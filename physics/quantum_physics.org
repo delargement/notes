@@ -1,0 +1,252 @@
+#+TITLE: Quantum mechanics
+#+STARTUP: latexpreview
+
+this is in gaussian units
+
+* Postulates
+1. Associated to any isolated physical system is a hilbert space which is completely described by its state vector.
+2. The evolution of a closed quantum system is described by a unitary transformation. i.e. the shrodinger equation
+
+* Hamiltonian formalism
+** EL equations
+
+L = T - V
+
+\[
+\dv{t}\left(\pdv{L}{\dot x}\right) = \pdv{L}{x}
+\]
+
+- Generalised momentum
+
+\[
+\pdv{L}{\dot q} = p
+\]
+
+- Generalised force
+
+\[
+\pdv{L}{q} = \dot{p}
+\]
+
+
+*** Cyclic coordinate
+
+When the Lagrangian does not depend on a coordinate qk:
+
+\[
+\pdv{L}{\dot q_k} = C
+\]
+
+This is also generalised momentum.
+
+q_k is thus a cyclic coordinate.
+
+*** Energy conservation
+
+\[
+\pdv{E}{t} = -\pdv{L}{t}
+\]
+
+
+\[
+E = \left(\sum_{i=1}^N \pdv{L}{\dot q_i}\dot{q_i}\right) - L
+\]
+
+If L has no time dependence, then E is conserved.
+
+E is indeed total energy when the new coordinate q is not related to the old coordinate x with a time dependence $x = x(q,t)$ or qdot dependence $x = x(q,\dot{q})$.
+
+*** Noether's theorem
+
+For each symmetry of the Lagrangian, there is a conserved quantity.
+
+Let the Lagrangian be invariant to first order in the small number $\epsilon$.
+
+\[
+q_i \to q_i + \epsilon K_i(q)
+\]
+
+each K_i(q) may be a function of all the q_i and need not be constant.
+
+The quantity:
+
+\[
+P(q,\dot{q}) = \sum_i \pdv{L}{\dot q_i}K_i(q)
+\]
+
+does not change with time and has the generic name of consered momentum.
+
+Example:
+
+For $L = (m/2)(5\dot{x}^2 - 2\dot{x}\dot{y} + 2\dot{y}^2) + C(2x-y)$, K_x = 1 and K_y = 2:
+
+\[
+P = \pdv{L}{\dot{x}}K_x + \pdv{L}{\dot y}K_y = m(3\dot{x} + 3\dot{y})
+\]
+
+** Hamiltonian
+
+We may write E as:
+
+\[
+E(q,\dot{q}) \equiv \pdv{L(q,\dot{q})}{\dot{q}}\dot{q} - L(q,\dot{q})
+\]
+
+and we wish to exchange all  $\dot{q}$ for $p$ in E.
+
+\[
+p \equiv \pdv{L}{\dot{q}}
+\]
+
+When written in this way, we define it as the Hamiltonian.
+
+\[
+H(q,p) \equiv p_i\dot{q_i}(q,p) - L(q,\dot{q}(q,p))
+\]
+
+*** Hamiltonian equations
+
+\[
+\pdv{H}{p} = \dot{q}
+\]
+
+\[
+\pdv{H}{q} = -\dot{p}
+\]
+
+*** Cyclic coordinates
+
+Same as Lagrange.
+if q is cyclic, p is conserved.
+
+
+Let w(p,q) be some function of the state variables with no explicit dependence on t.
+
+\[
+\dot{\omega} = \{\omega,\mathcal{H}\}
+\]
+
+where the Poisson brackets (PB) between two variables is:
+
+\[
+\left\{\omega,\lambda\right\} = \sum_i \left(\pdv{\omega}{q_i}\pdv{\lambda}{p_i} - \pdv{\omega}{p_i}\pdv{\lambda}{q_i}\right)
+\]
+
+**** Poisson bracket Identities
+
+Any variable whose PB with $\mathcal{H}$ vanishes is constant in time.
+
+{a,b} = -{b,a}
+{a,b+c} = {a,b} + {a,c}
+{a,bc} = {a,b}c + b{a,c}
+
+(similar to commutators)
+
+\[
+$\{q_i,q_j\} = \{p_i,p_j\} = 0
+\]
+
+\[
+\{q_i,p_j\}=\delta_{ij}
+\]
+
+as $\partial{q_i}/\partial{q_j} = \delta_{ij}, \partial{q_i}/\partial{p_k}=0$
+
+Hamiltonian equations may be written as:
+
+\begin{align*}
+\dot{q_i} = \{q_i,\mathcal{H}\} \\
+\dot{p_i} = \{p_i,\mathcal{H}\}
+\end{align*}
+
+
+*** Legendre transform
+
+Say that we wish to 'invert':
+
+\[
+\dv{F(x)}{x} = s(x)
+\]
+
+by constructing a function G(s) which is the Legendre transform of F(x):
+
+\[
+\dv{G(s)}{s} = x(s).
+\]
+
+By noting $d(F+G) = s \dd{x} + x \dd{s} = d(sx)$, we may write:
+
+\[
+G = sx-F = F'x - F
+\].
+
+Or
+
+\[
+G(s) = sx(s) - F(x(s))
+\]
+
+* Statevectors
+
+Statevector expressed in certain basis.
+
+\[
+\ket{\psi} = \ket{ + z}\braket{+ z}{\psi} + \ket{-z}\braket{-z}{\psi} = c_+\ket{+ z} + c_- \ket{-z}
+\]
+
+Expectation value: $\langle\Omega\rangle$
+Square of uncertainty: $(\Delta \Omega)^2 = \langle\Omega^2\rangle - \langle\Omega\rangle^2$
+
+Two states that differ by an overall phase are the same state.
+
+
+** Rotation Operators
+
+Rotate anticlockwise about z-axis can be defined as:
+
+\[
+\hat{R}(\dd{\phi} \bm{k}) = 1 - \frac{i}{\hbar}\hat{J_z}\dd{\phi}
+\]
+where $\hat{J_z}$ is a hermitian operator and has |+- z> as an eigenvector with +-hbar/2 as eigenvalues.
+
+\[
+\hat{R}(\phi \bm{k}) = \lim_{N\to\infty}\left[1-\frac{i}{\hbar}\hat{J}_z\left(\frac{\phi}{N}\right)\right]^N
+= \exp(-i\hat{J}_z\phi/\hbar)
+\]
+
+\[
+\hat{R}(\phi \bm{k})\ket{\pm z} = e^{\mp i \phi/2} \ket{\pm z}
+\]
+
+
+Notice that rotating by 360deg causes the state to pick up an overall minus sign.
+
+** Matrix representation
+
+The matrix representation of $\hat{A}$ in basis x is $A_{ij} = \bra{i}\hat{A}\ket{j}$ where i j are the bases of x.
+
+** Passive and active transform
+
+passive: rotating the axes
+active: rotating the vector expressed in the same axes.
+
+
+
+
+
+
+* Stern-Gerlach
+
+The intrinsic spin angular momentum of a particle, we write
+
+\[
+\bm{\mu} = \frac{gq}{2mc}\bm{S}
+\]
+
+The force by the magnet equals:
+
+\[
+F_z = \mu_B \pdv{B}{z}
+\]
+
+where u_b is the bohr magneton

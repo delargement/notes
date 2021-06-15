@@ -1,0 +1,36 @@
+#+TITLE: Optics
+#+STARTUP: latexpreview
+* Propogation of light.
+
+Incident rays produce both a reflected and refracted ray, the latter of which follows snell's law. The index of refraction of an optical material is defined by c/v or equivalently  $\lambda_0 / \lambda$, as since boundary surfaces can't create or destroy waves, the frequency of a wave does not change when passing from one material to another.
+
+Total internal reflection occurs when $\sin\theta_{crit} = \frac{n_b}{n_a}$
+** Dispersion
+
+Dispersion occurs due to certain optical materials having varying indices of refractions for each color (wavelength) of light.
+
+** Polarisers
+
+Malus' law if the incident light is already linearly polarised
+
+I = Im cos^2(phi)
+
+** Polarisation by reflection
+
+Unpolarised light can be polarised by reflection where as unpolarised light is incident on a reflecting surface, there is reflected lgith that is partially polarised perpendicular to plane of incidence and transmitted light is partially polarised to the plane of incidence. When the angle of incidence is at the polarising angle, the reflected ray and refracted ray are perpendicular to one another.
+
+Brewster's law
+
+\[
+\tan\theta_p = \frac{n_b}{n_a}
+\]
+
+** Circular and elliptical polarisation
+
+Occurs during superposition of two em waves. Circular when equal amptitude and lag/lead by quarter cycle
+
+** Birefrefringent and photoelasticity
+
+Calcite or materials under stress have different refractive indices for different directions of polarisation can cause elliptical polarisation or remove it.
+
+** Scattering of light

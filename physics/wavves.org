@@ -1,0 +1,100 @@
+#+TITLE: Waves
+#+STARTUP: latexpreview
+#+OPTIONS: toc:nil
+
+\[
+y(x,t) = y_m sin(kx-\omega t)
+\]
+
+k = angular wave number
+w = angular frequency
+
+Traveling waves are generally expressed as:
+
+\[
+y(x,t) = h(kx\pm \omega t)
+\]
+
+* Attributes
+
+** Wavelength to k
+
+\[
+k = \frac{2\pi}{\lambda}
+\]
+
+** Period to frequency
+
+\[
+\frac{\omega}{2\pi} = f = T^{-1}
+\]
+
+** Wave speed
+
+\[
+v =\frac{\omega}{k} =\frac{\lambda}{T} = \lambda f
+\]
+
+** Wave speed on stretched string
+
+\[
+v=\sqrt{\frac{\tau}{\mu}}
+\]
+
+$\tau$ = tension
+$\mu$ = linear density
+
+** Average Power of a wave on a stretched string
+
+\[
+P_{avg} = \frac{1}{2}\mu v \omega^2 y_m^2
+\]
+
+
+* Interactions
+
+** Interference
+
+\[
+y'(x,t) = [2y_m \cos \frac{1}{2}\phi] \sin(kx-\omega t +\frac{1}{2}\phi)
+\]
+
+Interference of two waves with same direction, amplitude, frequency (thus wavelength)
+but different phase constant $\phi$
+
+* Power
+
+\[
+P_{avg} = \frac{1}{2}\mu v \omega^2 y_m^2
+\]
+
+* Wave equation
+\[
+\pdv[2]{y}{x} = \frac{1}{v^2}\pdv[2]{y}{t}
+\]
+
+* Standing waves
+
+\[
+y'(x,t) =[2y_m \sin kx] \cos \omega t
+\]
+
+nodes:
+\[
+x=n {\lambda \over 2}
+\]
+
+antinodes:
+\[
+x=(n+{1\over2}){\lambda \over 2}
+\]
+
+harmonic series:
+
+\[
+\lambda = \frac{2L}{n}
+\]
+
+\[
+f=n\frac{v}{2L}
+\]

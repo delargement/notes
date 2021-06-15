@@ -1,0 +1,95 @@
+#+TITLE: Rotation
+#+STARTUP: latexpreview
+#+OPTIONS: toc:nil
+
+Moment of inertia
+
+\[
+I = \int r^2 dm
+\]
+\[
+I=I_{com} + Mh^2
+\]
+
+* Common formulae
+
+** Rotational Inertia through central axis of hoop
+
+\[
+I = MR^2
+\]
+
+** RI through central axis of an annular cylinder
+
+\[
+I = \frac{1}{2}M(R_1^2+R_2^2)
+\]
+
+** Solid cylinder about central axis
+
+\[
+I = \frac{1}{2}MR^2
+\]
+
+** Solid cylinder about central diameter
+
+
+\[
+I = \frac{1}{2}MR^2 + \frac{1}{12}ML^2
+\]
+
+** Thin rod about central diameter
+
+\[
+I = \frac{1}{12}ML^2
+\]
+
+** Solid cylinder about diameter
+
+
+\[
+I = \frac{2}{5}MR^2
+\]
+
+** Thin spherical shell about any diameter
+
+\[
+I = \frac{2}{3}MR^2
+\]
+
+** Hoop about diameter
+
+
+\[
+I = \frac{1}{2}MR^2
+\]
+
+** Slab about center
+
+
+\[
+I = \frac{1}{12}M(l^2 + w^2)
+\]
+
+* Newton's second law for rotation
+
+\[
+\tau_{net} =I\alpha
+\]
+
+* Work and rotational kinetic energy
+
+\[
+W = \int_{\theta_i}^{\theta_f} \tau \dd{\theta}
+\]
+
+if $\tau$ is constant, its just
+
+\[
+W=\tau(\theta_f-\theta_i)
+\]
+
+
+\[
+P=\tau \omega
+\]

@@ -1,0 +1,238 @@
+#+TITLE: Linear Momentum
+#+OPTIONS: toc:nil
+#+STARTUP: latexpreview
+
+
+
+* Linear Momentum
+
+
+\[
+\overrightarrow{p} = m\overrightarrow{v}
+\]
+
+Since $m$ is a scalar $\overrightarrow{p}$ always has the same direction as
+$\overrightarrow{v}$.
+
+** Newton's second law
+"The rate of change of the momentum of a particle is equal to the net force
+acting on the particle and in the direction of that force"
+
+** For a system of particles
+\[
+\overrightarrow{P} = M\overrightarrow{v}_{com},
+\]
+\[
+\overrightarrow{F}_{net} = \dv{\overrightarrow{p}}{t}
+\]
+
+
+* Impulse
+
+When a bat collides with a ball, the ball experiences a $\overrightarrow{F}(t)$
+which varies during the collision and changes the linear momentum of the ball.
+
+From this, impulse $\overrightarrow{J}$ is defined as follows.
+
+\[
+\overrightarrow{J} = \int_{t_i}^{t_f} \overrightarrow{F}(t) dt
+\]
+
+(also the area under a graph of $F$ against $t$)
+thus, the change in an object's momentum is equal to the impulse on the object
+
+\[
+\Delta\overrightarrow{p} = \overrightarrow{J}  \text{(linear momentum-impulse
+theorem)}
+\]
+
+If we know the average magnitude of the force and duration of the collision:
+
+\[
+J = F_{avg}\Delta t.
+\]
+
+** Why is landing in snow safer than landing on bare ground?
+
+The change in linear momentum is the same in both scenarios and thus the impulse
+of both collisions are equivalent. Thus, since landing in snow results in a
+greater $t$, $\rightoverarrow{F}$ should be less in order to achieve the same
+impulse.
+
+* Series of collisions
+
+Let's consider the force on a body when it undergoes a series of identical,
+repeated collisions. For instance, a tennis ball firing machine rapidly
+firing at a wall. Each collision would produce a force on the wall, but what we
+see is the average force on the wall during the bombardment.
+
+A steady stream of projectile bodies, with identical mass $m$ and linear momenta
+$m\overrightarrow{v}$ moves along an $x$ axis and collides with the target body
+$n$ times in a time interval $\Delta t$.  Thus, each projectile has initial
+momentum $mv$ and undergoes a change $\Delta p$ in linear momentum because of
+the colision. The total change in linear momentum for n particles for $n$
+projectiles during interval $\Delta t$ is $n \Delta p$.  The resulting impulse
+$\overrightarrow{J}$ on the target during $\Delta t$ is along the $x$ axis and
+has the same magnitude of $n \Delta p$ but is in the opposite direction.
+
+This results in the following relation:
+
+\[
+J = -n \Delta p.
+\]
+
+where the minus sign indicates that $J$ and $\Delta p$ have opposite directions.
+** Average force
+We find the average force acting on the target as follows:
+
+\[
+F_{avg} = - \frac{n}{\Delta t}m\Delta v.
+\]
+
+If the projectiles stop upon impact, we can write substitute for $\Delta v$,
+
+\[
+\Delta v = v_f - v_i = -v.
+\]
+
+if the projectiles rebound directly back with no change in speed, then $v_f =
+-v$ and thus,
+
+\[
+\Delta v = -2v.
+\]
+
+instead.
+
+
+* Conservation of linear momentum
+
+In a closed, isolated csystem,
+
+\[
+\overrightarrow{P} = constant
+\]
+
+or
+
+\[
+\overrightarrow{P_i} = \overrightarrow{P_f}
+\].
+
+* Momentum and KE in collisions
+
+If the total KE is unchanged by a collision, then the collision is "elastic"
+otherwise, it is considered inelastic.
+
+** Inelastic collisions
+A collision of a wet putty ball with a bat is inelastic as the putty sticks to
+the bat.
+
+\[
+\overrightarrow{p_{1i}} + \overrightarrow{p_{2i}} = \overrightarrow{p_{1f}} + \overrightarrow{p_{2f}}
+\] (conservation of linear momentum)
+
+*** Completely inelastic collision
+In a Completely inelastic collision, the objects stick together.
+Take the body with mass $m_2$ to be initially at rest and the body with mass
+$m_2$ to be the projectile. After the collision, the stuck-together bodies move
+with velocity V. For this situation, we can write the above equation as
+
+\[
+m_1v_{1i} = (m_1+m_2)V
+\]
+
+or
+
+\[
+V = \frac{m_1}{m_1+m_2}v_{1i}.
+\]
+
+In a closed,isolated system, the velocity \rightoverarrow{v_{com}} cannot be
+changed by a collision because with the system isolated, there is no net
+external force to change it.
+
+To find $v_{com}$, we can relate it to the total linear momentum
+$\overrightarrow{P}$ .
+
+\[
+\overrightarrow{P} = M\overrightarrow{v}_{com} = (m_1+m_2)\overrightarrow{v}_{com}.
+\]
+
+Thus,
+
+\[
+\overrightarrow{v}_{com} = \frac{\overrightarrow{P}}{m_1+m_2} =
+\frac{\overrightarrow{p_1}+\overrightarrow{p_2}}{m_1+m_2}
+\]
+
+
+** Elastic collisions
+
+In an elastic collision, the total KE of the system does not change.
+
+*** Stationary target
+
+\[
+m_1v_{1i} = m_1v_{1f} + m_2v_{2f}
+\]
+(conservation of momentum)
+
+\[
+\frac{1}{2}m_1v_{1i}^2 = \frac{1}{2}m_1v_{1f}^2 + \frac{1}{2}m_2v_{1f}^2
+\]
+
+(Total KE of system does not change)
+
+which can be rewritten as
+
+\[
+v_{1f} = \frac{m_1-m_2}{m_1+m_2}v_{1i}
+\]
+
+\[
+v_{2f} = \frac{2m_1}{m_1+m_2}v_{1i}
+\]
+
+
+**** Equal masses
+If $m_1 = m_2$, the equations reduce to:
+
+\[
+v_{1f} = 0 \text{ and } v_{2f} = v_{1i}
+\]
+
+similar to billiard balls.
+
+**** A massive target
+If $m_2 \gg m_1$,
+
+\[
+v_{1f} \approx -v_{1i} \text{ and } v_{2f} \approx \left( \frac{2m_1}{m_2} \right) v_{1i}
+\].
+
+This tells us the projectile simply bounces back while the target moves forward
+at a low speed as the quantity in parentheses is much less than unity
+
+**** A massive projectile
+If $m_1 \gg m_2$
+
+\[
+v_{1f} \approx v_{1i} \text{ and } v_{2f} \approx 2v_{1i}.
+\]
+
+The projectile just keeps on moving. The target moves at twice the speed similar
+to how there is a change of velocity of $2v$ as the projectile in the previous
+scenario as it bounces back.
+
+*** Moving targets
+
+The equations develop into
+
+\[
+v_{1f} = \frac{m_1-m_2}{m_1+m_2}v_{1i} + \frac{2m_2}{m_1+m_2}v_{2i}.
+\]
+
+\[
+v_{2f} = \frac{2m_1}{m_1+m_2}v_{1i} + \frac{m_2-m_1}{m_1+m_2}v_{2i}
+\]

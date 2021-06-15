@@ -1,0 +1,82 @@
+#+TITLE: Oxygen-containing compounds
+#+STARTUP: latexpreview
+#+OPTIONS: toc:nil
+
+
+* Alcohol
+
+** Properties
+
+*** Boiling point
+Increases as we go down the homologous series of alcohols. Bp increases as the
+Molecular mass increases.
+
+*** Solubility in water
+Decreases down the homologous series
+
+** Production
+
+*** Fermentation
+
+
+\[
+C_6H_{12}O_6 \xrightarrow{\textit{yeast enzymes}} 2CH_3CH_2OH + 2CO_2
+\]
+
+anaerobic
+
+*** Hydration
+
+alkene + water -> alcohol
+
+\[
+C_2H_4 + H_2O \xrightarrow{\textit{300\textdegree{}C, 60 to 70 atm}}_{H_3PO_4} CH_3CH_2OH
+\]
+
+reversible
+
+** Redox
+
+requires acidified potassium permanganate [KMnO4] (purple to decolorized )or potassium dichromate (VI) (orange to green)
+[K2Cr2O7]
+
+#+ATTR_ORG: :width 10
+#+ATTR_HTML: :width 10% :height 10%
+[[file:./alcoholoxidation.gif]]
+
+*** Primary alcohol
+
+
+\[
+R - CH_2 - O - H \rightarrow R - CH = O  \rightarrow R - C = O - OH
+\]
+
+
+*** Secondary alcohol
+
+
+** Dehydration
+
+\[
+C_2H_4 + H_2O \xrightarrow{\textit{300\textdegree{}C, 60 to 70 atm}}_{H_3PO_4} CH_3CH_2OH
+\]
+
+
+\[
+CH_3CH_2OH \xrightarrow{\textit{180\textdegree{}C,excess conc. $H_2SO_4$}} H_2SO_4C_2H_4 + H_2O
+\]
+
+* Carboxylic acid
+
+** Neutralisation
+
+(carboxylic) acid + base -> water + salt
+
+** Esterification
+
+
+   requires heat/reflux, excess conc. $H_2SO_4$.
+
+*carboxylic acid + alcohol -> ester + water*
+
+carboxylic acid loses OH, alcohol loses H.

@@ -1,0 +1,1022 @@
+#+TITLE: Mathematical methods pt. 1
+#+STARTUP: latexpreview
+
+* Precalc
+** Binomial expansion
+
+\begin{align*}
+(x+y)^n = (x+y)^{-m} = & x^{-m} \left(1+\frac{y}{x}\right)^{-m} \\
+                     = & x^{-m} \sum_{k=0}^{\infty} {-m \choose k} \left(\frac{y}{x}\right)^k
+\end{align*}
+where m is positive and x > y and:
+
+\[
+{-m \choose k} = (-1)^k {m+k-1 \choose k}
+\]
+
+.
+
+Whatever's n:
+
+\[
+\binom{n}{k+1} = \frac{n-k}{k+1} \binom{n}{k}
+\]
+
+* Complex & hyperbolic
+** Identities
+
+\[
+e^{i\theta} = \cos{\theta} + i\sin{\theta}
+\]
+
+\[
+z_1z_2 = (x_1x_2 - y_1y_2) + i(x_1y_2+y_1x_2)
+\]
+
+\[
+\abs{z_1z_2} = \abs{z_1}\abs{z_2}
+\]
+
+\[
+\arg(x+iy) = \tan^{-1}{y\over x}
+\]
+
+\[
+\arg(z_1z_2) = \arg{z_1} + \arg{z_2}
+\]
+
+\[
+\frac{z_1}{z_2} = \frac{x_1x_2+y_1y_2}{x_2^2+y_2^2} + i\frac{x_2y_1-x_1y_2}{x_2^2+y_2^2}
+\]
+
+\[
+e^z = \exp z = 1 + z + \frac{z^2}{2!} + \frac{z^3}{3!}
+\]
+
+** De moivre's
+
+\[
+(\cos\theta + i\sin\theta)^n = \cos{n\theta} + i\sin{n\theta}
+\]
+
+given $z = e^{i\theta}$
+
+\[
+z^n + \frac{1}{z^n} = 2\cos{n\theta}
+\]
+
+\[
+z^n - \frac{1}{z^n} = 2i\sin{n\theta}
+\]
+
+*** Application
+
+\[
+\cos^3\theta = \frac{1}{8} \left(z+\frac{1}{z}\right)^3
+\]
+
+** Roots of unity
+
+
+Notice
+
+\[
+z^n = e^{2ik\pi} = 1
+\]
+
+where k is any integer
+
+So the solutions are:
+
+\[
+z = e^{2ik\pi/n}
+\]
+
+** Integration
+
+\[
+\int e^{ax} cos(bx) \dd x
+\]
+
+** Hyperbolic identities
+
+\[
+\cosh x = \frac12(e^x + e^{-x})
+\]
+
+\[
+\sinh x = \frac12(e^x - e^{-x})
+\]
+
+Circular Trig identities hold for hyperbolic functions but replace sinh^2 by -sinh^2 and tanh^2 by -tanh^2
+
+* Series
+
+** Arithmetic series
+
+
+\[
+\sum_{n=0}^{N-1} (a + nd)
+\]
+
+Diverges
+
+
+\[
+S_N = \frac{N}{2}[2a + (N-1)d]
+\]
+
+** Geometric series
+
+\[
+\sum_{n=0}^{N-1} ar^n
+\]
+
+\[
+S_N = \frac{a(1-r^N)}{1-r}
+\]
+
+\[
+S_\infty = \frac{a}{1-r}
+\]
+
+** Arithmetico-geometric series
+
+\[
+\sum_{n=0}^{N-1} (a+nd)r^n
+\]
+
+\[
+S_N = \frac{a-[a+(N-1)d]r^N}{1-r} + \frac{rd(1-r^{N-1})}{(1-r)^2}
+\]
+
+
+\[
+S = \frac{a}{1-r} + \frac{rd}{(1-r)^2}
+\]
+
+** Difference method
+
+Consider the series $\sum u_n$
+
+If u_n can be expressed in the form:
+
+\[
+u_n = f(n) - f(n-1)
+\]term
+
+Notice sum of $f$ telescopes ($S_n = f(n)-f(0)$).
+
+If
+
+\[
+u_n = f(n) - f(n-m)
+\]
+
+then
+\[
+S_N = \sum_{k=1}^m f(N-k+1) - \sum_{k=1}^m f(1-k)
+\]
+
+
+** Convergence
+
+*** Real and positive (absolute convergence)
+
+**** Prelim test (not sufficient)
+
+\[
+\lim_{n\to\infty} u_n = 0.
+\]
+
+**** Comparison test
+
+if $\sum v_n$ is convergent and
+
+\[
+u_n \leq v_n \text{ for } n > N.
+\]
+
+converse is true
+
+**** D'Alembert's ratio test
+
+\[
+\rho = \lim_{n\to\infty} \left(\frac{u_{n+1}}{u_n}\right).
+\]
+
+if $\rho < 1$ the series is convergent; if $\rho > 1$ the series is divergent;
+if $\rho = 1$, it's undetermined by this test
+
+**** Ratio comparison test
+
+$v_n$ is convergent and
+
+\[
+\frac{u_{n+1}}{u_n} \leq \frac{v_{n+1}}{v_n}
+\]
+
+for all n greater than a fixed value N
+
+converse is true
+
+**** Quotient test
+
+\[
+\rho = \lim_{n\to\infty}\left(\frac{u_n}{v_n}\right)
+\].
+
+if $\rho \neq 0$ and finite: both converge or both diverge;
+if $\rho = 0$ and $\sum v_n$ converges: then $\sum u_n$ converges;
+if $\rho = \infty$ and $\sum v_n$ diverges: then $\sum u_n$ diverges;
+
+**** Integral test
+
+if the limit of the integral
+
+\[
+\lim_{N\to\infty} \int^N U(x) \dd{x}
+\]
+
+exists, the series $\sum u_n$ is convergent.
+
+the lower limit is not stated to avoid silly cases like singularities
+
+**** Cauchy's root test
+
+\[
+\rho = \lim_{n\to\infty} (u_n)^{1/n}.
+\]
+
+if $\rho < 1$ the series is convergent;
+if $\rho > 1$ the series is divergent;
+if $\rho = 1$, it's undetermined by this test;
+
+good for when the nth term contains an nth power like $\sum_{n=1}^{\infty} \left(\frac{1}{n}\right)^n$
+
+**** Grouping
+
+trivial
+
+
+*** Otherwise (merely convergent)
+
+**** Alternating series test
+
+\[
+\sum_{n=1}^\infty (-1)^{n+1} u_n
+\]
+
+where $u_n \geq 0$.
+
+It converges when:
+
+1. $u_n \to 0$ as $n \to \infty$
+
+2. $u_n < u_{n-1}$ for all $n>N$ for some finite $N$.
+
+   otherwise it oscillates
+
+
+** Operations
+
+If the infinite series $\sum u_n$ and $\sum v_n$ are both absolutely convergent then
+the series $\sum w_n$, where:
+
+\[
+w_n = u_1v_n + u_2v_{n-1} + \ldots + u_nv_1
+\]
+
+is also absolutely convergent.
+
+$\sum w_n$ is the Cauchy product and it converges to ST is u converges to S and v converges to T;
+
+** Power series
+
+Converges if:
+
+\[
+\rho = \abs{x} \lim_{n\to\infty} \abs{\frac{a_{n+1}}{a_n}} < 1
+\]
+
+** Taylor series
+
+\[
+f(a+h) = \frac{h^{n-1}}{(n-1)!}f^{(n-1)}(a) + R_n(h)
+\]
+
+\[
+R_n(h) = \frac{h^n}{n!}f^{(n)}(\zeta)
+\]
+
+for some $\zeta \in [a,a+h]$
+
+* Partial derivatives
+
+** Total differential
+
+\[
+\dd f = \pdv{f}{x}\dd x + \pdv{f}{y}\dd y
+\]
+
+If $x_i = x_i(x_1), i = 2,3,\ldots,n$, then the total derivative is:
+
+\[
+\dv{f}{x_1} = \pdv{f}{x_1} + \left(\pdv{f}{x_2}\right)\dv{x_2}{x_1} + \ldots + \left(\pdv{f}{x_n}\right) \dv{x_n}{x_1}
+\]
+
+Pretend that the other variables do not change with $x_1$ when evaluating $\pdv{f}{x_1}$
+
+** Exact differentials
+
+A differential is exact if when given:
+
+\[
+\dd f = A(x,y)\dd x + B(x,y) \dd y
+\],
+
+
+\[
+\pdv{A}{y} = \pdv{B}{x},
+\]
+
+or
+
+\[
+\pdv{g_i}{x_j} = \pdv{g_j}{x_i} \text{ for all pairs $i,j$}.
+\]
+
+and there are $\frac12 n(n-1)$ relationships to be satisfied
+
+** Useful theorems
+
+Reciprocity relation:
+
+\[
+\left(\pdv{x}{y}\right)_z = \left(\pdv{y}{x}\right)_z^{-1}
+\]
+
+given both exist and neither of zero
+
+Cyclic relation:
+
+\[
+\left(\pdv{y}{z}\right)_x \left(\pdv{z}{x}\right)_y \left(\pdv{x}{y}\right)_z = -1
+\]
+
+** Chain rule
+
+\[
+\dv{f}{u} = \pdv{f}{x}\dv{x}{u} + \pdv{f}{y}\dv{y}{u}
+\]
+
+Good for parametric equations without having to express x(u) and y(u) in terms of u.
+
+Can be extended to problems requiring change of variable by replacing the total derivative with partial ones
+
+** Taylor's theorem
+
+\begin{align*}
+f(x,y) = f(x_0,y_0) & + \pdv{f}{x}\Delta x + \pdv{f}{y} \Delta y \\
+                    & + \frac{1}{2!}\left[\pdv[2]{f}{x}(\Delta x)^2 + 2\pdv[2]{f}{x}{y}\Delta x \Delta y + \pdv[2]{f}{y}(\Delta y)^2\right] + \ldots \\
+\end{align*}
+\[
+= \sum_{n=0}^{\infty}\frac{1}{n!}\left[\left(\Delta x \pdv{x} + \Delta y \pdv{y}\right)^n f(x,y)\right]_{x_0,y_0}
+\]
+
+or more generally:
+
+\[
+f(\textbf x) = f(\textbf{x}_0) + \sum_i \pdv{f}{x_i}\Delta x_i + \frac{1}{2!}\sum_i\sum_j\pdv[2]{f}{x_i}{x_j}\Delta x_i \Delta x_j + \ldots
+\]
+\[
+= \sum_{n=0}^\infty \frac{1}{n!}\left[\left(\Delta \textbf{x} \cdot \nabla\right)^n f(\textbf x)\right]_{\textbf{x}=\textbf{x}_0}
+\]
+
+** Stationary values
+
+all stationary points have $f_x = f_y = 0$
+minima if $f_{xx}$ and $f_{yy}$ are positive and $f_{xy}^2 < f_{xx}f_{yy}$
+maxima if $f_{xx}$ and $f_{yy}$ are negative and $f_{xy}^2 < f_{xx}f_{yy}$
+saddle points if $f_{xx}$ and $f_{yy}$ have opposite signs or $f_{xy}^2 > f_{xx}{yy}$
+
+** Stationary values under constraints (lagrange multipliers)
+
+Abridged problem statement:
+Find the maximum value of the differentiable function f(x,y) subject to the constraint g(x,y) = c, where c is a constant.
+
+We must choose a $\lambda$ (*Lagrange undetermined multiplier*) such that:
+
+\[
+\pdv{f}{x} + \lambda\pdv{g}{x} = 0
+\]
+
+\[
+\pdv{f}{y} + \lambda\pdv{g}{y}=0
+\]
+
+this can be extended to multiple constraints given the no. of contraints is smaller than the number of variables
+
+** Envelope
+A function where
+
+\[
+f(x,y,\alpha_1) = 0
+\]
+
+and
+
+\[
+\pdv{f(x,y,\alpha_1)}{\alpha}=0
+\]
+
+** Differentiation of integrals
+
+\[
+\dv{x}\left[\int_u^v f(x,t) \dd{t} \right] = \int_u^v \pdv{f(x,t)}{x}\dd{t}
+\]
+
+given v and u are constants
+
+
+
+\[
+\dv{x}\left[\int_{u(x)}^{v(x)} f(x,t) \dd{t}\right]
+= f(x,v(x))\dv{v}{x} - f(x,u(x))\dv{u}{x} + \int_{u(x)}^{v(x)}\pdv{f(x,t)}{x}\dd{t}
+\]
+
+* Multiple Integrals
+
+** Center of mass
+
+\[
+\bar{x} \int \dd M = \int x \dd M
+\]
+
+** Pappus theorems
+Volume generated by rotating the plane area about the x-axis
+
+\[
+V = \int 2\pi y \dd{A} = 2\pi\bar{y}A
+\]
+
+Area generated by rotating the plane curve about the x-axis (surface of revolution):
+\[
+S = \int 2\pi y \dd{s} = 2\pi\bar{y}L
+\]
+
+** Change of variables (Jacobian)
+
+The Jacobian is defined by
+
+\[
+J = \frac{\partial(x,y)}{\partial(u,v)} =\begin{vmatrix}
+\pdv{x}{u} & \pdv{y}{u} \\
+&\\
+\pdv{x}{v} & \pdv{y}{v} \\
+\end{vmatrix}
+\]
+Thus:
+
+\[
+\dd{x} \dd{y} = \left|J\right| \dd{u} \dd{v}
+\]
+
+
+Note that:
+
+\[
+\dd{x}\dd{y} =  r \dd{r} \dd{\phi}
+\]
+
+
+Or that:
+\[
+\dd{V} = r^2\sin\theta \dd{r}\dd{\theta}\dd{\phi}
+\]
+
+Also:
+
+\[
+J_{xy}J_{yx} = 1
+\]
+
+or:
+
+\[
+\frac{\partial(x_1,\ldots,x_n)}{\partial(y_1,\ldots,y_n)} = \left[\frac{\partial(x_1,\ldots,x_n)}{\partial(y_1,\ldots,y_n)}\right]^{-1}
+\]
+
+* Vector algebra
+
+\[
+(a\times b)\cdot(c\times d) \equiv (a\cdot c)(b\cdot d)-(a\cdot d)(b\cdot c)
+\]
+
+\[
+a\times(b \times c) = (a \cdot c)b - (a \cdot b)c
+\]
+
+\[
+(a\times b)\times c = (a \cdot c)b - (b \cdot c)a
+\]
+
+** Ratio theorem
+
+[[file:ratiotheorem.png]]
+
+\[
+\textbf{OP} = \frac{\mu}{\lambda+\mu}\textbf{a} + \frac{\lambda}{\lambda+\mu}\textbf{b}
+\]
+
+** Geometry
+
+*** Line
+
+\[
+{\bf r} = {\bf a} + \lambda{\bf b}
+\]
+
+\[
+({\bf r - a}) \times {\bf b} = 0
+\]
+
+*** Plane
+
+\[
+({\bf r - a}) \cdot {\bf \hat n} = 0
+\]
+
+\[
+{\bf r} \cdot {\bf \hat n} = d
+\]
+
+\[
+{\bf r} = \alpha {\bf a} + \beta{\bf b} +\gamma {\bf n}
+\]
+
+where a + b + c = 1
+
+lx + my + nz = d
+
+*** Sphere
+
+|r-c|^2 = a^2
+
+* Vector calculus
+
+** Differentiation of a vector function
+
+If magnitude $|\textbf{a}|$ is constant wrt u
+
+\[
+\textbf{a} \cdot \dv{\textbf{a}}{u} = 0
+\]
+
+A function can be represented as:
+
+\[
+\textbf{r}(u) = x(u)\textbf{i} + y(u)\textbf{j} + z(u)\textbf{k}
+\]
+
+\[
+\textbf{r}(u) = u\textbf{i} + f(u)\textbf{j} + g(u)\textbf{k}
+\]
+
+
+*** Arc length
+the arc length between two points on the curve ${\bf r }(u)$ is given by:
+
+\[
+s = \int_{u_i}^{u_2} \sqrt{\dv{\bf r}{u} \cdot \dv{\bf r}{u}} \dd{u}
+\]
+
+*** tangent, binormal and normal (???)
+
+If the parameter u of r(u) is the arc length along the curve then dr/ds is the unit tangent vector $\hat{t}$
+
+The curvature ($\kappa$) or the radius of curvature ($\rho$)is defined by:
+
+\[
+\kappa = \frac{1}{\rho} =\left|\dv{\hat{t}}{s}\right| = \left|\dv[2]{\hat{r}}{s}\right|
+\]
+
+The unit vector perpendicular to $\hat{t}$ is denoted by $\hat{n}$, and is the principal normal.
+
+Thus:
+
+\[
+\dv{\hat{\bf t}}{s} = \kappa\hat{\bf n}
+\]
+
+The unit vector $\bf \hat{b} = \hat{t} \times \hat{n}$ is called the binormal to C, and t,n,b thus form a right handed
+
+rectangular coordinate system.
+
+The torsion ($\tau$) is given by $\dv{\hat b}{s}$ and is related to the normal by $\dv{b}{s} =-\tau \hat n$ or :
+
+\[
+\tau = -\hat{\bf n} \cdot \dv{\hat{\bf b}}{s}
+\]
+
+There is also the radius of torsion, $\sigma = 1/\tau$
+
+\[
+\dv{\hat{\bf n}}{s} = \tau \hat{\bf b} - \kappa \hat{\bf t}
+\]
+
+**** Frenet-Serret formulae
+
+\[
+\dv{\hat{\bf t}}{s} = \kappa \hat{\bf n}
+\]
+
+\[
+\dv{\hat{\bf n}}{s} = \tau \hat{\bf b} - \kappa \hat{\bf t}
+\]
+
+\[
+\dv{\hat{\bf b}}{s} =-\tau \hat{\bf n}
+\]
+
+
+** Surfaces
+
+a surface can be given by:
+
+\[
+{\bf r}(u,v) = u{\bf i} + v{\bf j} + f(u,v){\bf k}
+\]
+
+/Coordinate/ curves are curves with u= constant or v = constant. Notice that the tangent vector of u=constant is in direction dr/du
+
+A normal to the surface at P is given by:
+
+\[
+{\bf n} = \pdv{\bf r}{u} \times \pdv{\bf r}{v}
+\]
+
+or
+
+\[
+\hat{\bf n}(x,y,z) = \frac{\pdv{r}{u}\times\pdv{r}{v}}{|\pdv{r}{u}\times\pdv{r}{v}|} = \frac{-\bf{i}\pdv{f}{x}-\bf{j}\pdv{f}{y}+\bf{k}}{\sqrt{1 + \left(\pdv{f}{x}\right)^2 + \left(\pdv{f}{y}\right)^2}}
+\]
+The /element of area/ at P:
+
+\[
+\dd{S} = |{\bf n}| \dd{u} \dd{v}
+\]
+
+Thus:
+
+\[
+A = \iint_R |{\bf n}| \dd{u}\dd{v}
+\]
+
+
+** Surface integrals of normal component of function F
+
+\[
+\iint_S \bf{F\cdot \hat{n}} \dd{S} = \lim_{N\to\infty, \Delta S \to 0} \sum_{l=1}^N \bf{F}(x_l,y_l,z_l) \bf{\cdot \hat{n}_l} \Delta S_l
+\]
+
+The surface area is given by:
+
+\[
+\iint_S \dd{S}
+\]
+
+
+** Integrating over S -> Integrating over projection of S
+
+We find:
+
+\[
+\hat{\bf n} \cdot \bf{k}=\frac{1}{\sqrt{1+\left(\partial{f}/\partial{x}\right)^2 + \left(\partial{f}/\partial{y}\right)^2}}
+\]
+
+We can then write:
+
+\[
+\iint_S G(x,y,z) \dd{S} = \iint_R G[x,y,f(x,y)] \cdot \sqrt{1 + \left(\pdv{f}{x}\right)^2 + \left(\pdv{f}{y}\right)^2} \dd{x}\dd{y}
+\]
+
+which allows to integrate G over the projection on the x-y plane. This can be generalised to integration on the y-z plane and x-z plane.
+
+*** Flux of F
+
+To integrate integrals of the form $\bf F \cdot \hat{n}$
+
+we can simplify the earlier result into:
+
+\begin{align*}
+\iint_S \bf{F\cdot \hat{n}} \dd{S} & = \iint_R -F_x[x,y,f(x,y)]\pdv{f}{x} \\ - & F_y[x,y,f(x,y)]\pdv{f}{y}+ F_z[x,y,f(x,y)] \dd{x} \dd{y}
+\end{align*}
+The above integral is often called the flux of $\bf F$. The rate of flow through a surface S can be given by subsitiuting F for $\rho(x,y,z){\bf v} (x,y,z)$
+
+
+** Vector operators
+
+*** Nabla
+
+Gives a vector field
+
+Cartesian:
+
+\[
+\nabla \equiv {\bf \hat i}\pdv{x} + {\bf \hat j}\pdv{y} + {\bf \hat k}\pdv{z}
+\]
+
+
+
+*** Divergence
+
+**** Definitions
+
+\[
+\div {\bf F} = \lim_{\Delta V \to 0} \frac{1}{\Delta V} \iint_S {\bf F \cdot \hat{n}} \dd{S}
+\]
+
+Where $\Delta V$ is taken about (x,y,z)
+
+This allows us to express gauss' law as $\div E = \rho/\epsilon_0$
+
+***** Cartesian
+\[
+\div F = \pdv{F_x}{x} + \pdv{F_y}{y}+ \pdv{F_z}{z}
+\]
+***** Cylindrical
+
+\[
+\div F = \frac{1}{r}\pdv{}{r}\left(rF_r\right) + \frac{1}{r}\pdv{F_\theta}{\theta}+ \pdv{F_z}{z}
+\]
+***** Spherical
+
+\[
+\div F = \frac{1}{r^2}\pdv{}{r}\left(r^2F_r\right) + \frac{1}{r \sin\phi}\pdv{}{\phi} \left( \sin\phi F_\phi \right) +  \frac{1}{r \sin\phi}\pdv{F_\theta}{\theta}
+\]
+
+**** Divergence theorem
+
+\[
+\iint_S {\bf F \cdot \hat{n}} \dd{S} = \iiint_V {\div {\bf F}} \dd{V}
+\]
+
+
+*** Grad of a scalar field
+
+
+Rate of change of $\phi$ (a scalar field) wrt distance s in direction $\bf a$ (i.e. the directional derivative)
+
+\[
+\dv{\phi}{s} = \nabla \phi \cdot {\bf \hat a}
+\]
+
+
+To find the rate of change of a vector field in a particular direction:
+\[
+\hat{\bf a} \cdot \nabla = a_x \pdv{x} + a_y \pdv{y} + a_z\pdv{z}
+\]
+
+e.g. $\dd{\bf E} = (\dd{\bf r} \cdot \nabla){\bf E}$
+
+A second interesting property is that: $\nabla\phi$ is a vector normal to the surface $\phi(x,y,z) = c$ at every point
+
+* Fourier series
+
+\[
+f(x) = \frac{a_0}{2} + \sum_{r=1}^\infty \left[a_r \cos\left(\frac{2\pi r x}{L}\right) + b_r \sin\left(\frac{2\pi r x}{L}\right)\right]
+\]
+
+** Dirichlet conditions
+
+The conditions a function must fulfil in order that it may be expanded as a fourier series.
+
+- The function must be periodic*
+- It must be single-valued and continuous, except at a finite number of finite discontinuties
+- It must have only have a finite number of maxima and minima within one period
+- The integral over one period of |f(x)| must converge
+
+  Then the fourier series will converge to f(x) at all points where f(x) is continuous.
+
+** Properties of fourier series
+
+- Completeness
+- All terms are mutually orthogonal
+
+ i.e.
+
+\[
+\int_{x_0}^{x_0+L}\sin(2\pi r x / L)\cos(2 \pi p x/L)\dd{x} = 0
+\]
+
+for all r and p
+\[
+\int_{x_0}^{x_0+L}\cos(2\pi r x / L)\cos(2 \pi p x/L)\dd{x} =\begin{cases}
+L & r = p = 0 \\
+\frac12 L & r = p > 0 \\
+0 & r \neq p
+\end{cases}
+\]
+
+\[
+\int_{x_0}^{x_0+L}\sin(2\pi r x / L)\sin(2 \pi p x/L)\dd{x} =\begin{cases}
+0 & r = p = 0 \\
+\frac12 L & r = p > 0 \\
+0 & r \neq p
+\end{cases}
+\]
+
+where r and p are integers greater than or equal to zero.
+
+** Fourier coefficients
+
+\[
+a_r = \frac{2}{L} \int_{x_0}^{x_0+L}f(x)\cos(2\pi r x / L) \dd{x}
+\]
+\[
+b_r = \frac{2}{L} \int_{x_0}^{x_0+L}f(x)\sin(2\pi r x / L) \dd{x}
+\]
+
+*** Symmetry about quarter period
+
+if f(x) is even about L/4 then a_odd = 0 and b_even = 0
+if f(x) is odd about L/4 then a_2r = 0 and b_odd = 0
+
+** Discontinuous functions
+
+At a discontinuity the value of the fourier series at that point is halfway between the upper and lower values. There is also an overshoot which does not disappear in the limit of an infinite number of terms. This is the *Gibbs' phenomenon*
+
+** Non-periodic functions
+
+Can be extended to non-periodic functions by extending them (in numerous ways), usually to odd or even functions. Care must be taken that it converges properly at possible discontinuities at the ends.
+
+** Integration and differentiation
+
+Try it out!
+
+** Complex fourier series
+
+\[
+f(x) = \sum_{r=-\infty}^\infty c_r \exp(2 \pi i r x / L)
+\]
+
+\[
+c_r = \frac{1}{L}\int_{x_0}^{x_0+L}f(x)\exp(-\frac{2 \pi i r x}{L})\dd{x}
+\]
+
+in relation to real fourier coefficients:
+
+\begin{align*}
+c_r & = \frac12 (a_r - i b_r) \\
+c_{-r} & = \frac12 (a_r + i b_r) \\
+\end{align*}
+
+if f(x) is real then $c_{-r} = c_r^*$
+
+** Parseval's theorem
+
+\begin{align*}
+\frac{1}{L} \int_{x_0}^{x_0+L}|f(x)|^2 \dd{x} & = \sum_{-\infty}^\infty |c_r|^2 \\
+& =(\frac12 a_0)^2 + \frac12 \sum_{r=1}^\infty (a_r^2 + b_r^2)
+\end{align*}
+* Ordinary Differential equations
+
+*Order* is the order of the highest derivative it contains
+*Degree* is the power to which the highest order derivative is raised (after rationalisation)
+
+** 1st-degree, 1st-order
+
+*** Seperable-variable equations
+
+*Form*:
+
+
+\[
+\dv{y}{x} = f(x)g(y)
+\]
+
+*Solution method*:
+
+Factorise when necessary.
+
+\[
+\int \frac{\dd{y}}{g(y)} = \int f(x) \dd{x}
+\]
+
+*** Exact equations
+
+*Form*:
+
+\[
+A(x,y) \dd{x} + B(x,y) \dd{y} = 0
+\]
+
+where the expression is an exact differential.
+
+Since $\pdv{A}{y} = \pdv{B}{x}$, we may equate the expression to dU and thus dU = 0, U = c.
+
+*Solution method*:
+
+Make sure to check that its exact.
+\[
+U(x,y) = \int A(x,y) \dd{x} + F(y)
+\]
+
+F(y) can be found by differentiating U wrt y and equating the expression to B(x,y). Then sub back in.
+
+*** Inexact equations: integrating factors
+
+*Form*:
+
+Above but inexact.
+
+The differential can be made exact by multiplying by an *integrating factor* $\mu(x,y)$ which obeys:
+
+\[
+\pdv{(\mu A)}{y} = \pdv{(\mu B)}{x}
+\]
+
+If the integrating factor is a function of either x or y alone then the eq can be explicitly solved. Assuming $\mu = \mu(x)$:
+
+\begin{align*}
+&\mu\pdv{A}{y} =\mu \pdv{B}{x} + B\pdv{\mu}{x} \\
+\implies & \frac{\dd{\mu}}{\mu} = \frac{1}{B}\left(\pdv{A}{y}-\pdv{B}{x}\right)\dd{x} = f(x) \dd{x}
+\end{align*}
+
+where we require f(x) be a function of x only.
+
+*Solution method*:
+
+In which case,
+
+\[
+\mu(x) = \exp\left\{\int f(x) \dd{x}\right\} \text{   where   } f(x) = \frac{1}{B}\left(\pdv{A}{y}-\pdv{B}{x}\right)
+\]
+
+\[
+\mu(y) = \exp\left\{\int f(y) \dd{y}\right\} \text{   where   } f(y) = \frac{1}{A}\left(\pdv{B}{x}-\pdv{A}{y}\right)
+\]
+
+*** Linear equations
+
+Special case of inexact ODEs
+
+*Form*:
+
+\[
+\dv{y}{x} + P(x)y = Q(x)
+\]
+
+*Solution method*:
+
+\[
+\mu(x) = \exp\left\{\int P(x) \dd{x}\right\}
+\]
+
+Multiply throughout and then integrate left and right hand sides.
+*** Homogenous equations
+
+*Form*:
+
+\[
+\dv{y}{x} = \frac{A(x,y)}{B(x,y)} = F\left(\frac{y}{x}\right)
+\]
+
+where A(x,y) and B(x,y) are homogenous functions of the same degree. A function is homogenous of degree n if it obeys:
+
+
+\[
+f(\lambda x,\lambda y) = \lambda^n f(x,y)
+\]
+
+in general, the sum of the powers of x and y in each term of A and B should be the same.
+
+*Solution method*:
+
+The equation may solved by making the substitution y = vx, so that:
+
+\[
+\dv{y}{x} = v + x\dv{v}{x} = F(v)
+\].
+
+This is now seperable and can be integrated directly to give:
+
+\[
+\int \frac{\dd{v}}{F(v) - v} = \int \frac{\dd{x}}{x}
+\]
+
+*** Isobaric
+
+*Form*:
+
+A generalisation of the homogeneous ODE.
+
+\[
+\dv{y}{x} = \frac{A(x,y)}{B(x,y)}
+\]
+
+where the equation is dimensionally consistent if y and dy are each given a weight m relative to x and dx. i.e. if the substitution y=vx^m makes it seperable
+
+*Solution method*:
+Write the equation in the form Adx + Bdy = 0. Given y and dy weight m and x and dx each weight 1. then find an m which makes all the sums equal

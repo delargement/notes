@@ -1,0 +1,58 @@
+
+#+TITLE: Electronic structure of atoms
+#+STARTUP: latexpreview
+
+* Theory
+
+** Principal quantum number, n
+
+Relates to the average relative distance of the electron from the nucleus or energy level
+
+Larger n -> larger orbital & higher energy level (closer to zero)
+
+A collection of oribtals with same n is called a principal/electron shell
+
+** Angular momentum quantum number, l
+
+l = 0,1,2,...,n-1
+(i.e. spdf)
+
+Describes the shape of the volume of space occupied by the electron
+
+Defines subshell
+
+** Magnetic quantum number, m_l
+
+-l to l
+
+number of m_l values indicate number of orbitals. It describes the 3-D orientation of the orbital occupied by the electron wrt an applied magnetic field.
+
+e.g. 2p_x, 2p_y, 2p_z
+e.g. [3d] yz, xz, xy , x^2-y^2, z^2
+
+same m_l -> same energy (degenerate)
+
+** Electron spin quantum number, m_s
+
+accounts for possible orientations of the electron when magnetic field is applied
+
+** Magnetism
+
+*** Paramagnetism
+unpaired electrons, attracted by magnets
+There's net spin in at least one of its atomic orbitals
+
+*** Diamagnetism
+Slightly repelled by magnets
+There is no net spin in its atomic orbitals
+
+** Anomalous electron config
+
+Cr = [Ar] $3d^54s^1$
+Cu = [Ar] $3d^{10}4s^1$
+
+Due to added stability associated with half-filled and completely-filled subshells
+
+** Rules
+- Hund rule: minimise spin pairs
+- aufbau rule: zig zag
