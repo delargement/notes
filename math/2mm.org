@@ -1,4 +1,51 @@
 #+TITLE: Mathematical methods pt. 2
-#+STARTUP: latexpreview
+#+STARTUP: latexpreview,inlineimages
 
 * Normal modes
+
+The potential must not depend on the time derivatives of these of these coordinates. The potential must have a local minimum at the equillibrium point. The potential at this point is zero.
+
+T can be written as the quadratic form.
+
+\[
+T = \sum_i \sum_j a_{ij} \dot{q}_i \dot{q}_j = \dot{q}^TA\dot{q}
+\]
+
+and likewise for V with q instead of qdot.
+
+1. A and B can be made symmetric.
+
+2. A and B are real and positive definite.
+
+** Process
+
+[[file:normalmode1.png]]
+
+
+
+We may use the above equation to write the equation E = T + V.
+
+In the above case:
+
+\begin{aligned}
+T & \approx \frac12 M l^2 (\dot{\theta}_1^2 + \frac{1}{4} \dot{\theta}_2^2 + \dot{\theta}_1 \dot{\theta}_2) + \frac{1}{24}M l^2 \dot{\theta}_2^2 \\
+& = \frac{1}{12} M l^2 \dot{q}^T \begin{pmatrix} 6 & 3 \\ 3 & 2 \\\end{pmatrix}\dot{q}
+\end{aligned}
+
+
+\begin{aligned}
+V & \approx \frac{1}{4} M l g (2\dot{\theta}_1^2 + \dot{\theta}_2^2 \\
+& = \frac{1}{12} M l g q^T \begin{pmatrix} 6 & 0 \\ 0 & 3 \\\end{pmatrix}q
+\end{aligned}
+
+We may then apply conservation of energy $\dv{t} (T+V) = 0$.
+
+This simplifies* to $A\ddot{q} + Bq = 0$. Solutions of this form satisfy $q = x\cos\omega t$
+
+There will be N values of $\omega$ and these values are (normal || eigen)frequencies. This has non-trivial solutions only if:
+
+\[
+\vert B - \omega^2 A \vert = 0
+\]
+
+Note that the eigenvectors are mutually orthogonal (except when degeneracy) as A and B are real symmetric matrices.
