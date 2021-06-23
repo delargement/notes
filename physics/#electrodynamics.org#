@@ -63,21 +63,6 @@ For compount systems:
 W = W_1 + W_2 + \epsilon_0 \int{E_1 \cdot E_2}\dd{\tau}
 \]
 
-** Capacitors
-
-*** Breakdown voltage
-Series:
-
-\[
-V_{max} = \sum_j \frac{1}{C_j} \min_i C_iV_{bi}
-\]
-
-Parallel:
-
-\[
-V_{max} = \min_i(V_{bi})
-\]
-
 * Potentials
 
 Laplace's equations tolerates no local maxima and minima and at a point it can often be expressed as the average of the surrounding potential.
@@ -137,6 +122,7 @@ or $\sum_i q_i\bm{r}'_i$. or $\bm{p} - Q\bm{a}$ for a shift in coordiantes.
 \[
 V_{dip}(r) = \frac{1}{4\pi\epsilon_0}\frac{\bm{p}\cdot\hat{\bm{r}}}{r^2}
 \]
+
 
 for a pure dipole (as opposed to a physical one), qd = constant but d -> 0.
 

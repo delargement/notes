@@ -52,7 +52,6 @@ P_{avg} = \frac{1}{2}\mu v \omega^2 y_m^2
 
 
 * Interactions
-
 ** Interference
 
 \[

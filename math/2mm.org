@@ -1,5 +1,5 @@
 #+TITLE: Mathematical methods pt. 2
-#+STARTUP: latexpreview,inlineimages
+#+STARTUP: latexpreview , inlineimages
 
 * Normal modes
 
@@ -20,7 +20,6 @@ and likewise for V with q instead of qdot.
 ** Process
 
 [[file:normalmode1.png]]
-
 
 
 We may use the above equation to write the equation E = T + V.
@@ -49,3 +48,7 @@ There will be N values of $\omega$ and these values are (normal || eigen)frequen
 \]
 
 Note that the eigenvectors are mutually orthogonal (except when degeneracy) as A and B are real symmetric matrices.
+
+It is possible to get multiple normal modes by exploiting symmetries and then using the fact that the eigenvectors are orthogonal.
+
+** Rayleigh-Ritz method
