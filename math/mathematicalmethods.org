@@ -563,6 +563,58 @@ lx + my + nz = d
 
 |r-c|^2 = a^2
 
+* Normal modes
+
+The potential must not depend on the time derivatives of these of these coordinates. The potential must have a local minimum at the equillibrium point. The potential at this point is zero.
+
+T can be written as the quadratic form.
+
+\[
+T = \sum_i \sum_j a_{ij} \dot{q}_i \dot{q}_j = \dot{q}^TA\dot{q}
+\]
+
+and likewise for V with q instead of qdot.
+
+1. A and B can be made symmetric.
+
+2. A and B are real and positive definite.
+
+** Process
+
+[[file:normalmode1.png]]
+
+
+We may use the above equation to write the equation E = T + V.
+
+In the above case:
+
+\begin{aligned}
+T & \approx \frac12 M l^2 (\dot{\theta}_1^2 + \frac{1}{4} \dot{\theta}_2^2 + \dot{\theta}_1 \dot{\theta}_2) + \frac{1}{24}M l^2 \dot{\theta}_2^2 \\
+& = \frac{1}{12} M l^2 \dot{q}^T \begin{pmatrix} 6 & 3 \\ 3 & 2 \\\end{pmatrix}\dot{q}
+\end{aligned}
+
+
+\begin{aligned}
+V & \approx \frac{1}{4} M l g (2\dot{\theta}_1^2 + \dot{\theta}_2^2 \\
+& = \frac{1}{12} M l g q^T \begin{pmatrix} 6 & 0 \\ 0 & 3 \\\end{pmatrix}q
+\end{aligned}
+
+We may then apply conservation of energy $\dv{t} (T+V) = 0$.
+
+This simplifies* to $A\ddot{q} + Bq = 0$. Solutions of this form satisfy $q = x\cos\omega t$
+
+There will be N values of $\omega$ and these values are (normal || eigen)frequencies. This has non-trivial solutions only if:
+
+\[
+\vert B - \omega^2 A \vert = 0
+\]
+
+Note that the eigenvectors are mutually orthogonal (except when degeneracy) as A and B are real symmetric matrices.
+
+It is possible to get multiple normal modes by exploiting symmetries and then using the fact that the eigenvectors are orthogonal.
+
+** Rayleigh-Ritz method
+
 * Vector calculus
 
 ** Differentiation of a vector function
@@ -781,242 +833,3 @@ To find the rate of change of a vector field in a particular direction:
 e.g. $\dd{\bf E} = (\dd{\bf r} \cdot \nabla){\bf E}$
 
 A second interesting property is that: $\nabla\phi$ is a vector normal to the surface $\phi(x,y,z) = c$ at every point
-
-* Fourier series
-
-\[
-f(x) = \frac{a_0}{2} + \sum_{r=1}^\infty \left[a_r \cos\left(\frac{2\pi r x}{L}\right) + b_r \sin\left(\frac{2\pi r x}{L}\right)\right]
-\]
-
-** Dirichlet conditions
-
-The conditions a function must fulfil in order that it may be expanded as a fourier series.
-
-- The function must be periodic*
-- It must be single-valued and continuous, except at a finite number of finite discontinuties
-- It must have only have a finite number of maxima and minima within one period
-- The integral over one period of |f(x)| must converge
-
-  Then the fourier series will converge to f(x) at all points where f(x) is continuous.
-
-** Properties of fourier series
-
-- Completeness
-- All terms are mutually orthogonal
-
- i.e.
-
-\[
-\int_{x_0}^{x_0+L}\sin(2\pi r x / L)\cos(2 \pi p x/L)\dd{x} = 0
-\]
-
-for all r and p
-\[
-\int_{x_0}^{x_0+L}\cos(2\pi r x / L)\cos(2 \pi p x/L)\dd{x} =\begin{cases}
-L & r = p = 0 \\
-\frac12 L & r = p > 0 \\
-0 & r \neq p
-\end{cases}
-\]
-
-\[
-\int_{x_0}^{x_0+L}\sin(2\pi r x / L)\sin(2 \pi p x/L)\dd{x} =\begin{cases}
-0 & r = p = 0 \\
-\frac12 L & r = p > 0 \\
-0 & r \neq p
-\end{cases}
-\]
-
-where r and p are integers greater than or equal to zero.
-
-** Fourier coefficients
-
-\[
-a_r = \frac{2}{L} \int_{x_0}^{x_0+L}f(x)\cos(2\pi r x / L) \dd{x}
-\]
-\[
-b_r = \frac{2}{L} \int_{x_0}^{x_0+L}f(x)\sin(2\pi r x / L) \dd{x}
-\]
-
-*** Symmetry about quarter period
-
-if f(x) is even about L/4 then a_odd = 0 and b_even = 0
-if f(x) is odd about L/4 then a_2r = 0 and b_odd = 0
-
-** Discontinuous functions
-
-At a discontinuity the value of the fourier series at that point is halfway between the upper and lower values. There is also an overshoot which does not disappear in the limit of an infinite number of terms. This is the *Gibbs' phenomenon*
-
-** Non-periodic functions
-
-Can be extended to non-periodic functions by extending them (in numerous ways), usually to odd or even functions. Care must be taken that it converges properly at possible discontinuities at the ends.
-
-** Integration and differentiation
-
-Try it out!
-
-** Complex fourier series
-
-\[
-f(x) = \sum_{r=-\infty}^\infty c_r \exp(2 \pi i r x / L)
-\]
-
-\[
-c_r = \frac{1}{L}\int_{x_0}^{x_0+L}f(x)\exp(-\frac{2 \pi i r x}{L})\dd{x}
-\]
-
-in relation to real fourier coefficients:
-
-\begin{align*}
-c_r & = \frac12 (a_r - i b_r) \\
-c_{-r} & = \frac12 (a_r + i b_r) \\
-\end{align*}
-
-if f(x) is real then $c_{-r} = c_r^*$
-
-** Parseval's theorem
-
-\begin{align*}
-\frac{1}{L} \int_{x_0}^{x_0+L}|f(x)|^2 \dd{x} & = \sum_{-\infty}^\infty |c_r|^2 \\
-& =(\frac12 a_0)^2 + \frac12 \sum_{r=1}^\infty (a_r^2 + b_r^2)
-\end{align*}
-* Ordinary Differential equations
-
-*Order* is the order of the highest derivative it contains
-*Degree* is the power to which the highest order derivative is raised (after rationalisation)
-
-** 1st-degree, 1st-order
-
-*** Seperable-variable equations
-
-*Form*:
-
-
-\[
-\dv{y}{x} = f(x)g(y)
-\]
-
-*Solution method*:
-
-Factorise when necessary.
-
-\[
-\int \frac{\dd{y}}{g(y)} = \int f(x) \dd{x}
-\]
-
-*** Exact equations
-
-*Form*:
-
-\[
-A(x,y) \dd{x} + B(x,y) \dd{y} = 0
-\]
-
-where the expression is an exact differential.
-
-Since $\pdv{A}{y} = \pdv{B}{x}$, we may equate the expression to dU and thus dU = 0, U = c.
-
-*Solution method*:
-
-Make sure to check that its exact.
-\[
-U(x,y) = \int A(x,y) \dd{x} + F(y)
-\]
-
-F(y) can be found by differentiating U wrt y and equating the expression to B(x,y). Then sub back in.
-
-*** Inexact equations: integrating factors
-
-*Form*:
-
-Above but inexact.
-
-The differential can be made exact by multiplying by an *integrating factor* $\mu(x,y)$ which obeys:
-
-\[
-\pdv{(\mu A)}{y} = \pdv{(\mu B)}{x}
-\]
-
-If the integrating factor is a function of either x or y alone then the eq can be explicitly solved. Assuming $\mu = \mu(x)$:
-
-\begin{align*}
-&\mu\pdv{A}{y} =\mu \pdv{B}{x} + B\pdv{\mu}{x} \\
-\implies & \frac{\dd{\mu}}{\mu} = \frac{1}{B}\left(\pdv{A}{y}-\pdv{B}{x}\right)\dd{x} = f(x) \dd{x}
-\end{align*}
-
-where we require f(x) be a function of x only.
-
-*Solution method*:
-
-In which case,
-
-\[
-\mu(x) = \exp\left\{\int f(x) \dd{x}\right\} \text{   where   } f(x) = \frac{1}{B}\left(\pdv{A}{y}-\pdv{B}{x}\right)
-\]
-
-\[
-\mu(y) = \exp\left\{\int f(y) \dd{y}\right\} \text{   where   } f(y) = \frac{1}{A}\left(\pdv{B}{x}-\pdv{A}{y}\right)
-\]
-
-*** Linear equations
-
-Special case of inexact ODEs
-
-*Form*:
-
-\[
-\dv{y}{x} + P(x)y = Q(x)
-\]
-
-*Solution method*:
-
-\[
-\mu(x) = \exp\left\{\int P(x) \dd{x}\right\}
-\]
-
-Multiply throughout and then integrate left and right hand sides.
-*** Homogenous equations
-
-*Form*:
-
-\[
-\dv{y}{x} = \frac{A(x,y)}{B(x,y)} = F\left(\frac{y}{x}\right)
-\]
-
-where A(x,y) and B(x,y) are homogenous functions of the same degree. A function is homogenous of degree n if it obeys:
-
-
-\[
-f(\lambda x,\lambda y) = \lambda^n f(x,y)
-\]
-
-in general, the sum of the powers of x and y in each term of A and B should be the same.
-
-*Solution method*:
-
-The equation may solved by making the substitution y = vx, so that:
-
-\[
-\dv{y}{x} = v + x\dv{v}{x} = F(v)
-\].
-
-This is now seperable and can be integrated directly to give:
-
-\[
-\int \frac{\dd{v}}{F(v) - v} = \int \frac{\dd{x}}{x}
-\]
-
-*** Isobaric
-
-*Form*:
-
-A generalisation of the homogeneous ODE.
-
-\[
-\dv{y}{x} = \frac{A(x,y)}{B(x,y)}
-\]
-
-where the equation is dimensionally consistent if y and dy are each given a weight m relative to x and dx. i.e. if the substitution y=vx^m makes it seperable
-
-*Solution method*:
-Write the equation in the form Adx + Bdy = 0. Given y and dy weight m and x and dx each weight 1. then find an m which makes all the sums equal
