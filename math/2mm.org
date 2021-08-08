@@ -118,10 +118,10 @@ The fourier transform of f(t):
 \]
 
 \[
-f(t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \tilde{f}(\omega) e^{-i\omega t} \dd{\omega}
+f(t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \tilde{f}(\omega) e^{i\omega t} \dd{\omega}
 \]
 
-** Dirac delta function
+*** Dirac delta function
 
 \[
 \delta(t-u) = \frac{1}{2\pi} \int_{-\infty}^\infty e^{i\omega (t-u)}\dd{\omega}
@@ -135,7 +135,11 @@ f(t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \tilde{f}(\omega) e^{-i\omega
 \tilde{\delta}(\omega) = \frac{1}{\sqrt{2\pi}}
 \]
 
-** Properties
+\[
+H'(t) = \delta(t)
+\]
+
+*** Properties
 
 - Differentiation
 
@@ -173,10 +177,59 @@ where c is a constant.
 
 where $\alpha \in \mathbb{C}$
 
-** Odd and even functions
+*** Odd and even functions
+
+**** Odd
+
+\[
+\tilde{f}(\omega) = \sqrt{\frac{2}{\pi}} \int_0^\infty f(t) \sin\omega t \dd{t}
+\]
+
+\[
+f(t) = \sqrt{\frac{2}{\pi}} \int_0^\infty \tilde{f}(\omega) \sin\omega t \dd{\omega}
+\]
 
 
+For even functions, we can replace sin with cos.
 
+*** Convolution and Deconvolution
+
+\[
+h(z) = \int_{-\infty}^\infty f(x)g(z-x) \dd{x}
+\]
+
+where f(x) is the 'true' function and g(z-x) is the resolution function.
+
+*** Parseval's theorem
+
+\[
+\int_{-\infty}^\infty \vert f(t) \vert^2 \dd{t} = \int_{-\infty}^\infty \vert \tilde{f}(\omega) \vert^2 \dd{\omega}
+\]
+
+
+** Laplace transform
+
+When a function does not satisfy the dirichlet conditions as it may not converge at infinity or if it is only defined for t > 0. we may want to use the Laplace transform.
+
+\[
+\bar{f}(s) = \int_0^\infty f(t)e^{-st}\dd{t}
+\]
+
+where we assume s is real. Usually, for a given f(t), there will be some real number $s_0$ such that the integral exists for $s > s_0$ but diverges otherwise.
+
+*** Standard Lapalace transforms
+
+look up a table
+
+*** Laplace transforms of derivatives and integrals
+
+\[
+\mathcal{L}\left[\dv[n]{f}{t}\right] = s^n\bar{f} - s^{n-1}f(0) - s^{n-2}f'(0) - \ldots - \dv[n-1]{f}{t}(0), \text{ for s > 0}
+\]
+
+\[
+\mathcal{L}\left[\int_0^t f(u)\dv{u}\right] = \frac{1}{s}\mathcal{L}[f]
+\]
 
 
 
@@ -395,7 +448,7 @@ e\alpha + f\beta + g = 0
 \]
 
 
-** Higher-degree-1st-order equations
+** Higher-degree 1st-order equations
 
 Can expressed as:
 
@@ -405,6 +458,7 @@ p^n + a_{n-1}(x,y)p^{n-1} + \ldots + a_1(x,y)p + a_0(x,y) = 0
 
 where $p = \dd{y}/\dd{x}$
 
+Singular solutions are sometimes given which contain no arbitrary constants.
 
 *** Equations soluble for p
 
@@ -415,3 +469,109 @@ If the LHS can be factorised into the form:
 \]
 
 then we are left with solving the n first-degree equations $p = F_i$
+
+*** Equations soluble for x
+
+If the equation can be expressed as:
+
+\[
+x = F(y,p)
+\]
+
+then it can be reduced to:
+
+\[
+\dv{x}{y} = \frac{1}{p} = \pdv{F}{y} + \pdv{F}{p}\dv{p}{y}
+\]
+
+which can be factorized
+
+
+*** Equations soluble for y
+
+If the equation can be expressed as:
+
+\[
+x = F(y,p)
+\]
+
+then it can be reduced to:
+
+\[
+\dv{y}{x} = p = \pdv{F}{x} + \pdv{F}{p}\dv{p}{x}
+\]
+
+which can be factorized.
+
+*** Clairaut's equation
+
+Special case of equations soluble for y.
+
+*Form:*
+
+\[
+y = px + F(p)
+\]
+
+The general solution is given by $y = c_1 x + F(c_1)$, the singular solution can often be found from the relation:
+
+\[
+\dv{F}{p} + x = 0
+\]
+
+
+** Higher-order linear equations
+
+Linear ODE of general order:
+
+\[
+a_n(x)\dv[n]{y}{x} + a_{n-1}(x)\dv[n-1]{y}{x} + \ldots +a_1(x)\dv{y}{x} + a_0(x)y = f(x)
+\]
+
+
+An nth order linear ODE must have n linearly independent solutions for the complementary equation. Their linear independence can be confirmed by forming n simultaneous equations for the n constants by repeatedly differentiating them and noticing that RHS is always zero for the complementary solution. This can be constructed as a determinant or the *Wronkskian* of the set of functions. If it does not vanish then the n functions are linearly independent though the converse does not necessarily apply.
+
+
+*** Linear equations with constant coefficients
+The coefficients $a_m$ are constants.
+
+To find the complementary solution try a solution of the form Ae^kx, and we are left with an auxillary equation in k. If all roots are distinct then the solutions are linearly independent and can be superposed. If some roots are complex and all coefficients are real, then it for every complex root its complex conjugate is also a root. If some roots are repeated, then we must try solutions of the form $x^ne^{kx}$ are also solutions.
+
+for particular solutions, use method of undetermined coefficients.
+
+- if f(x) = ae^rx, try be^rx
+- if f(x) = a sin(rx) + b cos(rx) (a or b may be zero), then try c sin(rx) + d cos(rx)
+- if f(x) = polynomial of degree N, where some coefficients may be zero, then try another polynomial of degree N.
+
+
+** Linear recurrence relations
+
+Form:
+
+\[
+u_{n+1} = \sum_{r=0}^{N-1}a_r u_{n-r} + k
+\]
+
+where k may be a simple function of n.
+
+Equations involving terms whose indices differ by up to N are called Nth-order recurrence relations. If k=0, then the relation is called homogenous.
+
+*** First-order recurrence relations
+
+For the equation:
+
+\[
+u_{n+1} = au_n + k
+\]
+
+the general solution is:
+
+when $a \neq 1$:
+\[
+u_n = u_0 a^n + k \frac{1-a^n}{1-a}
+\]
+when a = 1:
+
+\[
+u_n = u_0 + nk
+\]
