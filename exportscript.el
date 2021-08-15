@@ -24,4 +24,5 @@
                  (org-export-to-file 'html outfile)))
     nil)))
 
+(load-file "./minimal-config.el")
 (walk-directory "/home/spongiforma/documents/notes/" #'export-file)

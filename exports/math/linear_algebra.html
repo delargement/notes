@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-08-16 Mon 00:03 -->
+<!-- 2021-08-16 Mon 00:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Linear Algebra</title>
@@ -269,92 +269,92 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org5863ef9">1. Vector space</a></li>
-<li><a href="#org18d9139">2. Linear equations</a>
+<li><a href="#orgfb86831">1. Vector space</a></li>
+<li><a href="#org5a5643a">2. Linear equations</a>
 <ul>
-<li><a href="#org8c5710e">2.1. Row-echelon form</a></li>
-<li><a href="#org3eabef5">2.2. Reduced row-echelon form</a></li>
-<li><a href="#org19a71f6">2.3. Row operations</a></li>
-<li><a href="#orge99abbc">2.4. Gauss-Jordan algorithm / Gaussian elimination</a></li>
-<li><a href="#org1331dcc">2.5. Homogenous equations</a></li>
+<li><a href="#orgabe6c89">2.1. Row-echelon form</a></li>
+<li><a href="#org65663e3">2.2. Reduced row-echelon form</a></li>
+<li><a href="#orgaa5abd4">2.3. Row operations</a></li>
+<li><a href="#orgeb2c2f9">2.4. Gauss-Jordan algorithm / Gaussian elimination</a></li>
+<li><a href="#orgb1c9c05">2.5. Homogenous equations</a></li>
 </ul>
 </li>
-<li><a href="#orgd8fbe42">3. Matrices</a>
+<li><a href="#org2ad2a11">3. Matrices</a>
 <ul>
-<li><a href="#org689821a">3.1. Inner product</a></li>
-<li><a href="#org00ef9ed">3.2. Inequalities and equalities</a>
+<li><a href="#orgbbe7148">3.1. Inner product</a></li>
+<li><a href="#orga9f1c9e">3.2. Inequalities and equalities</a>
 <ul>
-<li><a href="#org1689266">3.2.1. Cauchy-Schwarz's inequality</a></li>
-<li><a href="#org413dd9c">3.2.2. Triangle Inequality</a></li>
-<li><a href="#org3026bfa">3.2.3. Bessel's inequality</a></li>
-<li><a href="#orgd7d7743">3.2.4. Parallelogram equality</a></li>
+<li><a href="#org0f7d6d8">3.2.1. Cauchy-Schwarz's inequality</a></li>
+<li><a href="#org749bbed">3.2.2. Triangle Inequality</a></li>
+<li><a href="#org3f88157">3.2.3. Bessel's inequality</a></li>
+<li><a href="#org21e2042">3.2.4. Parallelogram equality</a></li>
 </ul>
 </li>
-<li><a href="#org22aa4cf">3.3. Functions of matrices</a></li>
-<li><a href="#orgb7d1738">3.4. Operations</a>
+<li><a href="#org2c62833">3.3. Functions of matrices</a></li>
+<li><a href="#orgf45a6dc">3.4. Operations</a>
 <ul>
-<li><a href="#org05c7d60">3.4.1. Transpose</a></li>
-<li><a href="#orga0c57c1">3.4.2. Hermitian Conjugate (Complex Transpose)</a></li>
-<li><a href="#org8a157c4">3.4.3. Trace</a></li>
-<li><a href="#orga2eb065">3.4.4. Determinant</a></li>
-<li><a href="#orgca8ebcb">3.4.5. Inverse</a></li>
-<li><a href="#org289bd56">3.4.6. Rank</a></li>
+<li><a href="#org2faa4c6">3.4.1. Transpose</a></li>
+<li><a href="#org5a34abc">3.4.2. Hermitian Conjugate (Complex Transpose)</a></li>
+<li><a href="#org2b2d6b0">3.4.3. Trace</a></li>
+<li><a href="#org3a44626">3.4.4. Determinant</a></li>
+<li><a href="#org6e1e54e">3.4.5. Inverse</a></li>
+<li><a href="#orgcbd3325">3.4.6. Rank</a></li>
 </ul>
 </li>
-<li><a href="#orga25692d">3.5. Special forms</a>
+<li><a href="#orgadee7d4">3.5. Special forms</a>
 <ul>
-<li><a href="#org7290677">3.5.1. Diagonal matrix</a></li>
-<li><a href="#orgb809953">3.5.2. Lower or upper triangular matrices</a></li>
-<li><a href="#org62b255d">3.5.3. Symmetric and antisymmetric matrices</a></li>
-<li><a href="#orgd8c69dc">3.5.4. Orthogonal matrix</a></li>
-<li><a href="#org7e38f6c">3.5.5. Hermitian matrices (Complex Symmetric)</a></li>
-<li><a href="#orge757b4a">3.5.6. Unitary matrix (complex orthogonal)</a></li>
-<li><a href="#org08d8832">3.5.7. Normal matrices</a></li>
+<li><a href="#orgc53ecd3">3.5.1. Diagonal matrix</a></li>
+<li><a href="#org1ffbfe8">3.5.2. Lower or upper triangular matrices</a></li>
+<li><a href="#org43c08f9">3.5.3. Symmetric and antisymmetric matrices</a></li>
+<li><a href="#org98c4127">3.5.4. Orthogonal matrix</a></li>
+<li><a href="#org1d5a4d3">3.5.5. Hermitian matrices (Complex Symmetric)</a></li>
+<li><a href="#orgf0576f7">3.5.6. Unitary matrix (complex orthogonal)</a></li>
+<li><a href="#org11c532b">3.5.7. Normal matrices</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org15c6472">4. Vectors and spaces</a>
+<li><a href="#org5189d9a">4. Vectors and spaces</a>
 <ul>
-<li><a href="#org6534ca5">4.1. Completeness relation for orthonormal vectors</a>
+<li><a href="#org8e6ede7">4.1. Completeness relation for orthonormal vectors</a>
 <ul>
-<li><a href="#org2d9a899">4.1.1. Outer product representation of Unitary U</a></li>
+<li><a href="#org8e9414f">4.1.1. Outer product representation of Unitary U</a></li>
 </ul>
 </li>
-<li><a href="#org6b282ef">4.2. Projectors</a></li>
+<li><a href="#org0deee5f">4.2. Projectors</a></li>
 </ul>
 </li>
-<li><a href="#orgb58e92a">5. Operators</a>
+<li><a href="#org08917a2">5. Operators</a>
 <ul>
-<li><a href="#orgd9d7342">5.1. Commutator</a></li>
-<li><a href="#orgebbcb85">5.2. Diagonalisable</a></li>
-<li><a href="#org5770195">5.3. Active and passive transformations</a></li>
+<li><a href="#org9bc7893">5.1. Commutator</a></li>
+<li><a href="#org60e28f6">5.2. Diagonalisable</a></li>
+<li><a href="#org764cc8a">5.3. Active and passive transformations</a></li>
 </ul>
 </li>
-<li><a href="#org53eb8f1">6. Eigenvectors and eigenvalues</a>
+<li><a href="#orgdd92869">6. Eigenvectors and eigenvalues</a>
 <ul>
-<li><a href="#orgf8cb2ce">6.1. Normal matrices:</a></li>
-<li><a href="#org0a356ad">6.2. Gram-Schmidt orthogonalisation</a></li>
-<li><a href="#org80cc76a">6.3. Eigen-everything of Hermitian and anti-hermitian matrices</a></li>
-<li><a href="#orgde97f3a">6.4. Eigen-everything of unitary matrix</a></li>
-<li><a href="#org9bdf859">6.5. Eigen-everything of a general square matrix</a></li>
-<li><a href="#org2874b2e">6.6. Simultaneous eigenvectors</a></li>
-<li><a href="#orga41980a">6.7. Determination</a></li>
+<li><a href="#org691c510">6.1. Normal matrices:</a></li>
+<li><a href="#org39c5201">6.2. Gram-Schmidt orthogonalisation</a></li>
+<li><a href="#org8498ee2">6.3. Eigen-everything of Hermitian and anti-hermitian matrices</a></li>
+<li><a href="#orgff1be8b">6.4. Eigen-everything of unitary matrix</a></li>
+<li><a href="#orgd6638ff">6.5. Eigen-everything of a general square matrix</a></li>
+<li><a href="#org013cb9f">6.6. Simultaneous eigenvectors</a></li>
+<li><a href="#orge302dad">6.7. Determination</a></li>
 </ul>
 </li>
-<li><a href="#org4480a6a">7. Change in basis</a>
+<li><a href="#org376e891">7. Change in basis</a>
 <ul>
-<li><a href="#org7169e6f">7.1. Unitary S</a></li>
+<li><a href="#org2bb4c3b">7.1. Unitary S</a></li>
 </ul>
 </li>
-<li><a href="#org9abd3d4">8. Diagonalisation of matrices</a></li>
-<li><a href="#orgc717bfc">9. Infinite dimensions</a>
+<li><a href="#orgfa86c15">8. Diagonalisation of matrices</a></li>
+<li><a href="#org34b57f1">9. Infinite dimensions</a>
 <ul>
-<li><a href="#org8f22e7c">9.1. Dirac delta</a></li>
-<li><a href="#org28c4b2e">9.2. Operators</a>
+<li><a href="#orgb8f54ab">9.1. Dirac delta</a></li>
+<li><a href="#org66591c9">9.2. Operators</a>
 <ul>
-<li><a href="#orgc9b60f6">9.2.1. Differential operator</a></li>
-<li><a href="#orgb91bff1">9.2.2. X basis</a></li>
+<li><a href="#org3c53d8c">9.2.1. Differential operator</a></li>
+<li><a href="#org06ee87b">9.2.2. X basis</a></li>
 </ul>
 </li>
 </ul>
@@ -363,8 +363,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org5863ef9" class="outline-2">
-<h2 id="org5863ef9"><span class="section-number-2">1</span> Vector space</h2>
+<div id="outline-container-orgfb86831" class="outline-2">
+<h2 id="orgfb86831"><span class="section-number-2">1</span> Vector space</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Requirements for a set of entities to form a vector space
@@ -380,12 +380,12 @@ Requirements for a set of entities to form a vector space
 </div>
 </div>
 
-<div id="outline-container-org18d9139" class="outline-2">
-<h2 id="org18d9139"><span class="section-number-2">2</span> Linear equations</h2>
+<div id="outline-container-org5a5643a" class="outline-2">
+<h2 id="org5a5643a"><span class="section-number-2">2</span> Linear equations</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org8c5710e" class="outline-3">
-<h3 id="org8c5710e"><span class="section-number-3">2.1</span> Row-echelon form</h3>
+<div id="outline-container-orgabe6c89" class="outline-3">
+<h3 id="orgabe6c89"><span class="section-number-3">2.1</span> Row-echelon form</h3>
 <div class="outline-text-3" id="text-2-1">
 <ol class="org-ol">
 <li>All zero rows are at the bottom of the matrix</li>
@@ -394,8 +394,8 @@ Requirements for a set of entities to form a vector space
 </div>
 </div>
 
-<div id="outline-container-org3eabef5" class="outline-3">
-<h3 id="org3eabef5"><span class="section-number-3">2.2</span> Reduced row-echelon form</h3>
+<div id="outline-container-org65663e3" class="outline-3">
+<h3 id="org65663e3"><span class="section-number-3">2.2</span> Reduced row-echelon form</h3>
 <div class="outline-text-3" id="text-2-2">
 <ol class="org-ol">
 <li>It's in row-echelon form</li>
@@ -405,8 +405,8 @@ Requirements for a set of entities to form a vector space
 </div>
 </div>
 
-<div id="outline-container-org19a71f6" class="outline-3">
-<h3 id="org19a71f6"><span class="section-number-3">2.3</span> Row operations</h3>
+<div id="outline-container-orgaa5abd4" class="outline-3">
+<h3 id="orgaa5abd4"><span class="section-number-3">2.3</span> Row operations</h3>
 <div class="outline-text-3" id="text-2-3">
 <ol class="org-ol">
 <li>Interchanging rows</li>
@@ -420,8 +420,8 @@ Preserves row-equivalence
 </div>
 </div>
 
-<div id="outline-container-orge99abbc" class="outline-3">
-<h3 id="orge99abbc"><span class="section-number-3">2.4</span> Gauss-Jordan algorithm / Gaussian elimination</h3>
+<div id="outline-container-orgeb2c2f9" class="outline-3">
+<h3 id="orgeb2c2f9"><span class="section-number-3">2.4</span> Gauss-Jordan algorithm / Gaussian elimination</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 You should know this
@@ -429,8 +429,8 @@ You should know this
 </div>
 </div>
 
-<div id="outline-container-org1331dcc" class="outline-3">
-<h3 id="org1331dcc"><span class="section-number-3">2.5</span> Homogenous equations</h3>
+<div id="outline-container-orgb1c9c05" class="outline-3">
+<h3 id="orgb1c9c05"><span class="section-number-3">2.5</span> Homogenous equations</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 "Implicit equations with no non-zero constants"
@@ -443,12 +443,12 @@ You should know this
 </div>
 </div>
 
-<div id="outline-container-orgd8fbe42" class="outline-2">
-<h2 id="orgd8fbe42"><span class="section-number-2">3</span> Matrices</h2>
+<div id="outline-container-org2ad2a11" class="outline-2">
+<h2 id="org2ad2a11"><span class="section-number-2">3</span> Matrices</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org689821a" class="outline-3">
-<h3 id="org689821a"><span class="section-number-3">3.1</span> Inner product</h3>
+<div id="outline-container-orgbbe7148" class="outline-3">
+<h3 id="orgbbe7148"><span class="section-number-3">3.1</span> Inner product</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Hilbert space is basically inner product space for finite dimensions
@@ -466,12 +466,12 @@ Orthornormal: \(\braket{\hat{e}_i}{\hat{e}_j} = \delta_{ij}\) (i.e. orthogonal a
 </div>
 </div>
 
-<div id="outline-container-org00ef9ed" class="outline-3">
-<h3 id="org00ef9ed"><span class="section-number-3">3.2</span> Inequalities and equalities</h3>
+<div id="outline-container-orga9f1c9e" class="outline-3">
+<h3 id="orga9f1c9e"><span class="section-number-3">3.2</span> Inequalities and equalities</h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-org1689266" class="outline-4">
-<h4 id="org1689266"><span class="section-number-4">3.2.1</span> Cauchy-Schwarz's inequality</h4>
+<div id="outline-container-org0f7d6d8" class="outline-4">
+<h4 id="org0f7d6d8"><span class="section-number-4">3.2.1</span> Cauchy-Schwarz's inequality</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 \[
@@ -489,8 +489,8 @@ equality when a is a scalar multiple of b
 </div>
 </div>
 
-<div id="outline-container-org413dd9c" class="outline-4">
-<h4 id="org413dd9c"><span class="section-number-4">3.2.2</span> Triangle Inequality</h4>
+<div id="outline-container-org749bbed" class="outline-4">
+<h4 id="org749bbed"><span class="section-number-4">3.2.2</span> Triangle Inequality</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <p>
 \[
@@ -500,8 +500,8 @@ equality when a is a scalar multiple of b
 </div>
 </div>
 
-<div id="outline-container-org3026bfa" class="outline-4">
-<h4 id="org3026bfa"><span class="section-number-4">3.2.3</span> Bessel's inequality</h4>
+<div id="outline-container-org3f88157" class="outline-4">
+<h4 id="org3f88157"><span class="section-number-4">3.2.3</span> Bessel's inequality</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <p>
 \[
@@ -528,8 +528,8 @@ a<sub>i</sub> = 0
 </div>
 
 
-<div id="outline-container-orgd7d7743" class="outline-4">
-<h4 id="orgd7d7743"><span class="section-number-4">3.2.4</span> Parallelogram equality</h4>
+<div id="outline-container-org21e2042" class="outline-4">
+<h4 id="org21e2042"><span class="section-number-4">3.2.4</span> Parallelogram equality</h4>
 <div class="outline-text-4" id="text-3-2-4">
 <p>
 \[
@@ -540,8 +540,8 @@ a<sub>i</sub> = 0
 </div>
 </div>
 
-<div id="outline-container-org22aa4cf" class="outline-3">
-<h3 id="org22aa4cf"><span class="section-number-3">3.3</span> Functions of matrices</h3>
+<div id="outline-container-org2c62833" class="outline-3">
+<h3 id="org2c62833"><span class="section-number-3">3.3</span> Functions of matrices</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 \[
@@ -556,12 +556,12 @@ Derivatives exist.
 </div>
 
 
-<div id="outline-container-orgb7d1738" class="outline-3">
-<h3 id="orgb7d1738"><span class="section-number-3">3.4</span> Operations</h3>
+<div id="outline-container-orgf45a6dc" class="outline-3">
+<h3 id="orgf45a6dc"><span class="section-number-3">3.4</span> Operations</h3>
 <div class="outline-text-3" id="text-3-4">
 </div>
-<div id="outline-container-org05c7d60" class="outline-4">
-<h4 id="org05c7d60"><span class="section-number-4">3.4.1</span> Transpose</h4>
+<div id="outline-container-org2faa4c6" class="outline-4">
+<h4 id="org2faa4c6"><span class="section-number-4">3.4.1</span> Transpose</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <p>
 \[
@@ -571,8 +571,8 @@ Derivatives exist.
 </div>
 </div>
 
-<div id="outline-container-orga0c57c1" class="outline-4">
-<h4 id="orga0c57c1"><span class="section-number-4">3.4.2</span> Hermitian Conjugate (Complex Transpose)</h4>
+<div id="outline-container-org5a34abc" class="outline-4">
+<h4 id="org5a34abc"><span class="section-number-4">3.4.2</span> Hermitian Conjugate (Complex Transpose)</h4>
 <div class="outline-text-4" id="text-3-4-2">
 <p>
 \[
@@ -582,8 +582,8 @@ A^\dagger = (A^\ast)^T = (A^T)^\ast
 </div>
 </div>
 
-<div id="outline-container-org8a157c4" class="outline-4">
-<h4 id="org8a157c4"><span class="section-number-4">3.4.3</span> Trace</h4>
+<div id="outline-container-org2b2d6b0" class="outline-4">
+<h4 id="org2b2d6b0"><span class="section-number-4">3.4.3</span> Trace</h4>
 <div class="outline-text-4" id="text-3-4-3">
 <p>
 \[
@@ -609,8 +609,8 @@ A^\dagger = (A^\ast)^T = (A^T)^\ast
 </div>
 </div>
 
-<div id="outline-container-orga2eb065" class="outline-4">
-<h4 id="orga2eb065"><span class="section-number-4">3.4.4</span> Determinant</h4>
+<div id="outline-container-org3a44626" class="outline-4">
+<h4 id="org3a44626"><span class="section-number-4">3.4.4</span> Determinant</h4>
 <div class="outline-text-4" id="text-3-4-4">
 <p>
 Minor:
@@ -645,7 +645,7 @@ e.g.
 </div>
 
 <ol class="org-ol">
-<li><a id="orgf8aa695"></a>Properties<br />
+<li><a id="org96f139e"></a>Properties<br />
 <div class="outline-text-5" id="text-3-4-4-1">
 <ol class="org-ol">
 <li>\(\vert A^T \vert = \vert A \vert\)</li>
@@ -681,8 +681,8 @@ e.g.
 </ol>
 </div>
 
-<div id="outline-container-orgca8ebcb" class="outline-4">
-<h4 id="orgca8ebcb"><span class="section-number-4">3.4.5</span> Inverse</h4>
+<div id="outline-container-org6e1e54e" class="outline-4">
+<h4 id="org6e1e54e"><span class="section-number-4">3.4.5</span> Inverse</h4>
 <div class="outline-text-4" id="text-3-4-5">
 <p>
 Exists when determinant is not zero, i.e. the matrix is non-singular
@@ -707,8 +707,8 @@ A diagonally dominant matrices are invertible/non-singular
 </div>
 </div>
 
-<div id="outline-container-org289bd56" class="outline-4">
-<h4 id="org289bd56"><span class="section-number-4">3.4.6</span> Rank</h4>
+<div id="outline-container-orgcbd3325" class="outline-4">
+<h4 id="orgcbd3325"><span class="section-number-4">3.4.6</span> Rank</h4>
 <div class="outline-text-4" id="text-3-4-6">
 <p>
 R(A) = R(A<sup>T</sup>) = number of linearly independent vectors row-wise or column-wise
@@ -725,12 +725,12 @@ Size of the largest square submatrix of A whose determinant is non-zero
 </div>
 </div>
 
-<div id="outline-container-orga25692d" class="outline-3">
-<h3 id="orga25692d"><span class="section-number-3">3.5</span> Special forms</h3>
+<div id="outline-container-orgadee7d4" class="outline-3">
+<h3 id="orgadee7d4"><span class="section-number-3">3.5</span> Special forms</h3>
 <div class="outline-text-3" id="text-3-5">
 </div>
-<div id="outline-container-org7290677" class="outline-4">
-<h4 id="org7290677"><span class="section-number-4">3.5.1</span> Diagonal matrix</h4>
+<div id="outline-container-orgc53ecd3" class="outline-4">
+<h4 id="orgc53ecd3"><span class="section-number-4">3.5.1</span> Diagonal matrix</h4>
 <div class="outline-text-4" id="text-3-5-1">
 <p>
 Having non-zero elements only on the leading diagonal
@@ -759,8 +759,8 @@ if A and B are diagonal, their product is commutative
 </div>
 </div>
 
-<div id="outline-container-orgb809953" class="outline-4">
-<h4 id="orgb809953"><span class="section-number-4">3.5.2</span> Lower or upper triangular matrices</h4>
+<div id="outline-container-org1ffbfe8" class="outline-4">
+<h4 id="org1ffbfe8"><span class="section-number-4">3.5.2</span> Lower or upper triangular matrices</h4>
 <div class="outline-text-4" id="text-3-5-2">
 <p>
 \[
@@ -770,8 +770,8 @@ if A and B are diagonal, their product is commutative
 </div>
 </div>
 
-<div id="outline-container-org62b255d" class="outline-4">
-<h4 id="org62b255d"><span class="section-number-4">3.5.3</span> Symmetric and antisymmetric matrices</h4>
+<div id="outline-container-org43c08f9" class="outline-4">
+<h4 id="org43c08f9"><span class="section-number-4">3.5.3</span> Symmetric and antisymmetric matrices</h4>
 <div class="outline-text-4" id="text-3-5-3">
 <p>
 Symmetric:
@@ -810,8 +810,8 @@ Note that if A is an NxN antisymmetric matrix, |A| = 0 if N is odd
 </div>
 </div>
 
-<div id="outline-container-orgd8c69dc" class="outline-4">
-<h4 id="orgd8c69dc"><span class="section-number-4">3.5.4</span> Orthogonal matrix</h4>
+<div id="outline-container-org98c4127" class="outline-4">
+<h4 id="org98c4127"><span class="section-number-4">3.5.4</span> Orthogonal matrix</h4>
 <div class="outline-text-4" id="text-3-5-4">
 <p>
 \[
@@ -827,8 +827,8 @@ A^T = A^{-1}
 </div>
 </div>
 
-<div id="outline-container-org7e38f6c" class="outline-4">
-<h4 id="org7e38f6c"><span class="section-number-4">3.5.5</span> Hermitian matrices (Complex Symmetric)</h4>
+<div id="outline-container-org1d5a4d3" class="outline-4">
+<h4 id="org1d5a4d3"><span class="section-number-4">3.5.5</span> Hermitian matrices (Complex Symmetric)</h4>
 <div class="outline-text-4" id="text-3-5-5">
 <p>
 Hermitian
@@ -858,8 +858,8 @@ A = \frac12 (A+A^\dagger) + \frac12(A-A^\dagger)
 </div>
 </div>
 
-<div id="outline-container-orge757b4a" class="outline-4">
-<h4 id="orge757b4a"><span class="section-number-4">3.5.6</span> Unitary matrix (complex orthogonal)</h4>
+<div id="outline-container-orgf0576f7" class="outline-4">
+<h4 id="orgf0576f7"><span class="section-number-4">3.5.6</span> Unitary matrix (complex orthogonal)</h4>
 <div class="outline-text-4" id="text-3-5-6">
 <p>
 \[
@@ -886,8 +886,8 @@ The rows may be interpreted as components of n orthonormal vectors similar to ho
 </div>
 </div>
 
-<div id="outline-container-org08d8832" class="outline-4">
-<h4 id="org08d8832"><span class="section-number-4">3.5.7</span> Normal matrices</h4>
+<div id="outline-container-org11c532b" class="outline-4">
+<h4 id="org11c532b"><span class="section-number-4">3.5.7</span> Normal matrices</h4>
 <div class="outline-text-4" id="text-3-5-7">
 <p>
 \[
@@ -907,12 +907,12 @@ A Normal matrix is hermitian iff it has real eigenvalues
 </div>
 </div>
 
-<div id="outline-container-org15c6472" class="outline-2">
-<h2 id="org15c6472"><span class="section-number-2">4</span> Vectors and spaces</h2>
+<div id="outline-container-org5189d9a" class="outline-2">
+<h2 id="org5189d9a"><span class="section-number-2">4</span> Vectors and spaces</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org6534ca5" class="outline-3">
-<h3 id="org6534ca5"><span class="section-number-3">4.1</span> Completeness relation for orthonormal vectors</h3>
+<div id="outline-container-org8e6ede7" class="outline-3">
+<h3 id="org8e6ede7"><span class="section-number-3">4.1</span> Completeness relation for orthonormal vectors</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 \[
@@ -936,8 +936,8 @@ A & = I_W A I_V \\
 \end{aligned}
 </div>
 
-<div id="outline-container-org2d9a899" class="outline-4">
-<h4 id="org2d9a899"><span class="section-number-4">4.1.1</span> Outer product representation of Unitary U</h4>
+<div id="outline-container-org8e9414f" class="outline-4">
+<h4 id="org8e9414f"><span class="section-number-4">4.1.1</span> Outer product representation of Unitary U</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <p>
 Define:
@@ -966,8 +966,8 @@ And that if |v<sub>i</sub>&gt; and |w<sub>i</sub>&gt; are any orthonormal bases,
 </div>
 </div>
 
-<div id="outline-container-org6b282ef" class="outline-3">
-<h3 id="org6b282ef"><span class="section-number-3">4.2</span> Projectors</h3>
+<div id="outline-container-org0deee5f" class="outline-3">
+<h3 id="org0deee5f"><span class="section-number-3">4.2</span> Projectors</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 A class of Hermitian operators. Let W be a k-dimensional vector subspace of the d-dimensional vector space V. Using Gram-Schmidt procedure it is possible to construct an orthonormal basisc for V (|1&gt;,&#x2026;,|d&gt;)such that |1&gt;,&#x2026;,|k&gt; is an orthonormal basis for W. The projector by defintion:
@@ -1002,12 +1002,12 @@ Note that P<sup>2</sup> = P
 </div>
 </div>
 
-<div id="outline-container-orgb58e92a" class="outline-2">
-<h2 id="orgb58e92a"><span class="section-number-2">5</span> Operators</h2>
+<div id="outline-container-org08917a2" class="outline-2">
+<h2 id="org08917a2"><span class="section-number-2">5</span> Operators</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgd9d7342" class="outline-3">
-<h3 id="orgd9d7342"><span class="section-number-3">5.1</span> Commutator</h3>
+<div id="outline-container-org9bc7893" class="outline-3">
+<h3 id="org9bc7893"><span class="section-number-3">5.1</span> Commutator</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 Definition:
@@ -1037,8 +1037,8 @@ Identities:
 </div>
 </div>
 
-<div id="outline-container-orgebbcb85" class="outline-3">
-<h3 id="orgebbcb85"><span class="section-number-3">5.2</span> Diagonalisable</h3>
+<div id="outline-container-org60e28f6" class="outline-3">
+<h3 id="org60e28f6"><span class="section-number-3">5.2</span> Diagonalisable</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 A diagonal representation for an operator A on vector space V is a representation:
@@ -1061,8 +1061,8 @@ Any normal operator M on a vector space V is diagonal wrt some orthonormal basis
 </div>
 </div>
 
-<div id="outline-container-org5770195" class="outline-3">
-<h3 id="org5770195"><span class="section-number-3">5.3</span> Active and passive transformations</h3>
+<div id="outline-container-org764cc8a" class="outline-3">
+<h3 id="org764cc8a"><span class="section-number-3">5.3</span> Active and passive transformations</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 If all vectors in a space are subject to a unitary transform (<b>Active Transformation</b>)
@@ -1081,8 +1081,8 @@ Then the same change would be effected if subjected operators to the change (<b>
 </div>
 </div>
 
-<div id="outline-container-org53eb8f1" class="outline-2">
-<h2 id="org53eb8f1"><span class="section-number-2">6</span> Eigenvectors and eigenvalues</h2>
+<div id="outline-container-orgdd92869" class="outline-2">
+<h2 id="orgdd92869"><span class="section-number-2">6</span> Eigenvectors and eigenvalues</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 \[
@@ -1102,8 +1102,8 @@ The eigenspace corresponding to a eigenvalue v is the set of vectors with eigenv
 </p>
 </div>
 
-<div id="outline-container-orgf8cb2ce" class="outline-3">
-<h3 id="orgf8cb2ce"><span class="section-number-3">6.1</span> Normal matrices:</h3>
+<div id="outline-container-org691c510" class="outline-3">
+<h3 id="org691c510"><span class="section-number-3">6.1</span> Normal matrices:</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 \[
@@ -1127,8 +1127,8 @@ Suppose \(\lambda_1\) is k-fold degenerate (for x<sup>1</sup> to x<sup>k</sup>),
 </div>
 
 
-<div id="outline-container-org0a356ad" class="outline-3">
-<h3 id="org0a356ad"><span class="section-number-3">6.2</span> Gram-Schmidt orthogonalisation</h3>
+<div id="outline-container-org39c5201" class="outline-3">
+<h3 id="org39c5201"><span class="section-number-3">6.2</span> Gram-Schmidt orthogonalisation</h3>
 <div class="outline-text-3" id="text-6-2">
 \begin{aligned}
 z^1 & = x^1, \\
@@ -1144,8 +1144,8 @@ Where \(\hat{z}^i =  \frac{z^i}{\Vert z^i \Vert}\)
 </div>
 </div>
 
-<div id="outline-container-org80cc76a" class="outline-3">
-<h3 id="org80cc76a"><span class="section-number-3">6.3</span> Eigen-everything of Hermitian and anti-hermitian matrices</h3>
+<div id="outline-container-org8498ee2" class="outline-3">
+<h3 id="org8498ee2"><span class="section-number-3">6.3</span> Eigen-everything of Hermitian and anti-hermitian matrices</h3>
 <div class="outline-text-3" id="text-6-3">
 <p>
 Eigenvalues of hermitian matrices are real
@@ -1161,8 +1161,8 @@ To every hermitian operator, there exists at least a basis consisting of its ort
 </div>
 </div>
 
-<div id="outline-container-orgde97f3a" class="outline-3">
-<h3 id="orgde97f3a"><span class="section-number-3">6.4</span> Eigen-everything of unitary matrix</h3>
+<div id="outline-container-orgff1be8b" class="outline-3">
+<h3 id="orgff1be8b"><span class="section-number-3">6.4</span> Eigen-everything of unitary matrix</h3>
 <div class="outline-text-3" id="text-6-4">
 <p>
 Eigenvalues of a unitary matrix have unit modulus and are complex.
@@ -1174,8 +1174,8 @@ Assuming no degeneracy, the eigenvectors of a unitary operator are mutually orth
 </div>
 </div>
 
-<div id="outline-container-org9bdf859" class="outline-3">
-<h3 id="org9bdf859"><span class="section-number-3">6.5</span> Eigen-everything of a general square matrix</h3>
+<div id="outline-container-orgd6638ff" class="outline-3">
+<h3 id="orgd6638ff"><span class="section-number-3">6.5</span> Eigen-everything of a general square matrix</h3>
 <div class="outline-text-3" id="text-6-5">
 <p>
 Any N x N matrix with distinct eigenvalues has N linearly independent eigenvectors.
@@ -1191,8 +1191,8 @@ Not having linearly independent eigenvectors makes it <b>defective</b>
 </div>
 </div>
 
-<div id="outline-container-org2874b2e" class="outline-3">
-<h3 id="org2874b2e"><span class="section-number-3">6.6</span> Simultaneous eigenvectors</h3>
+<div id="outline-container-org013cb9f" class="outline-3">
+<h3 id="org013cb9f"><span class="section-number-3">6.6</span> Simultaneous eigenvectors</h3>
 <div class="outline-text-3" id="text-6-6">
 <p>
 Two different normal matrices have a common set of eigenvectors that diagonalises them both if and only if they commute
@@ -1204,8 +1204,8 @@ If an eigenvalue of A is degenerate then not all of its possible sets of eigenve
 </div>
 </div>
 
-<div id="outline-container-orga41980a" class="outline-3">
-<h3 id="orga41980a"><span class="section-number-3">6.7</span> Determination</h3>
+<div id="outline-container-orge302dad" class="outline-3">
+<h3 id="orge302dad"><span class="section-number-3">6.7</span> Determination</h3>
 <div class="outline-text-3" id="text-6-7">
 <p>
 Chracteristic function:
@@ -1231,8 +1231,8 @@ When the determinant is written as a polynomial equation in \(\lambda\), the coe
 </div>
 </div>
 
-<div id="outline-container-org4480a6a" class="outline-2">
-<h2 id="org4480a6a"><span class="section-number-2">7</span> Change in basis</h2>
+<div id="outline-container-org376e891" class="outline-2">
+<h2 id="org376e891"><span class="section-number-2">7</span> Change in basis</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 Given S where:
@@ -1317,8 +1317,8 @@ So any property of A which represents some basis independent property of its lin
 </div>
 
 
-<div id="outline-container-org7169e6f" class="outline-3">
-<h3 id="org7169e6f"><span class="section-number-3">7.1</span> Unitary S</h3>
+<div id="outline-container-org2bb4c3b" class="outline-3">
+<h3 id="org2bb4c3b"><span class="section-number-3">7.1</span> Unitary S</h3>
 <div class="outline-text-3" id="text-7-1">
 <ol class="org-ol">
 <li>If the original basis is orthonormal and S is unitary then the new basis is also orthonormal</li>
@@ -1328,8 +1328,8 @@ So any property of A which represents some basis independent property of its lin
 </div>
 </div>
 </div>
-<div id="outline-container-org9abd3d4" class="outline-2">
-<h2 id="org9abd3d4"><span class="section-number-2">8</span> Diagonalisation of matrices</h2>
+<div id="outline-container-orgfa86c15" class="outline-2">
+<h2 id="orgfa86c15"><span class="section-number-2">8</span> Diagonalisation of matrices</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 Define a basis \(x^j\) given by:
@@ -1372,12 +1372,12 @@ Note:
 </p>
 </div>
 </div>
-<div id="outline-container-orgc717bfc" class="outline-2">
-<h2 id="orgc717bfc"><span class="section-number-2">9</span> Infinite dimensions</h2>
+<div id="outline-container-org34b57f1" class="outline-2">
+<h2 id="org34b57f1"><span class="section-number-2">9</span> Infinite dimensions</h2>
 <div class="outline-text-2" id="text-9">
 </div>
-<div id="outline-container-org8f22e7c" class="outline-3">
-<h3 id="org8f22e7c"><span class="section-number-3">9.1</span> Dirac delta</h3>
+<div id="outline-container-orgb8f54ab" class="outline-3">
+<h3 id="orgb8f54ab"><span class="section-number-3">9.1</span> Dirac delta</h3>
 <div class="outline-text-3" id="text-9-1">
 <p>
 In infinite dimensions,
@@ -1414,12 +1414,12 @@ where x<sub>i</sub> are the zeros of f(x)
 </div>
 </div>
 
-<div id="outline-container-org28c4b2e" class="outline-3">
-<h3 id="org28c4b2e"><span class="section-number-3">9.2</span> Operators</h3>
+<div id="outline-container-org66591c9" class="outline-3">
+<h3 id="org66591c9"><span class="section-number-3">9.2</span> Operators</h3>
 <div class="outline-text-3" id="text-9-2">
 </div>
-<div id="outline-container-orgc9b60f6" class="outline-4">
-<h4 id="orgc9b60f6"><span class="section-number-4">9.2.1</span> Differential operator</h4>
+<div id="outline-container-org3c53d8c" class="outline-4">
+<h4 id="org3c53d8c"><span class="section-number-4">9.2.1</span> Differential operator</h4>
 <div class="outline-text-4" id="text-9-2-1">
 <p>
 \[
@@ -1469,7 +1469,7 @@ so that &lt;g|K|f&gt; = &lt;f|K|g&gt;*.
 </div>
 
 <ol class="org-ol">
-<li><a id="org3bf4507"></a>eigeneverything<br />
+<li><a id="orga97f09e"></a>eigeneverything<br />
 <div class="outline-text-5" id="text-9-2-1-1">
 <p>
 X-basis
@@ -1513,8 +1513,8 @@ and &lt;k|k&gt;
 </ol>
 </div>
 
-<div id="outline-container-orgb91bff1" class="outline-4">
-<h4 id="orgb91bff1"><span class="section-number-4">9.2.2</span> X basis</h4>
+<div id="outline-container-org06ee87b" class="outline-4">
+<h4 id="org06ee87b"><span class="section-number-4">9.2.2</span> X basis</h4>
 <div class="outline-text-4" id="text-9-2-2">
 <p>
 X|x&gt; = x|x&gt;
@@ -1553,7 +1553,7 @@ F(x) = xf(x)
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2021-08-16 Mon 00:03</p>
+<p class="date">Created: 2021-08-16 Mon 00:21</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
