@@ -1,0 +1,41 @@
+
+#+TITLE: Abstract Algebra
+#+STARTUP: latexpreview
+
+* Groups
+
+A group is an ordered pair (G,*), where G is a set (closed under *) and * is a binary operation satisfying the following axioms.
+
+1. * is associative
+2. There exists an identity element
+3. For each a in G, there is a double-sided inverse element
+
+   If the operation is commutative within the group, then the group is abelian.
+
+
+The order of an element x is the smallest positive integer n such that x^n = 1.
+
+** Dihedral groups
+
+D_2n is the set of symmetries of a regular n-gon via moving it in rigid motion. |D_2n| = 2n.
+
+The elements are r^i and s, where s is a reflection and r is a rotation
+
+Properties:
+
+1. 1, r, r^2 ..., r^n-1 are all distinct and r^n = 1, so |r| = n.
+2. |s| = 2
+3. s != r^i for any i
+4. sr^i != sr^j for all i!=j, 0 <= i,j <= n-1.
+5. rs = sr^-1
+6. r^i s = s r^-i
+
+** Generators and relations
+
+Groups can be described with generators which is a subset of G such that every element of G can be written as a finite product of elements of S. G = <S>.
+
+D_2n = <r,s>
+
+Relations are any equations satisfied by the generators. Groups can be represented by a presentation of G.
+
+D_2n = < r,s | r^n = s^2 = 1, rs = sr^-1 >
