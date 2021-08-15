@@ -29,8 +29,6 @@ jobs:
         run: emacs --load exportscript.el --batch kill
       - name: Pushes to shirator website
         uses: cpina/github-action-push-to-another-repository@cp_instead_of_deleting
-      - name: Run a one-line script
-        run: echo Hello, world!
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
