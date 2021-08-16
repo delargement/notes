@@ -7,7 +7,7 @@
         displayAlign: \"%ALIGN\",
         displayIndent: \"%INDENT\",
 
-        extensions: [\"[Contrib]\\physics\\physics.js\"],
+        extensions: [\"[Contrib]/physics/physics.js\"],
         \"HTML-CSS\": { scale: %SCALE,
                         linebreaks: { automatic: \"%LINEBREAKS\" },
                         webFont: \"%FONT\"

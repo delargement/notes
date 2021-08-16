@@ -20,9 +20,6 @@ def walkdir(func, root='./exports/'):
             else root.name: list(filter(lambda x: x, lst))}
 
 
-test = './exports/math/2mm.html'
-
-
 def scrape(f):
     def fnl(lst):
         return list(filter(lambda x: x != '\n', lst))
