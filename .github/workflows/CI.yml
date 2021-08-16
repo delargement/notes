@@ -24,16 +24,17 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
       - name: Install emacs
         run: apk --update add emacs
       - name: Render config into html
         run: emacs --load exportscript.el --batch kill
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3.9 #install the python needed
       - name: Install dependencies
         run: |
-          pip install --upgrade pip
+          python -m pip install --upgrade pip
           pip install beautifulsoup4
       - name: Create index.json
         run: |
