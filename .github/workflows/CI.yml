@@ -29,11 +29,12 @@ jobs:
       - name: Render config into html
         run: emacs --load exportscript.el --batch kill
       - name: Pushes to shirator website
-        uses: cpina/github-action-push-to-another-repository@cp_instead_of_deleting
+        uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: 'exports'
-          destination-github-username: 'Spongiforma'
-          destination-repository-name: 'vanity-affair'
-          user-email: bot@emacs.bot
+          source-file: 'exports'
+          destination-folder: 'public'
+          destination-repo: 'Spongiforma/vanity-affair'
+          user_email: 'bot@emacs.bot'
+          user_name: 'emacs action'
