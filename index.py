@@ -4,9 +4,10 @@ import json
 
 ignore = ['.gitignore', '.github', 'dream-diary', 'chemistry']
 
+root = './exports/'
 
-def walkdir(func, root='./exports/'):
 
+def walkdir(func, root=root):
     lst = []
     for f in filter(lambda x: x.name not in ignore, os.scandir(root)):
         if f.is_dir():
@@ -14,10 +15,12 @@ def walkdir(func, root='./exports/'):
         else:
             if f.name.endswith('.html'):
                 with open(f) as fp:
-                    lst.append(func(fp))
+                    lst.append({'toc': func(fp),
+                                'filename': f.name})
 
-    return {root if type(root) is str
-            else root.name: list(filter(lambda x: x, lst))}
+    return {'dir': root if type(root) is str
+            else root.name,
+            'files': list(filter(lambda x: x, lst))}
 
 
 def scrape(f):
@@ -58,7 +61,7 @@ def scrape(f):
 
 def main():
     with open('./exports/index.json', 'w') as w:
-        w.write(json.dumps(walkdir(scrape)))
+        w.write(json.dumps(walkdir(scrape)[root]))
 
 
 main()
