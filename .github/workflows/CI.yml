@@ -29,7 +29,7 @@ jobs:
       - name: Render config into html
         run: emacs --load exportscript.el --batch kill
       - name: Pushes to shirator website
-        uses: dmnemec/copy_file_to_another_repo_action@main
+        uses: dmnemec/copy_file_to_another_repo_action@master
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
