@@ -42,8 +42,9 @@ def scrape(f):
             section_name = head.string
             section_href = head.attrs['href']
 
-            section_d = {section_name:
-                         {'href': section_href, 'children': None}}
+            section_d = {'name': section_name,
+                         'href': section_href,
+                         'children': None}
 
             if subsections:
                 section_d[section_name]['children'] = \
