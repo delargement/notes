@@ -17,10 +17,10 @@ def walkdir(func, root=root):
                 with open(f) as fp:
                     lst.append({'toc': func(fp),
                                 'filename': f.name})
+    files = list(filter(lambda x: x, lst))
 
-    return {'dir': root if type(root) is str
-            else root.name,
-            'files': list(filter(lambda x: x, lst))}
+    return files if type(root) is str else {'dir': root.name,
+                                            'files': files}
 
 
 def scrape(f):
@@ -61,7 +61,7 @@ def scrape(f):
 
 def main():
     with open('./exports/index.json', 'w') as w:
-        w.write(json.dumps(walkdir(scrape)[root]))
+        w.write(json.dumps(walkdir(scrape)))
 
 
 main()
