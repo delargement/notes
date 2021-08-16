@@ -33,8 +33,8 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-file: 'exports'
-          destination-folder: 'public'
-          destination-repo: 'Spongiforma/vanity-affair'
+          source_file: 'exports'
+          destination_folder: 'public'
+          destination_repo: 'Spongiforma/vanity-affair'
           user_email: 'bot@emacs.bot'
           user_name: 'emacs action'
