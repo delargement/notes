@@ -24,10 +24,17 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - name: Setup Python
+        run: apk add --update python3 py3-pip && ln -sf python3 /usr/bin/python
       - name: Install emacs
         run: apk --update add emacs
       - name: Render config into html
         run: emacs --load exportscript.el --batch kill
+      - name: Install Python dependencies
+        run: pip install beautifulsoup4
+      - name: Create index.json
+        run: |
+          python3 index.py
       - name: Pushes to shirator website
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:
