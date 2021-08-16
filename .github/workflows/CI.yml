@@ -28,8 +28,7 @@ jobs:
         run: apk --update add emacs
       - name: Render config into html
         run: emacs --load exportscript.el --batch kill
-      - name: Setup python
-        uses: actions/setup-python@v2
+      - uses: actions/setup-python@v2
         with:
           python-version: 3.9 #install the python needed
       - name: Install dependencies
