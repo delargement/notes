@@ -47,7 +47,7 @@ def scrape(f):
                          'children': None}
 
             if subsections:
-                section_d[section_name]['children'] = \
+                section_d['children'] = \
                     walksection(fnl(subsections))
 
             data.append(section_d)
