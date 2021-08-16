@@ -29,12 +29,13 @@ jobs:
       - name: Render config into html
         run: emacs --load exportscript.el --batch kill
       - name: Pushes to shirator website
-        uses: dmnemec/copy_file_to_another_repo_action@master
+        uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source_file: 'exports'
           destination_folder: 'public'
           destination_repo: 'Spongiforma/vanity-affair'
+          destination_branch: 'master'
           user_email: 'bot@emacs.bot'
           user_name: 'emacs action'
