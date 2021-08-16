@@ -1,0 +1,1560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-08-16 Mon 17:32 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Linear Algebra</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        extensions: ["[Contrib]/physics/physics.js"],
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Linear Algebra</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgdd41964">1. Vector space</a></li>
+<li><a href="#org21db95a">2. Linear equations</a>
+<ul>
+<li><a href="#orged8e3ae">2.1. Row-echelon form</a></li>
+<li><a href="#orgd144dd6">2.2. Reduced row-echelon form</a></li>
+<li><a href="#orgdf6cad5">2.3. Row operations</a></li>
+<li><a href="#org6056e17">2.4. Gauss-Jordan algorithm / Gaussian elimination</a></li>
+<li><a href="#org5de4cc5">2.5. Homogenous equations</a></li>
+</ul>
+</li>
+<li><a href="#org26aa64e">3. Matrices</a>
+<ul>
+<li><a href="#orgfc4fcd9">3.1. Inner product</a></li>
+<li><a href="#orgd624515">3.2. Inequalities and equalities</a>
+<ul>
+<li><a href="#orgdf85d24">3.2.1. Cauchy-Schwarz's inequality</a></li>
+<li><a href="#orga17134c">3.2.2. Triangle Inequality</a></li>
+<li><a href="#org431f3ae">3.2.3. Bessel's inequality</a></li>
+<li><a href="#org0677a01">3.2.4. Parallelogram equality</a></li>
+</ul>
+</li>
+<li><a href="#org2fab0fe">3.3. Functions of matrices</a></li>
+<li><a href="#org940f329">3.4. Operations</a>
+<ul>
+<li><a href="#org3bdf355">3.4.1. Transpose</a></li>
+<li><a href="#org89af3c0">3.4.2. Hermitian Conjugate (Complex Transpose)</a></li>
+<li><a href="#org62e3173">3.4.3. Trace</a></li>
+<li><a href="#orgc2869c0">3.4.4. Determinant</a></li>
+<li><a href="#orga43b6be">3.4.5. Inverse</a></li>
+<li><a href="#org05a68b1">3.4.6. Rank</a></li>
+</ul>
+</li>
+<li><a href="#orgfb912d4">3.5. Special forms</a>
+<ul>
+<li><a href="#orga613f8c">3.5.1. Diagonal matrix</a></li>
+<li><a href="#org6151834">3.5.2. Lower or upper triangular matrices</a></li>
+<li><a href="#orgc164763">3.5.3. Symmetric and antisymmetric matrices</a></li>
+<li><a href="#org1490157">3.5.4. Orthogonal matrix</a></li>
+<li><a href="#org23e156e">3.5.5. Hermitian matrices (Complex Symmetric)</a></li>
+<li><a href="#orgd8f6462">3.5.6. Unitary matrix (complex orthogonal)</a></li>
+<li><a href="#orge1d0194">3.5.7. Normal matrices</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgacaaaa1">4. Vectors and spaces</a>
+<ul>
+<li><a href="#org7ed7f49">4.1. Completeness relation for orthonormal vectors</a>
+<ul>
+<li><a href="#org77ad4c5">4.1.1. Outer product representation of Unitary U</a></li>
+</ul>
+</li>
+<li><a href="#org692765d">4.2. Projectors</a></li>
+</ul>
+</li>
+<li><a href="#org8cbecec">5. Operators</a>
+<ul>
+<li><a href="#org5b8e9b7">5.1. Commutator</a></li>
+<li><a href="#orge4143b4">5.2. Diagonalisable</a></li>
+<li><a href="#org4d9f053">5.3. Active and passive transformations</a></li>
+</ul>
+</li>
+<li><a href="#orgcd69d74">6. Eigenvectors and eigenvalues</a>
+<ul>
+<li><a href="#org6cb6721">6.1. Normal matrices:</a></li>
+<li><a href="#org244d2ea">6.2. Gram-Schmidt orthogonalisation</a></li>
+<li><a href="#org4e8058b">6.3. Eigen-everything of Hermitian and anti-hermitian matrices</a></li>
+<li><a href="#orgc9af4c0">6.4. Eigen-everything of unitary matrix</a></li>
+<li><a href="#orgb5733c4">6.5. Eigen-everything of a general square matrix</a></li>
+<li><a href="#org5742db8">6.6. Simultaneous eigenvectors</a></li>
+<li><a href="#org92b0bbe">6.7. Determination</a></li>
+</ul>
+</li>
+<li><a href="#org94f6e9b">7. Change in basis</a>
+<ul>
+<li><a href="#org66f4b5f">7.1. Unitary S</a></li>
+</ul>
+</li>
+<li><a href="#orgc9cb5c6">8. Diagonalisation of matrices</a></li>
+<li><a href="#org075087c">9. Infinite dimensions</a>
+<ul>
+<li><a href="#orgfc7401a">9.1. Dirac delta</a></li>
+<li><a href="#org3164eb0">9.2. Operators</a>
+<ul>
+<li><a href="#orgd361d86">9.2.1. Differential operator</a></li>
+<li><a href="#orgde2d273">9.2.2. X basis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdd41964" class="outline-2">
+<h2 id="orgdd41964"><span class="section-number-2">1</span> Vector space</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Requirements for a set of entities to form a vector space
+</p>
+
+<ol class="org-ol">
+<li>Closure under commutative and associative addition</li>
+<li>Closure under multiplication of a scalar</li>
+<li>The existance of a null vector</li>
+<li>Multiplication by unity leaves any vector unchanged</li>
+<li>Each vector has a corresponding negative vector</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org21db95a" class="outline-2">
+<h2 id="org21db95a"><span class="section-number-2">2</span> Linear equations</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orged8e3ae" class="outline-3">
+<h3 id="orged8e3ae"><span class="section-number-3">2.1</span> Row-echelon form</h3>
+<div class="outline-text-3" id="text-2-1">
+<ol class="org-ol">
+<li>All zero rows are at the bottom of the matrix</li>
+<li>If two sucessive rows are non-zero, the second row starts with strictly more zeros than the first</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgd144dd6" class="outline-3">
+<h3 id="orgd144dd6"><span class="section-number-3">2.2</span> Reduced row-echelon form</h3>
+<div class="outline-text-3" id="text-2-2">
+<ol class="org-ol">
+<li>It's in row-echelon form</li>
+<li>The leading left most non-zero entry in each non-zero row is 1</li>
+<li>All other elements of the column in which the leading entry 1 occurs are zeros</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgdf6cad5" class="outline-3">
+<h3 id="orgdf6cad5"><span class="section-number-3">2.3</span> Row operations</h3>
+<div class="outline-text-3" id="text-2-3">
+<ol class="org-ol">
+<li>Interchanging rows</li>
+<li>Multiplying row by non-zero scalar</li>
+<li>Adding a multiple of one row to another row</li>
+</ol>
+
+<p>
+Preserves row-equivalence
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6056e17" class="outline-3">
+<h3 id="org6056e17"><span class="section-number-3">2.4</span> Gauss-Jordan algorithm / Gaussian elimination</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+You should know this
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5de4cc5" class="outline-3">
+<h3 id="org5de4cc5"><span class="section-number-3">2.5</span> Homogenous equations</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+"Implicit equations with no non-zero constants"
+</p>
+
+<p>
+<code>A homogenous system of m linear equations in n unknowns always has a non-trivial solution if m &lt; n</code>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org26aa64e" class="outline-2">
+<h2 id="org26aa64e"><span class="section-number-2">3</span> Matrices</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgfc4fcd9" class="outline-3">
+<h3 id="orgfc4fcd9"><span class="section-number-3">3.1</span> Inner product</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Hilbert space is basically inner product space for finite dimensions
+</p>
+
+<p>
+Orthornormal: \(\braket{\hat{e}_i}{\hat{e}_j} = \delta_{ij}\) (i.e. orthogonal and normalised)
+</p>
+
+\begin{aligned}
+\braket{a}{b} & = \braket{b}{a}^\ast \\
+              & = \sum_i a_i^\ast b_i \text{ (On orthonormal basis)} \\
+              & = \sum_{ij} a_i^\ast b_j \braket{\hat{e}_i}{\hat{e}_j} \\
+\end{aligned}
+</div>
+</div>
+
+<div id="outline-container-orgd624515" class="outline-3">
+<h3 id="orgd624515"><span class="section-number-3">3.2</span> Inequalities and equalities</h3>
+<div class="outline-text-3" id="text-3-2">
+</div>
+<div id="outline-container-orgdf85d24" class="outline-4">
+<h4 id="orgdf85d24"><span class="section-number-4">3.2.1</span> Cauchy-Schwarz's inequality</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<p>
+\[
+\vert\braket{a}{b}\vert \leq \Vert a\Vert \Vert b\Vert
+\]
+</p>
+
+<p>
+In 2d, abcosx &lt;= aba
+</p>
+
+<p>
+equality when a is a scalar multiple of b
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga17134c" class="outline-4">
+<h4 id="orga17134c"><span class="section-number-4">3.2.2</span> Triangle Inequality</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<p>
+\[
+\Vert a+b \Vert \leq \Vert a \Vert + \Vert b \Vert
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org431f3ae" class="outline-4">
+<h4 id="org431f3ae"><span class="section-number-4">3.2.3</span> Bessel's inequality</h4>
+<div class="outline-text-4" id="text-3-2-3">
+<p>
+\[
+\Vert a \Vert^2 \geq \sum_i \vert \braket{\hat{e}_i}{a} \vert^2
+\]
+or
+</p>
+
+<p>
+\[
+\braket{a}{a} \geq \sum_i \vert a_i \vert^2
+\]
+</p>
+
+<p>
+where \(\hat{e}_i\) is an orthonormal basis
+</p>
+
+<p>
+where the equality holds if the sum includes all N basis vectors or if remaining basis vectors have
+a<sub>i</sub> = 0
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org0677a01" class="outline-4">
+<h4 id="org0677a01"><span class="section-number-4">3.2.4</span> Parallelogram equality</h4>
+<div class="outline-text-4" id="text-3-2-4">
+<p>
+\[
+\Vert a + b \Vert^2 + \Vert a - b \Vert^2 = 2(\Vert a \Vert^2 + \Vert b \Vert^2)
+\]
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2fab0fe" class="outline-3">
+<h3 id="org2fab0fe"><span class="section-number-3">3.3</span> Functions of matrices</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+\[
+\exp A = \sum_{n=0}^\infty \frac{A^n}{n!}
+\]
+</p>
+
+<p>
+Derivatives exist.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org940f329" class="outline-3">
+<h3 id="org940f329"><span class="section-number-3">3.4</span> Operations</h3>
+<div class="outline-text-3" id="text-3-4">
+</div>
+<div id="outline-container-org3bdf355" class="outline-4">
+<h4 id="org3bdf355"><span class="section-number-4">3.4.1</span> Transpose</h4>
+<div class="outline-text-4" id="text-3-4-1">
+<p>
+\[
+(AB\ldots G)^T = G^T \ldots C^T B^T A^T
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org89af3c0" class="outline-4">
+<h4 id="org89af3c0"><span class="section-number-4">3.4.2</span> Hermitian Conjugate (Complex Transpose)</h4>
+<div class="outline-text-4" id="text-3-4-2">
+<p>
+\[
+A^\dagger = (A^\ast)^T = (A^T)^\ast
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org62e3173" class="outline-4">
+<h4 id="org62e3173"><span class="section-number-4">3.4.3</span> Trace</h4>
+<div class="outline-text-4" id="text-3-4-3">
+<p>
+\[
+\Tr A = \sum_i A_{ii}
+\]
+</p>
+
+<p>
+\[
+\Tr ABC = \Tr BCA = \Tr CAB
+\]
+</p>
+
+<p>
+(Invariant under cyclic permutations)
+</p>
+
+<p>
+\[
+\Tr \Omega = \Tr U^\dagger \Omega U
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc2869c0" class="outline-4">
+<h4 id="orgc2869c0"><span class="section-number-4">3.4.4</span> Determinant</h4>
+<div class="outline-text-4" id="text-3-4-4">
+<p>
+Minor:
+</p>
+
+<p>
+\(M_{ij}\) = determinant of matrix obtained by removing row i and column j
+</p>
+
+<p>
+Cofactor:
+</p>
+
+<p>
+\(C_{ij} = (-1)^{i+j} M_{ij}\)
+</p>
+
+
+<p>
+Thus a determinant is the sum of the products of the elements along any row or column and their corresponding cofactors
+</p>
+
+<p>
+e.g.
+</p>
+
+<p>
+\[
+\sum_i A_{1i}C_{1i}
+\]
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org8833a98"></a>Properties<br />
+<div class="outline-text-5" id="text-3-4-4-1">
+<ol class="org-ol">
+<li>\(\vert A^T \vert = \vert A \vert\)</li>
+
+<li>If rows of A are interchanged, its determinant changes sign but is unaltered in magnitude</li>
+
+<li>if all the elements of a row or column of A have a common factor, it can be factored out. Also, \(\vert \lambda A \vert = \lambda^N \vert A \vert\)</li>
+
+<li>If any two rows are identical or multiples of one another, det is 0</li>
+
+<li>Determinant is unchanged by adding to the elements of one row any fixed multiple of the elements of another row</li>
+
+<li>Determinant of the product of multiple matrices is invariant under permutations of the matrices</li>
+</ol>
+
+<p>
+\[
+\vert A \vert = a \cdot (b \times c)
+\]
+</p>
+
+<p>
+\(\vert A^{-1} \vert = \vert A \vert^{-1}\)
+</p>
+
+<p>
+\[
+\det \Omega = \det U^\dagger \Omega U
+\]
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orga43b6be" class="outline-4">
+<h4 id="orga43b6be"><span class="section-number-4">3.4.5</span> Inverse</h4>
+<div class="outline-text-4" id="text-3-4-5">
+<p>
+Exists when determinant is not zero, i.e. the matrix is non-singular
+</p>
+
+
+<p>
+\[
+(A^{-1})_{ik} = \frac{C_{ki}}{\vert A \vert}
+\]
+</p>
+
+<p>
+\[
+(ABC)^{-1} = C^{-1}B^{-1}A^{-1}
+\]
+</p>
+
+<p>
+A diagonally dominant matrices are invertible/non-singular
+</p>
+</div>
+</div>
+
+<div id="outline-container-org05a68b1" class="outline-4">
+<h4 id="org05a68b1"><span class="section-number-4">3.4.6</span> Rank</h4>
+<div class="outline-text-4" id="text-3-4-6">
+<p>
+R(A) = R(A<sup>T</sup>) = number of linearly independent vectors row-wise or column-wise
+</p>
+
+<p>
+or
+</p>
+
+<p>
+Size of the largest square submatrix of A whose determinant is non-zero
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfb912d4" class="outline-3">
+<h3 id="orgfb912d4"><span class="section-number-3">3.5</span> Special forms</h3>
+<div class="outline-text-3" id="text-3-5">
+</div>
+<div id="outline-container-orga613f8c" class="outline-4">
+<h4 id="orga613f8c"><span class="section-number-4">3.5.1</span> Diagonal matrix</h4>
+<div class="outline-text-4" id="text-3-5-1">
+<p>
+Having non-zero elements only on the leading diagonal
+</p>
+
+<p>
+Also denoted by e.g. A = diag(1,2,-3)
+</p>
+
+<p>
+\[
+\vert A \vert = \prod_i A_{ii}
+\]
+</p>
+
+<p>
+\[
+A^{-1} = \text{diag} (\frac{1}{A_{11}},\frac{1}{A_{22}}, \ldots)
+\]
+</p>
+
+
+<p>
+if A and B are diagonal, their product is commutative
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6151834" class="outline-4">
+<h4 id="org6151834"><span class="section-number-4">3.5.2</span> Lower or upper triangular matrices</h4>
+<div class="outline-text-4" id="text-3-5-2">
+<p>
+\[
+\vert A \vert = \prod_i A_{ii}
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc164763" class="outline-4">
+<h4 id="orgc164763"><span class="section-number-4">3.5.3</span> Symmetric and antisymmetric matrices</h4>
+<div class="outline-text-4" id="text-3-5-3">
+<p>
+Symmetric:
+</p>
+
+<p>
+\[
+A = A^T
+\]
+</p>
+
+<p>
+Anti/Skew-symmetric:
+</p>
+
+<p>
+\[
+A = -A^T
+\]
+</p>
+
+
+<p>
+Any matrix can be written as a sum of a symmetric and an antisymmetric matrix
+</p>
+
+<p>
+\[
+A = \frac12 (A + A^T) + \frac12 (A - A^T)
+\]
+</p>
+
+<p>
+Note that if A is an NxN antisymmetric matrix, |A| = 0 if N is odd
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1490157" class="outline-4">
+<h4 id="org1490157"><span class="section-number-4">3.5.4</span> Orthogonal matrix</h4>
+<div class="outline-text-4" id="text-3-5-4">
+<p>
+\[
+A^T = A^{-1}
+\]
+</p>
+
+<p>
+\[
+\vert A \vert = \pm 1
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org23e156e" class="outline-4">
+<h4 id="org23e156e"><span class="section-number-4">3.5.5</span> Hermitian matrices (Complex Symmetric)</h4>
+<div class="outline-text-4" id="text-3-5-5">
+<p>
+Hermitian
+</p>
+
+<p>
+\[
+A = A^\dagger
+\]
+</p>
+
+<p>
+Anti-Hermitian
+</p>
+
+<p>
+\[
+A = -A^\dagger
+\]
+</p>
+
+<p>
+\[
+A = \frac12 (A+A^\dagger) + \frac12(A-A^\dagger)
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd8f6462" class="outline-4">
+<h4 id="orgd8f6462"><span class="section-number-4">3.5.6</span> Unitary matrix (complex orthogonal)</h4>
+<div class="outline-text-4" id="text-3-5-6">
+<p>
+\[
+A^\dagger = A^{-1}
+\]
+</p>
+
+
+<p>
+The determinant and eigenvalues of a unitary matrix have unit modulus
+</p>
+
+<p>
+It also represents a linear operator which leaves the norms (inner products) of complex vectors unchanged (i.e. orthonormal-ness)
+</p>
+
+<p>
+An operator is unitary iff each of its matrix representations are unitary
+</p>
+
+<p>
+The rows may be interpreted as components of n orthonormal vectors similar to how columns are components of n vectors.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge1d0194" class="outline-4">
+<h4 id="orge1d0194"><span class="section-number-4">3.5.7</span> Normal matrices</h4>
+<div class="outline-text-4" id="text-3-5-7">
+<p>
+\[
+AA^\dagger = A^\dagger A
+\]
+</p>
+
+<p>
+Hermitian matrices and unitary matrices are normal
+</p>
+
+<p>
+A Normal matrix is hermitian iff it has real eigenvalues
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgacaaaa1" class="outline-2">
+<h2 id="orgacaaaa1"><span class="section-number-2">4</span> Vectors and spaces</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org7ed7f49" class="outline-3">
+<h3 id="org7ed7f49"><span class="section-number-3">4.1</span> Completeness relation for orthonormal vectors</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+\[
+\sum_i \ket{i}\bra{i} = I
+\]
+</p>
+
+<p>
+where |i&gt; is any orthonormal basis for the vector space V
+</p>
+
+<p>
+Which allows us to represent any operator in the outer product notation.
+Given A : V \(\rightarrow\) W, and |v<sub>i</sub>&gt; and |w<sub>j</sub>&gt; are orthornormal bases for V and W
+</p>
+
+
+\begin{aligned}
+A & = I_W A I_V \\
+  & = \sum_{ij} \bra{w_j}A\ket{v_i} \ket{w_j} \bra{v_i}
+\end{aligned}
+</div>
+
+<div id="outline-container-org77ad4c5" class="outline-4">
+<h4 id="org77ad4c5"><span class="section-number-4">4.1.1</span> Outer product representation of Unitary U</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<p>
+Define:
+</p>
+
+<p>
+\[
+\ket{w_i} \equiv U\ket{v_i}
+\]
+</p>
+
+<p>
+Note that that implies:
+</p>
+
+<p>
+\[
+U = \sum_i \ket{w_i} \bra{v_i}
+\]
+</p>
+
+<p>
+And that if |v<sub>i</sub>&gt; and |w<sub>i</sub>&gt; are any orthonormal bases, then U defined above is also unitary
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org692765d" class="outline-3">
+<h3 id="org692765d"><span class="section-number-3">4.2</span> Projectors</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+A class of Hermitian operators. Let W be a k-dimensional vector subspace of the d-dimensional vector space V. Using Gram-Schmidt procedure it is possible to construct an orthonormal basisc for V (|1&gt;,&#x2026;,|d&gt;)such that |1&gt;,&#x2026;,|k&gt; is an orthonormal basis for W. The projector by defintion:
+</p>
+
+<p>
+\[
+P \equiv \sum_{i=k}^k \ket{i} \bra{i}
+\]
+</p>
+
+<p>
+\[
+(P_i)_{kl} = \delta_{kl}\delta_{li}
+\]
+</p>
+
+<p>
+The orthogonal complement of P is Q = I - P, which is a projector onto the vector space spanned by |k+1&gt;&#x2026;|d&gt;
+</p>
+
+<p>
+\[
+P_i P_j = \delta_{ij} P_j
+\]
+</p>
+
+<p>
+Note that P<sup>2</sup> = P
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8cbecec" class="outline-2">
+<h2 id="org8cbecec"><span class="section-number-2">5</span> Operators</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-org5b8e9b7" class="outline-3">
+<h3 id="org5b8e9b7"><span class="section-number-3">5.1</span> Commutator</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Definition:
+</p>
+
+<p>
+\[
+\Omega \Lambda - \Lambda\Omega \equiv [\Omega,\Lambda]
+\]
+</p>
+
+<p>
+Identities:
+</p>
+
+<p>
+\[
+[\Omega,\Lambda] = \Lambda[\Omega,\theta] + [\Omega,\Lambda]\theta
+\]
+</p>
+
+<p>
+\[
+[\Lambda\Omega,\theta] = \Lambda[\Omega,\theta] + [\Lambda,\theta]\Omega
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge4143b4" class="outline-3">
+<h3 id="orge4143b4"><span class="section-number-3">5.2</span> Diagonalisable</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+A diagonal representation for an operator A on vector space V is a representation:
+</p>
+
+<p>
+\[
+A = \sum_i \lambda_i \ket{i}\bra{i}
+\]
+with corresponding eigenvalues \(\lambda_i\)
+</p>
+
+<p>
+An operator is diagonalisable is it has a diagonal representation.
+</p>
+
+<p>
+Any normal operator M on a vector space V is diagonal wrt some orthonormal basis for V. Also any diagonalisable operator is normal
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4d9f053" class="outline-3">
+<h3 id="org4d9f053"><span class="section-number-3">5.3</span> Active and passive transformations</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+If all vectors in a space are subject to a unitary transform (<b>Active Transformation</b>)
+</p>
+
+<p>
+\[
+\ket{V} \to U\ket{V}
+\]
+Then the same change would be effected if subjected operators to the change (<b>Passive Transformation</b>)
+\[
+\Omega \to U^\dagger\Omega U
+\]
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcd69d74" class="outline-2">
+<h2 id="orgcd69d74"><span class="section-number-2">6</span> Eigenvectors and eigenvalues</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+\[
+Ax = \lambda x
+\]
+</p>
+
+
+<p>
+\[
+A^{-1}x^i = \frac{1}{\lambda_i}x_i
+\]
+</p>
+
+<p>
+The eigenspace corresponding to a eigenvalue v is the set of vectors with eigenvalue v
+</p>
+</div>
+
+<div id="outline-container-org6cb6721" class="outline-3">
+<h3 id="org6cb6721"><span class="section-number-3">6.1</span> Normal matrices:</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+\[
+A^\dagger x^i = \lambda_i^\ast x^i
+\]
+</p>
+
+<p>
+If \(\lambda_i \neq \lambda_j\), the eigenvectors \(x^i\) and \(x^j\) must be orthogonal
+</p>
+
+
+<p>
+An eigenvalue corresponding to two or more different eigenvectors (i.e. they are not multiples) are <b>degenerate</b>. or in other words the <b>eigenspace</b> has more than 1 dimensions
+</p>
+
+<p>
+Suppose \(\lambda_1\) is k-fold degenerate (for x<sup>1</sup> to x<sup>k</sup>), then any linear combination of those x<sup>1</sup> also has an eigenvalue of \(\lambda_1\)
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org244d2ea" class="outline-3">
+<h3 id="org244d2ea"><span class="section-number-3">6.2</span> Gram-Schmidt orthogonalisation</h3>
+<div class="outline-text-3" id="text-6-2">
+\begin{aligned}
+z^1 & = x^1, \\
+z^2 & = x^2 - \braket{\hat{z}^1}{x^2} \hat{z}^1, \\
+z^3 & = x^3 - \braket{\hat{z}^2}{x^3} \hat{z}^2 - \braket{\hat{z}^1}{x^3} \hat{z}^1, \\
+ & \ldots \\
+z^k & = x^k - \sum_{i=1}^{k-1} \braket{\hat{z}^i}{x^k}\hat{z}^k \\
+\end{aligned}
+
+<p>
+Where \(\hat{z}^i =  \frac{z^i}{\Vert z^i \Vert}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4e8058b" class="outline-3">
+<h3 id="org4e8058b"><span class="section-number-3">6.3</span> Eigen-everything of Hermitian and anti-hermitian matrices</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+Eigenvalues of hermitian matrices are real
+</p>
+
+<p>
+Eigenvalues of anti-hermitian matrices are pure imaginary (-\(\lambda\))
+</p>
+
+<p>
+To every hermitian operator, there exists at least a basis consisting of its orthonormal eigenvectors. It is diagonal in this eigenbasis and has its eigenvalues as its diagonal entries.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc9af4c0" class="outline-3">
+<h3 id="orgc9af4c0"><span class="section-number-3">6.4</span> Eigen-everything of unitary matrix</h3>
+<div class="outline-text-3" id="text-6-4">
+<p>
+Eigenvalues of a unitary matrix have unit modulus and are complex.
+</p>
+
+<p>
+Assuming no degeneracy, the eigenvectors of a unitary operator are mutually orthogonal
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb5733c4" class="outline-3">
+<h3 id="orgb5733c4"><span class="section-number-3">6.5</span> Eigen-everything of a general square matrix</h3>
+<div class="outline-text-3" id="text-6-5">
+<p>
+Any N x N matrix with distinct eigenvalues has N linearly independent eigenvectors.
+</p>
+
+<p>
+If it has a degenerate eigenvalues, however, then it may or may not have N linearly independent eigenvectors.
+</p>
+
+<p>
+Not having linearly independent eigenvectors makes it <b>defective</b>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5742db8" class="outline-3">
+<h3 id="org5742db8"><span class="section-number-3">6.6</span> Simultaneous eigenvectors</h3>
+<div class="outline-text-3" id="text-6-6">
+<p>
+Two different normal matrices have a common set of eigenvectors that diagonalises them both if and only if they commute
+</p>
+
+<p>
+If an eigenvalue of A is degenerate then not all of its possible sets of eigenvectors will also constitute a set of eigenvectors of B. i.e. If B is nondegenerate but A is degenerate, then all eigenvectors of B are eigenvectors of A.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org92b0bbe" class="outline-3">
+<h3 id="org92b0bbe"><span class="section-number-3">6.7</span> Determination</h3>
+<div class="outline-text-3" id="text-6-7">
+<p>
+Chracteristic function:
+c(lambda) = det | A - lambda I |
+Characteristic equation:
+</p>
+
+<p>
+\[
+\vert A - \lambda I \vert = 0
+\]
+</p>
+
+<p>
+LHS is the characteristic/secular determinant of A
+</p>
+
+
+<p>
+When the determinant is written as a polynomial equation in \(\lambda\), the coefficient of \(-\lambda^{N-1}\) will be Tr A, i.e. the sum of the roots (recall p+q = -b/a, pq = c/a)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org94f6e9b" class="outline-2">
+<h2 id="org94f6e9b"><span class="section-number-2">7</span> Change in basis</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Given S where:
+</p>
+
+<p>
+\[
+x_i = \sum_{j=1}^N S_{ij}x'_j
+\]
+</p>
+
+<p>
+\[
+x = Sx'
+\]
+</p>
+
+<p>
+where S is the transformation matrix associated with the change in basis
+</p>
+
+<p>
+and
+</p>
+
+<p>
+\[
+x' = S^{-1} x
+\]
+</p>
+
+
+<p>
+The components of x transform <b>inversely</b> to how the basis vectors transform, as the vector x itself much remain unchanged
+</p>
+
+<p>
+This applies to linear operators of x:
+</p>
+
+<p>
+\[
+y = Ax, y' = A'x'
+\]
+</p>
+
+<p>
+=&gt;
+</p>
+
+<p>
+\[
+y' = S^{-1}ASx'
+\]
+</p>
+
+<p>
+or in other words:
+</p>
+
+<p>
+\[
+A' = S^{-1}AS
+\]
+</p>
+
+<p>
+which is an example of a similarity transformation
+</p>
+
+
+<p>
+So any property of A which represents some basis independent property of its linear operator will be shared by A'
+</p>
+
+<ol class="org-ol">
+<li>If A = I, A' = I</li>
+<li>|A| = |A'|</li>
+<li>Eigenvalues are the same</li>
+<li>Trace is unchanged</li>
+</ol>
+</div>
+
+
+<div id="outline-container-org66f4b5f" class="outline-3">
+<h3 id="org66f4b5f"><span class="section-number-3">7.1</span> Unitary S</h3>
+<div class="outline-text-3" id="text-7-1">
+<ol class="org-ol">
+<li>If the original basis is orthonormal and S is unitary then the new basis is also orthonormal</li>
+<li>If A is (anti) hermitian then A' is (anti) hermitian</li>
+<li>If A is unitary then A' is also unitary</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc9cb5c6" class="outline-2">
+<h2 id="orgc9cb5c6"><span class="section-number-2">8</span> Diagonalisation of matrices</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Define a basis \(x^j\) given by:
+\[
+x^j = \sum_{i=1}^N S_{ij}{\bf e_i},
+\]
+</p>
+
+<p>
+where \(x^j\) are chosen to be the eigenvectors of the linear operator \(\mathcal{A}\).
+i.e.
+</p>
+
+<p>
+\[
+\mathcal{A} x^j = \lambda_j x^j
+\].
+</p>
+
+<p>
+In our new basis, \(\mathcal{A}\) is represented by the matrix \(A' = S^{-1}AS\). The columns of S are the eigenvectors of the matrix A, i.e. \(S_{ij} = (x^j)_i\). Therefore, A' is diagonal with the eigenvalues of \(\mathcal{A}\) as the diagonal elements.
+</p>
+
+<p>
+Since we require S to be non-singular, the N eigenvectors of A must be linearly independent and form a basis for the N-dimensional vector space. Any matrix with distinct eigenvalues can be diagonalised by this procedure. If it doesn't have N linearly independent eigenvectors, then it cannot be diagaonlised.
+</p>
+
+<p>
+For normal matrices, the N eigenvectors are indeed linearly independent. For them, S is unitary.
+</p>
+
+<p>
+Note:
+</p>
+
+<p>
+\[
+\det \exp A = \exp(\Tr A)
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org075087c" class="outline-2">
+<h2 id="org075087c"><span class="section-number-2">9</span> Infinite dimensions</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-orgfc7401a" class="outline-3">
+<h3 id="orgfc7401a"><span class="section-number-3">9.1</span> Dirac delta</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+In infinite dimensions,
+</p>
+
+<p>
+\[
+\braket{x}{x'} = \delta(x-x')
+\]
+</p>
+
+<p>
+\[
+\delta '(x-x') = \delta(x-x')\dv{x}
+\]
+</p>
+
+<p>
+Dirac delta with fourier transform
+</p>
+
+<p>
+\[
+\delta(x-x') = \frac{1}{2\pi}\int_{-\infty}^\infty e^{ik(x-x')}\dd{k}
+\]
+</p>
+
+<p>
+\[
+\delta(f(x)) = \sum_i \frac{\delta(x_i-x)}{|\dv{f}{x_i}|}
+\]
+where x<sub>i</sub> are the zeros of f(x)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3164eb0" class="outline-3">
+<h3 id="org3164eb0"><span class="section-number-3">9.2</span> Operators</h3>
+<div class="outline-text-3" id="text-9-2">
+</div>
+<div id="outline-container-orgd361d86" class="outline-4">
+<h4 id="orgd361d86"><span class="section-number-4">9.2.1</span> Differential operator</h4>
+<div class="outline-text-4" id="text-9-2-1">
+<p>
+\[
+D\ket{f} = \ket{\dv{f}{x}}
+\]
+</p>
+
+<p>
+implies
+</p>
+
+<p>
+In the |x&gt; basis,
+\[
+\bra{x}D\ket{x'} = D_{x,x'}=\delta'(x-x')=\delta(x-x')\dv{x'}
+\]
+</p>
+
+<p>
+where it is integrated over the second index (x') and pulls out the derivative of f at the first index (x).
+</p>
+
+<p>
+We can turn it hermitian by turning it into the form:
+</p>
+
+<p>
+\[
+K = -iD
+\]
+</p>
+
+<p>
+but in infinite dimensions, K<sup>t</sup> = K is not sufficient to be hermitian. It is only hermitian in the space of functions that obey:
+</p>
+
+
+<p>
+\[
+-ig^*(x)f(x) | \given_a^b = 0
+\]
+</p>
+
+<p>
+so that &lt;g|K|f&gt; = &lt;f|K|g&gt;*.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgcbc86da"></a>eigeneverything<br />
+<div class="outline-text-5" id="text-9-2-1-1">
+<p>
+X-basis
+</p>
+
+<p>
+\[
+K\ket{k} = k\ket{k}
+\]
+</p>
+
+<p>
+\[
+-i\dv{x}\psi_k(x) = k\psi_k(x)
+\]
+</p>
+
+<p>
+where \(\psi_k(x) = \braket{x}{k}\).
+</p>
+
+<p>
+the solution is:
+</p>
+
+<p>
+\[
+\psi_k(x) = Ae^{ikx}
+\]
+</p>
+
+<p>
+where we choose \(A = (1/2\pi)^{-1/2}\)
+</p>
+
+<p>
+and &lt;k|k&gt;
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orgde2d273" class="outline-4">
+<h4 id="orgde2d273"><span class="section-number-4">9.2.2</span> X basis</h4>
+<div class="outline-text-4" id="text-9-2-2">
+<p>
+X|x&gt; = x|x&gt;
+</p>
+
+<p>
+\[
+\bra{x'}X\ket{x} = x\delta(x'-x)
+\]
+</p>
+
+<p>
+Action on functions:
+</p>
+
+<p>
+X|f&gt; = |F&gt;
+</p>
+
+<p>
+F(x) = xf(x)
+</p>
+
+<p>
+\[
+\bra{k}X\ket{k'} = i\delta'(k-k')
+\]
+</p>
+
+<p>
+[X,K] = iI
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2021-08-16 Mon 17:32</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

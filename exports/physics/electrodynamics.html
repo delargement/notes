@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-08-16 Mon 17:32 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Electrodynamics</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        extensions: ["[Contrib]/physics/physics.js"],
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Electrodynamics</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd6a87d0">1. Electrostatics</a>
+<ul>
+<li><a href="#org0e3f11a">1.1. Relations</a></li>
+<li><a href="#org3507bcb">1.2. Potential energy</a></li>
+<li><a href="#org46abfbe">1.3. Capacitors</a>
+<ul>
+<li><a href="#org6b98d8b">1.3.1. Breakdown voltage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org262feba">2. Potentials</a>
+<ul>
+<li><a href="#orgc06946d">2.1. Boundary conditions and uniqueness theorems</a>
+<ul>
+<li><a href="#orge4eaf9d">2.1.1. First uniqueness theorem</a></li>
+<li><a href="#org922f89a">2.1.2. 2nd uniqueness theorem</a></li>
+</ul>
+</li>
+<li><a href="#orga341bb8">2.2. Method of images</a></li>
+<li><a href="#org160fcc0">2.3. Seperation of variables</a>
+<ul>
+<li><a href="#orgd3edc16">2.3.1. Spherical coordinates</a></li>
+</ul>
+</li>
+<li><a href="#orgd5bb221">2.4. Multipole expansion</a>
+<ul>
+<li><a href="#org31f10d0">2.4.1. Dipole</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org8d94722">3. Electric fields in matter</a>
+<ul>
+<li><a href="#org981fab8">3.1. Induced dipole</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd6a87d0" class="outline-2">
+<h2 id="orgd6a87d0"><span class="section-number-2">1</span> Electrostatics</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org0e3f11a" class="outline-3">
+<h3 id="org0e3f11a"><span class="section-number-3">1.1</span> Relations</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+V -&gt; rho
+</p>
+
+<p>
+\[
+\laplacian V = -\frac{\rho}{\epsilon_0}
+\]
+rho -&gt; V
+</p>
+
+<p>
+\[
+V = \frac{1}{4\pi\epsilon_0}\int\frac{\rho}{r}\dd{\tau}
+\]
+</p>
+
+<p>
+E -&gt; rho
+</p>
+
+<p>
+\[
+\div{E} = \frac{\rho}{\epsilon_0}
+\]
+</p>
+
+<p>
+rho -&gt; E
+</p>
+
+<p>
+\[
+E = \frac{1}{4\pi\epsilon_0}\int\frac{\rho{\bf \hat{r}}}{r^2}\dd{\tau}
+\]
+</p>
+
+<p>
+V -&gt; E
+</p>
+
+<p>
+\[
+E = -\grad{V}
+\]
+</p>
+
+<p>
+E -&gt; V
+\[
+V = -\int{E \cdot \dd{l}}
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3507bcb" class="outline-3">
+<h3 id="org3507bcb"><span class="section-number-3">1.2</span> Potential energy</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+For a configuration,
+</p>
+
+
+\begin{align*}
+W & = \frac{1}{8\pi\epsilon_0}\sum_{i=1}^n\sum_{j\neq i}^n \frac{q_iq_j}{r_{ij}} \\
+& = \frac12 \sum_{i=1}^n q_i V(\bf r_i) \\
+\end{align*}
+
+<p>
+For a continuous charge distribution,
+</p>
+
+\begin{align*}
+W & = \frac12 \int \rho V \dd{\tau} \\
+& = \frac{\epsilon_0}{2}\left(\int_V E^2 \dd{\tau} + \oint_S VE\cdot\dd{\bf a}\right) \\
+& = \frac{\epsilon_0}{2}\int E^2 \dd{\tau} \text{(all space)}
+\end{align*}
+
+<p>
+For compount systems:
+</p>
+
+<p>
+\[
+W = W_1 + W_2 + \epsilon_0 \int{E_1 \cdot E_2}\dd{\tau}
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org46abfbe" class="outline-3">
+<h3 id="org46abfbe"><span class="section-number-3">1.3</span> Capacitors</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-org6b98d8b" class="outline-4">
+<h4 id="org6b98d8b"><span class="section-number-4">1.3.1</span> Breakdown voltage</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+Series:
+</p>
+
+<p>
+\[
+V_{max} = \sum_j \frac{1}{C_j} \min_i C_iV_{bi}
+\]
+</p>
+
+<p>
+Parallel:
+</p>
+
+<p>
+\[
+V_{max} = \min_i(V_{bi})
+\]
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org262feba" class="outline-2">
+<h2 id="org262feba"><span class="section-number-2">2</span> Potentials</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Laplace's equations tolerates no local maxima and minima and at a point it can often be expressed as the average of the surrounding potential.
+</p>
+
+<p>
+The potential at the center of a sphere is equal to the average potential at the surface due to an external charge located a distance from the center of the sphere. v<sub>ave</sub> = V<sub>center</sub> + kQ<sub>enc</sub>/R
+</p>
+</div>
+
+<div id="outline-container-orgc06946d" class="outline-3">
+<h3 id="orgc06946d"><span class="section-number-3">2.1</span> Boundary conditions and uniqueness theorems</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-orge4eaf9d" class="outline-4">
+<h4 id="orge4eaf9d"><span class="section-number-4">2.1.1</span> First uniqueness theorem</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+The solution to Laplace's equation in some volume is uniquely determined if potential is specified on the boundary surface S and the charge density throughout the region is specified.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org922f89a" class="outline-4">
+<h4 id="org922f89a"><span class="section-number-4">2.1.2</span> 2nd uniqueness theorem</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+In a volume surrounded by conductors and containing a specifed charge density, the electric field is uniquely determined if the total charge on each conductor is given.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga341bb8" class="outline-3">
+<h3 id="orga341bb8"><span class="section-number-3">2.2</span> Method of images</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Suppose a point charge q is held a distance d above an infinite grounded conducting plane. What is the potential (which is affected by the accumulation of charge on the plane).
+</p>
+
+<p>
+Solution: Pretend there is a charge at -z. Many quantities end up being the same though, Energy is not the same. Note you cannot put image charges where yuo are calculating V as it would change charge density.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org160fcc0" class="outline-3">
+<h3 id="org160fcc0"><span class="section-number-3">2.3</span> Seperation of variables</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+set boundary conditions and you will get hyperbolic (suited for boundary conditions at infinity)and trig functions. then find fourier coeffs
+</p>
+</div>
+
+<div id="outline-container-orgd3edc16" class="outline-4">
+<h4 id="orgd3edc16"><span class="section-number-4">2.3.1</span> Spherical coordinates</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+\[
+V(r,\theta) = \sum^\infty_{l=0}\left(A_lr^l + \frac{B_l}{r^{l+1}}\right) P_l(\cos\theta)
+\]
+</p>
+
+<p>
+where P are the legendre polynomials:
+</p>
+
+<p>
+\[
+P_l(x) = \frac{1}{2^l l!} \left(\dv{x}\right)^l (x^2 - 1)^l
+\]
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd5bb221" class="outline-3">
+<h3 id="orgd5bb221"><span class="section-number-3">2.4</span> Multipole expansion</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+\[
+V(\bm{r}) = \frac{1}{4\pi\epsilon_0}\sum_{n=0}^\infty \frac{1}{r^{n+1}}\int(r')^n P_n(cos\alpha)\rho(\bm{r}')\dd{\tau'}
+\]
+</p>
+
+<p>
+where \(\alpha\) is the angle between r and r'
+</p>
+</div>
+
+<div id="outline-container-org31f10d0" class="outline-4">
+<h4 id="org31f10d0"><span class="section-number-4">2.4.1</span> Dipole</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<p>
+Dipole moment:
+</p>
+
+<p>
+\[
+\bm{p} \equiv \int \bm{r}' \rho(\bm{r}') \dd{\tau}
+\]
+</p>
+
+<p>
+or \(\sum_i q_i\bm{r}'_i\). or \(\bm{p} - Q\bm{a}\) for a shift in coordiantes.
+</p>
+
+<p>
+\[
+V_{dip}(r) = \frac{1}{4\pi\epsilon_0}\frac{\bm{p}\cdot\hat{\bm{r}}}{r^2}
+\]
+</p>
+
+<p>
+for a pure dipole (as opposed to a physical one), qd = constant but d -&gt; 0.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8d94722" class="outline-2">
+<h2 id="org8d94722"><span class="section-number-2">3</span> Electric fields in matter</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org981fab8" class="outline-3">
+<h3 id="org981fab8"><span class="section-number-3">3.1</span> Induced dipole</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+An atom which is placed in an electric field gets polarised and forms a dipole. the dipole moment is given by.
+</p>
+
+<p>
+\[
+\bm{p} = \alpha \bm{E}
+\]
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2021-08-16 Mon 17:32</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
