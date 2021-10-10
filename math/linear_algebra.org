@@ -564,6 +564,15 @@ Note:
 \]
 * Infinite dimensions
 
+Define a function
+
+
+Inner product in (countable) infinite dimensions:
+
+\[
+\braket{f}{g} = \int_0^L f(x)g(x) \dd{x}
+\]
+
 
 ** Dirac delta
 
@@ -573,6 +582,7 @@ In infinite dimensions,
 \braket{x}{x'} = \delta(x-x')
 \]
 
+if two basis vectors are the same.
 \[
 \delta '(x-x') = \delta(x-x')\dv{x}
 \]

@@ -101,7 +101,7 @@ Solution: Pretend there is a charge at -z. Many quantities end up being the same
 
 ** Seperation of variables
 
-set boundary conditions and you will get hyperbolic (suited for boundary conditions at infinity)and trig functions. then find fourier coeffs
+set boundary conditions and you will get hyperbolic (suited for boundary conditions at infinity) and trig functions. then find fourier coeffs
 
 *** Spherical coordinates
 
@@ -148,4 +148,223 @@ An atom which is placed in an electric field gets polarised and forms a dipole. 
 
 \[
 \bm{p} = \alpha \bm{E}
+\]
+
+
+** Alignment of polar molecules
+
+
+A dipole in a uniform field $E$ experiences a torque
+
+\[
+\bm{N} = \bm{p} \times \bm{E}
+\]
+
+If the field is nonuniform, such that the force on the positive part does not balance the force on the negative part, then
+
+\[
+\bm{F} = (\bm{p} \cdot \nabla)\bm{E}
+\]
+
+** Polarisation
+
+When an object gets polarised, we get a bunch of little dipoles pointing in the direction of the field, so we can call this:
+
+\[
+\bm{P} \equiv \text{dipole moment per unit volume}
+\]
+
+which is the polarisation.
+
+** Field of polarised object
+
+Since the total potential of polarised object is:
+
+\[
+V(\bm{r}) = \frac{1}{4\pi\epsilon_0} \int_\mathcal{V} \frac{\bm{P}(\bm{r'})\cdot \bm{\hat\gamma} }{\gamma^2} \dd{\tau'}
+\]
+
+This can be shown to be equivalent to defining:
+
+\[
+\sigma_b \equiv \bm{P} \cdot \bm{\hat{n}}
+\]
+
+\[
+\rho_b \equiv - \div P
+\]
+
+
+and expressing above as:
+
+\[
+V(\bm{r}) = \frac{1}{4\pi\epsilon_0} \oint_\mathcal{S} \frac{\sigma_b}{\gamma} \dd{a'} + \frac{1}{4\pi\epsilon_0} \int_\mathcal{V} \frac{\rho}{\gamma} \dd{\tau'}
+\]
+
+
+** Electric Displacement
+
+
+Since we have found that the effect of polarization is to produce accumulations of bound charge within the dielectric and on the surface, we will now put it all together with the field attributable to bound charge plus the field due to everything else, which we will call *free charge.*
+
+Gauss' law reads:
+
+\[
+\epsilon_0 \div \bm{E} = \rho_b + \rho_f = -\div \bm{P} + \rho_f
+\]
+
+It is convenient to combine the two divergence terms:
+
+\[
+\div (\epsilon_0 \bm{E} + \bm{P}) = \rho_f
+\]
+
+and call the expression in parentheses $\bm D$, the *electric displacement*. Thus:
+
+\[
+\div \bm{D} = \rho_f
+\]
+
+\[
+\oint \bm{D} \cdot \dd{\bm{a}} = Q_{f_{enc}}
+\]
+
+
+One must be careful not to draw a direct parallel between E and D such as trying to prescribe a coulomb's law for D.
+
+By helmholtz' theorem, the divergence alone is insufficient to determine a vector field, as one would need to know the curl as well. However, the curl of D is not always zero as while curl E is zero, curl P isn't always.
+Thus, D is not determined exculsively by the free charge.
+
+
+** Boundary conditions
+
+*** Perpendicular component
+
+D above - D below = $\sigma_f$
+
+*** Parallel component
+
+D above - D below = P above - P below ()
+
+** Linear dielectrics (starting on the how)
+
+If the E field is not too strong, the polarisation is proportional to the field. They will be called *Linear dielectrics*.
+
+\[
+\bm{P} = \epsilon_0 \chi_e \bm{E}
+\]
+
+where $\chi_e$ (dimensionless) is called the electric susceptibility of the medium.
+Note: E is the total field, so in order to calculate P, E must be found, and in order to find contribution from P (by finding P), one must find E. Thus, gauss' law in dielectrics should be used first to find D.
+
+From definition of electric displacement, we have:
+
+\[
+\bm{D} = \epsilon_0(1 + \chi_e)\bm{E} = \epsilon \bm{E}
+\]
+
+where $\epsilon$ is the permittivity of the material. The relative permittivity, or dielectric constant is given by $\epsilon_r$ or $\kappa$.
+
+
+
+
+
+
+
+
+
+
+
+* Magnetostatics
+
+Lorentz' force law
+
+\[
+\bm{F} = q(\bm{E} + \bm{v} \times \bm{B})
+\]
+
+\[
+\bm{F} = I \int (\dd{\bm l}\times \bm{B})
+\]
+
+** Current
+
+Current can also be written as a vector:
+
+\[
+\bm{I} = \lambda \bm{v}
+\].
+
+Surface Charge density is defined as:
+
+\[
+\bm{K} = \dv{\bm I}{l}
+\]
+
+Volume current density is defined as:
+
+\[
+\bm{J} = \dv{\bm I}{a}
+\]
+
+Continuity equation:
+
+\[
+\div \bm{J} = - \pdv{\rho}{t}
+\]
+
+** Steady Currents
+
+Steady currents produce constant magnetic fields. Thus:
+
+\[
+\pdv{\rho}{t} = 0
+\]
+
+\[
+\pdv{\bm{J}}{t} = \bm{0}
+\]
+
+
+*** Biot-Savart law
+
+\[
+\bm{B}(\bm{r}) = \frac{\mu_0}{4 \pi} \int \frac{\bm{I} \times \bm{\hat\gamma}}{\gamma^2} \dd{l'}
+\]
+
+**** Magnetic field around wire
+
+\[
+\bm{B} = \frac{\mu_0 I}{2\pi s} \bm{\hat\phi}
+\]
+
+
+**** force per unit length of two parallel wires
+
+\[
+f = \frac{\mu_0}{2\pi} \frac{I_1I_2}{d}
+\]
+
+
+**** Magnetic field above a circular loop
+
+\[
+B(z) = \frac{\mu_0 I}{2} \frac{R^2}{(R^2 + z^2)^{3/2}}
+\]
+
+
+*** Curl and div of B
+
+\[
+\oint \bm{B} \cdot \dd{\bm{l}} = \mu_0 I_{enc}
+\]
+
+
+\[
+\curl \bm{B} = \mu_0 \bm{J}
+\]
+
+
+\[
+\div \bm{B} = 0
 \]

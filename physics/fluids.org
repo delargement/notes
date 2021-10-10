@@ -1,0 +1,139 @@
+#+TITLE: Fluid Dynamics
+#+STARTUP:latexpreview
+
+Resources: math.nyu.edu/~childres/fluidsbook.pdf, Batchelor
+
+Conventions:
+subscript denotes differentiation
+repeated indices are summed over
+
+* Fluid continuum
+
+** Scale
+
+Random motion of liquid molecules: $10^{-7} - 10^{-8}$ cm
+gas Mean Free path: $10^{-3}$ cm
+
+** Eulerian and Lagrangian descriptions
+
+Let the independent variables of a fluid be a function of position, $\mathbf{x} = (x_1,\ldots,x_N)$ in Euclidean sapce and time t.
+
+We introduce the function
+
+\[
+\mathbf{x} = \chi(\bm{a},t)
+\]
+
+as the position of a fluid particle at a time t which was located at $\bm{a}$ at time t=0.
+
+In eulerian descriptions, we look at fixed points instead of parcels of fluid and properties are expressed as functions of $\mathbf{x}$ and $t$.
+
+We can relate the two coordinates with velocity.
+
+\[
+\mathbf{x}_t = \pdv{\chi}{t}\Big\vert_{\bm{a}} = \bm{u}(\mathbf{x(\bm{a},t),t})
+\]
+
+Finding lagrangian coordinates given velocity field thus requires solving an ode.
+
+** Streamlines
+
+Instantaneous streamlines are families of curves satisfying:
+
+\[
+\frac{\dd{x}}{u} = \frac{\dd{y}}{v} = \frac{\dd{z}}{w}
+\]
+
+given that $\bm{u}(\mathbf{x},t) = (u(x,y,z,t),v(x,y,z,t),w(x,y,z,t))$.
+
+
+Streaklines (consider labelling a particle with a dye and watching its path) can be described using the generalized Lagrangian coordinate $\mathbf{x} = \chi(\bm{a},t,t_a)$ defined to be the position at time t of a particle that was located at $\bm{a}$ at time $t_a$.
+
+** Jacobian matrix
+
+The jacobian of the Lagrangian map ($S_t = M_tS_0$ where S is an open set of $\mathbb{R}^N$) is defined by the matrix:
+
+\[
+J_{ij} = \pdv{x_i}{a_j}\Big\vert_t
+\]
+
+Thus $\dd{l_i}  = J_{ij}\dd{a_j}$ is a differential vector which can be visualized as connecting two nearby fluid particles whose labels differ by $\dd{a_j}$. If $\dd{a_1}\ldots\dd{a_N}$ is the volume of a small fluid parcel, $\det(\bm{J})\dd{a_1}\ldots\dd{a_N}$ is the volume of the parcel under the map $\mathcal{M}_t$. For incompressible liquids, Det(J) = constant = 1 when $\bm{a}$ denotes initial position, independently of $\bm{a}$,$t$. It is usually assumed that Det(J) > 0, such that we can invert to express a as a function of x,t.
+
+** Material Derivative
+
+Suppose there is a certain scalar property $\mathcal{P}$ of the liquid that can be attached to a fluid parcel such as temperature or density. If the property is invariant in time, we can express it as:
+
+\[
+\pdv{\mathcal{P}}{t}\Big\vert_{\bm{a}} = 0
+\]
+
+i.e. time derivative is taken with label fixed. Such a scalar is material. To express it in eulerian form:
+
+\[
+\pdv{\mathcal{P}(\mathbf{x}(\bm{a},t),t)}{t}\Big\vert_{\bm{a}} = \mathcal{P}_t + \bm{u}\cdot \grad\mathcal{P}
+\]
+
+The Eulerian operator $\pdv{}{t} + \bm{u}\cdot\nabla$ is the *material/substantive/convective derivative.*
+
+The accleration of a fluid parcel is defined as teh amterial derivative of the velocity $\bm{u}$. In Lagrangian variables, the accleration is $\pdv[2]{\mathbf{x}}{t}\vert_{\bm{a}}$.
+
+\[
+\mdv{}{t}\det(\bm{J}) = \text{div}(\bm{u})\det(\bm{J})
+\]
+
+In eulerian variables, an incompressible fluid is defined by div(u) = 0.
+
+** Solenoidal velocity fields
+
+
+The solenoidal condition in 2d is:
+
+\[
+\pdv{u}{x} + \pdv{v}{y} = 0
+\]
+
+\[
+u = \pdv{\psi}{y}, v = -\pdv{\psi}{x}
+\]
+
+The function $\psi$ is called the stream function of the velocity field. The lines of constant $\psi$ are the instantaneous streamlines of $(u,v)$.
+
+Given two streaklines $\psi_1,\psi_2$, and any oriented simple contour (no self-crossings), connecting one streamline to another, the flux of liquid across the contour from left to right is given by the differnece in values of the stream function. This is because the integral of flux is:
+
+\[
+\int (u,v) \cdot (\dd{y},-\dd{x}) = \int \dd{\psi} = \psi_2 - \psi_1
+\]
+
+** Convection theorem
+
+Suppose $S_t$ is a region of fluid particles and $f(\mathbf{x},t)$ be a scalar function. Forming the volume integral over $S_t$, $F = \int_{S_t} f\dd{V_\mathbf{x}}$, we seek to compute $\dv{F}{t}$. Using $\dd{V_\mathbf{x}} = \dd{x_1}\ldots\dd{x_N} = \det(\bm{J})\dd{V_\bm{a}}$,
+
+\begin{align*}
+\dv{F}{t} & = \int_{S_t} \mdv{f}{t} + f\text{div}(\bm{u}) \dd{V_\mathbf{x}} \\
+          & = \int_{S_t} \pdv{f}{t} + \text{div}(f\bm{u}) \dd{V_\mathbf{x}} \\
+\end{align*}
+
+Which is the convection theorem.
+
+** Material vector fields
+
+
+
+
+* Conservation of mass and momentum
+
+** Eulerian form
+
+\[
+\pdv{\rho}{t} + \text{div}(\bm{u}\rho) = q
+\]
+
+\[
+\mdv{\rho}{t} + \rho\text{div}(\bm{u}) = q
+\]
+
+** Lagrangian form
+
+\[
+\det\bm{J}(\bm{a},t) = \frac{\rho_0}{\rho}
+\]
