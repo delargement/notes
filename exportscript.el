@@ -1,6 +1,6 @@
+(load-file "./minimal-config.el")
 (require 'seq)
-(with-eval-after-load 'ox
-  (require 'ox-hugo))
+(require 'ox-hugo)
 
 (defun walk-directory (file func)
   (defun walk (file)
@@ -20,5 +20,4 @@
                  (org-hugo-export-to-file)))
     nil))
 
-(load-file "./minimal-config.el")
 (walk-directory "." #'export-file)
