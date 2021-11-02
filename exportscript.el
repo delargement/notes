@@ -1,3 +1,4 @@
+(add-to-list 'load-path "./ox-hugo/")
 (load-file "./minimal-config.el")
 (require 'seq)
 (require 'ox-hugo)
