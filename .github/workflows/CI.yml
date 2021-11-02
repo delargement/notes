@@ -27,8 +27,10 @@ jobs:
         uses: purcell/setup-emacs@master
         with:
           version: 26.3
+      - name: Clone Org-mode exporter
+        run: git clone https://github.com/kaushalmodi/ox-hugo.git ox-hugo
       - name: Render config into hugo
-        run: emacs --load exportscript.el --batch kill
+        run: emacs -L ./ox-hugo -l ox-hugo.el --load exportscript.el --batch kill
       - run: ls .. -a
       - run: ls ~ -a
       - name: Pushes to shirator website
