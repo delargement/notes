@@ -1,6 +1,4 @@
-
 (require 'seq)
-
 
 (defun walk-directory (file func)
   (defun walk (file)
@@ -21,4 +19,4 @@
     nil))
 
 (load-file "./minimal-config.el")
-(walk-directory "/home/spongiforma/documents/notes/" #'export-file)
+(walk-directory "." #'export-file)
