@@ -1,4 +1,5 @@
 (require 'seq)
+(require 'ox-hugo)
 
 (defun walk-directory (file func)
   (defun walk (file)
