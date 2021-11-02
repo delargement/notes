@@ -524,7 +524,7 @@ a\times(b \times c) = (a \cdot c)b - (a \cdot b)c
 
 ** Ratio theorem
 
-[[file:ratiotheorem.png]]
+[[file:/static/ratiotheorem.png]]
 
 \[
 \textbf{OP} = \frac{\mu}{\lambda+\mu}\textbf{a} + \frac{\lambda}{\lambda+\mu}\textbf{b}
@@ -582,7 +582,7 @@ and likewise for V with q instead of qdot.
 
 ** Process
 
-[[file:normalmode1.png]]
+[[file:/static/normalmode1.png]]
 
 
 We may use the above equation to write the equation E = T + V.
