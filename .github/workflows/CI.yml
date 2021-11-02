@@ -24,8 +24,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Setup emacs
-        run: apk --update add emacs
+      - name: Install packages
+        run: |
+        apk --update add git
+        apk --update add emacs
       - name: Clone Org-mode exporter
         run: git clone https://github.com/kaushalmodi/ox-hugo.git ox-hugo
       - name: Render config into hugo
