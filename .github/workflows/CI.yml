@@ -37,7 +37,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: '/__w/notes/notes/hugo/'
+          source_file: './hugo/'
           destination_folder: 'public'
           destination_repo: 'Spongiforma/notes-page'
           destination_branch: 'master'
