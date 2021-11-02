@@ -28,13 +28,14 @@ jobs:
         run: apk --update add emacs
       - name: Render config into hugo
         run: emacs --load exportscript.el --batch kill
-      - run: ls -a
+      - run: ls .. -a
+      - run: ls ~ -a
       - name: Pushes to shirator website
         uses: dmnemec/copy_file_to_another_repo_action@3fe42250d47e0764da9de9939b151b09a26e5857
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: '/hugo/content/posts/'
+          source_file: '~/hugo/content/posts/'
           destination_folder: 'public'
           destination_repo: 'Spongiforma/notes-page'
           destination_branch: 'master'
