@@ -12,7 +12,7 @@
                                 (member (file-name-nondirectory fi) '("math" "physics" "prog")))
                               (directory-files file t)))
         (progn
-          (export-file file))))
+          (print (export-file file)))))
   (walk file))
 
 (defun export-file (file)
