@@ -31,8 +31,7 @@ jobs:
       - run: ls
       - name: Render config into hugo
         run: emacs --load exportscript.el --batch kill
-      - run: ls .. -a
-      - run: ls ~ -a
+      - run: ls . -a
       - name: Pushes to shirator website
         uses: dmnemec/copy_file_to_another_repo_action@3fe42250d47e0764da9de9939b151b09a26e5857
         env:
