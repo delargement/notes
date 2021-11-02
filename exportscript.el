@@ -14,7 +14,7 @@
                   (seq-filter (lambda (fi)
                                 (not (member (file-name-nondirectory fi) *blacklisted-dirs*)))
                               (directory-files file t)))
-          (export-file file)))
+          (print (export-file file))))
   (walk file))
 
 (defun export-file (file)
