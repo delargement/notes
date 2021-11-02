@@ -25,9 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Setup emacs
-        uses: purcell/setup-emacs@master
-        with:
-          version: 24.5
+        run: apk --update add emacs
       - name: Render config into hugo
         run: emacs --load exportscript.el --batch kill
       - run: ls -a
