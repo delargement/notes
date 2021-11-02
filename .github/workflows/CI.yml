@@ -24,25 +24,20 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Setup Python
-        run: apk add --update python3 py3-pip && ln -sf python3 /usr/bin/python
-      - name: Install emacs
+      - name: Setup emacs
         run: apk --update add emacs
-      - name: Render config into html
+      - name: Render config into hugo
         run: emacs --load exportscript.el --batch kill
-      - name: Install Python dependencies
-        run: pip install beautifulsoup4
-      - name: Create index.json
-        run: |
-          python3 index.py
+      - run: ls .. -a
+      - run: ls ~ -a
       - name: Pushes to shirator website
-        uses: dmnemec/copy_file_to_another_repo_action@main
+        uses: dmnemec/copy_file_to_another_repo_action@3fe42250d47e0764da9de9939b151b09a26e5857
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: 'exports'
+          source_file: '~/hugo/content/posts/'
           destination_folder: 'public'
-          destination_repo: 'Spongiforma/vanity-affair'
+          destination_repo: 'Spongiforma/notes-page'
           destination_branch: 'master'
           user_email: 'bot@emacs.bot'
           user_name: 'emacs action'
