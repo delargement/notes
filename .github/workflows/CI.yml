@@ -26,8 +26,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install packages
         run: |
-        apk --update add git
-        apk --update add emacs
+        apk --update add git && apk --update add emacs
       - name: Clone Org-mode exporter
         run: git clone https://github.com/kaushalmodi/ox-hugo.git ox-hugo
       - name: Render config into hugo
