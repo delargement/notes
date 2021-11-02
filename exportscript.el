@@ -9,7 +9,7 @@
           (mapcar (lambda (f)
                     (funcall #'walk f))
                   (seq-filter (lambda (fi)
-                                (not (member (file-name-nondirectory fi) '(".git" "." ".." ".gitignore" "dream-diary" "chemistry" "archive"))))
+                                (member (file-name-nondirectory fi) '("math" "physics" "prog")))
                               (directory-files file t)))
         (progn
           (export-file file))))
