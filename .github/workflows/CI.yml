@@ -28,7 +28,7 @@ jobs:
         run: apk --update add git && apk --update add emacs
       - name: Clone Org-mode exporter
         run: git clone https://github.com/kaushalmodi/ox-hugo.git ox-hugo
-      - run: ls
+      - run: mkdir -p /hugo/math/static/
       - name: Render config into hugo
         run: emacs --load exportscript.el --batch kill
       - run: ls . -a
