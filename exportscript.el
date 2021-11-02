@@ -1,5 +1,6 @@
 (require 'seq)
-(require 'ox-hugo)
+(with-eval-after-load 'ox
+  (require 'ox-hugo))
 
 (defun walk-directory (file func)
   (defun walk (file)
