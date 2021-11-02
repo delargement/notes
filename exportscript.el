@@ -18,7 +18,7 @@
 (defun export-file (file)
   (if (equal (file-name-extension file) "org")
     	(progn (with-current-buffer (find-file-noselect file)
-                 (org-hugo-export-to-file)))
+                 (org-hugo-export-to-md)))
     nil))
 
 (walk-directory "." #'export-file)
