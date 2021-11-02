@@ -1,5 +1,6 @@
 #+TITLE: Quantum mechanics
 #+STARTUP: latexpreview
+#+HUGO_SECTION: Physics
 
 this is in gaussian units
 

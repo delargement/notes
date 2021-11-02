@@ -1,6 +1,6 @@
-
 #+TITLE: Abstract Algebra
 #+STARTUP: latexpreview
+#+HUGO_SECTION: Math
 
 * Groups
 

@@ -1,6 +1,7 @@
 #+TITLE: Circuits
 #+STARTUP: latexpreview
 #+OPTIONS: toc:nil
+#+HUGO_SECTION: Physics
 
 Permittivity constant
 

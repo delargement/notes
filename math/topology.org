@@ -1,6 +1,6 @@
-
 #+TITLE: Topology
 #+STARTUP: latexpreview
+#+HUGO_SECTION: Math
 
 * Set theory
 

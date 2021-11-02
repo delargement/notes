@@ -1,6 +1,6 @@
 #+TITLE: Linear Momentum
-#+OPTIONS: toc:nil
 #+STARTUP: latexpreview
+#+HUGO_SECTION: Physics
 
 
 

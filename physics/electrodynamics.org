@@ -1,5 +1,6 @@
 #+TITLE: Electrodynamics
 #+STARTUP: latexpreview
+#+HUGO_SECTION: Physics
 
 * Electrostatics
 

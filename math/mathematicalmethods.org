@@ -1,5 +1,6 @@
 #+TITLE: Mathematical methods pt. 1
 #+STARTUP: latexpreview
+#+HUGO_SECTION: Math
 
 * Precalc
 ** Binomial expansion

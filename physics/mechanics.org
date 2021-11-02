@@ -1,5 +1,6 @@
 #+TITLE: Mechanics
 #+STARTUP: latexpreview
+#+HUGO_SECTION: Physics
 
 * Central forces
 

@@ -1,5 +1,6 @@
 #+TITLE: Fluid Dynamics
 #+STARTUP:latexpreview
+#+HUGO_SECTION: Physics
 
 Resources: math.nyu.edu/~childres/fluidsbook.pdf, Batchelor
 
@@ -7,12 +8,22 @@ Conventions:
 subscript denotes differentiation
 repeated indices are summed over
 
-* Fluid continuum
+* Kinematics
 
 ** Scale
 
 Random motion of liquid molecules: $10^{-7} - 10^{-8}$ cm
 gas Mean Free path: $10^{-3}$ cm
+
+** Stress
+
+Short range forces can be written as the vector
+
+\[
+\bm{\Sigma}(\mathbf{n},\mathbf{x},t)\delta A
+\]
+
+where $\Sigma$ is the stress exerted by the fluid on the side of the surface element to which n points, on the fluid on the side which n points away from.
 
 ** Eulerian and Lagrangian descriptions
 
@@ -85,6 +96,7 @@ In eulerian variables, an incompressible fluid is defined by div(u) = 0.
 
 ** Solenoidal velocity fields
 
+*** 2 dimensions
 
 The solenoidal condition in 2d is:
 
@@ -104,6 +116,19 @@ Given two streaklines $\psi_1,\psi_2$, and any oriented simple contour (no self-
 \int (u,v) \cdot (\dd{y},-\dd{x}) = \int \dd{\psi} = \psi_2 - \psi_1
 \]
 
+
+*** 3 dimensions
+
+From mass continuity, $\div \bm{u} = 0$. Thus, the quantity in brackets can be represented by:
+
+\[
+\bm{u} = \curl \bm{\Psi}
+\]
+
+where $\Psi$ is the vector potential which can be specified in terms of two scalar functions $\bm{\Psi} = \chi\grad\psi$. This produces $\bm{u} =  \grad\chi \times \grad\psi$. Thus 3D streamlines are te intersections of two stream surfaces.
+
+
+
 ** Convection theorem
 
 Suppose $S_t$ is a region of fluid particles and $f(\mathbf{x},t)$ be a scalar function. Forming the volume integral over $S_t$, $F = \int_{S_t} f\dd{V_\mathbf{x}}$, we seek to compute $\dv{F}{t}$. Using $\dd{V_\mathbf{x}} = \dd{x_1}\ldots\dd{x_N} = \det(\bm{J})\dd{V_\bm{a}}$,
@@ -114,15 +139,87 @@ Suppose $S_t$ is a region of fluid particles and $f(\mathbf{x},t)$ be a scalar f
 \end{align*}
 
 Which is the convection theorem.
+Also known as Reynold's Transport Theorem.
 
-** Material vector fields
+** Strain and rotation rates
+
+Consider the relative motion between two neighbouring points.
+
+A taylor expansion of $\mathbf{u}$ about $\mathbf{x}$ gives:
+
+\[
+\dd{u_i} = \pdv{u_i}{x_j}\dd{x_j}
+\]
+
+The derivative is called the velocity gradient tensor, and it can be decomposed into:
+
+\[
+\pdv{u_i}{x_j} = S_{ij} + \frac12 R_{ij}
+\]
+
+Where
+
+\[
+S_{ij} = \frac12 \left(\pdv{u_i}{x_j} + \pdv{u_j}{x_i}\right) = \frac12 (\grad \bm{u} + (\grad \bm{u})^T)
+\]
+
+is the (symmetric) strain rate tensor
+
+\[
+R_{ij} = \pdv{u_i}{x_j} - \pdv{u_j}{x_i}
+\]
+is the (antisymmetric) rotation tensor
 
 
+The taylor expansion equation can thus be written:
+
+\[
+\dd{u_i} = \left(S_{ij}-\frac12 \epsilon_{ijk}\omega_k\right)\dd{x_j}
+\]
+
+where $\epsilon_{ijk}\omega_k\dd{x_j}$ is the ith component of the cross product $-\bm{\omega} \times \dd{\mathbf{x}}$.
+*** Strain rate tensor
+
+The diagonal terms of $S_{ij}$ represent elongation and contraction per unit length in various coordinate directions and are called linear strain rates. $S_{11}$ represents the rate of change of fluid element length in the $x_1$-direction per unit length. The off diagonal terms represent shear deformations that change the relative orientations of material line segments initially parallel to the i- and j-directions of the flow. Thus, $S_{ij}$ represents the average rate at which material line segments parallel to the i- and j-directions rotate toward each other.
+
+The average rate at which the initially perpendicular segments rotate toward each other is $S_{12} = S_{21}$
+
+$S$ is independent of the frame of reference in which it is observed as it is zero for rigid body motion composed of translation at a spatially uniform velocity and rotation at a constant angular velocity.
+
+$S_{ii}$ is the /volumetric strain rate/ or /bulk strain rate/. It thus specifies the rate of volume change per unit volume and does not depend on the orientation of the coordinate system.
+
+
+*** Rotation tensor
+
+Diagonal elements are zero and off-diagonal elements are equal and opposite.
+
+\[
+R_{ij} = -\epsilon_{ijk}\omega_k = \mqty[ 0 & -\omega_3 & \omega_2 \\ \omega_3 & 0 & -\omega_1 \\ - \omega_2 & \omega_1 & 0]
+\]
+where
+
+\[
+\omega_1 = \pdv{u_3}{x_2}-\pdv{u_2}{u_3}
+\]
+
+and cyclic permutations hold.
+
+The vector $\bm{\omega}$ is the vorticity, $\bm{\omega} = \curl \mathbf{u}$
+
+
+Fluid rotation is called irrotational if $\bm{\omega} = \bm{0}$. In this case, the fluid velocity $\mathbf{u}$ can be written as the gradient of a scalar function.
+
+The /circulation/ $\Gamma$ is the amount of fluid rotation within a closed contour.
+
+\[
+\Gamma \equiv \oint_C \bm{u}\cdot\dd{\bm{s}} = \int_S \bm{\omega}\cdot\dd{\bm{A}}
+\]
 
 
 * Conservation of mass and momentum
 
-** Eulerian form
+** Conservation of mass
+*** Eulerian form
 
 \[
 \pdv{\rho}{t} + \text{div}(\bm{u}\rho) = q
@@ -132,8 +229,214 @@ Which is the convection theorem.
 \mdv{\rho}{t} + \rho\text{div}(\bm{u}) = q
 \]
 
-** Lagrangian form
+*** Lagrangian form
+
+When q = 0 (no mass sinks/sources),
 
 \[
 \det\bm{J}(\bm{a},t) = \frac{\rho_0}{\rho}
 \]
+otherwise:
+
+\[
+\pdv{}{t}\Big\vert_{\bm{a}} \rho\det(\bm{J}) = \det(\bm{J})q(\mathbf{x}(\bm{a},t),t)
+\]
+
+
+Both forms can be reconcilled with:
+
+Assuming q=0,
+
+\[
+\mdv{\rho}{t} + \rho\div \bm{u} = 0 = \frac{1}{\det(\bm{J})} \mdv{}{t}(\rho\det(\bm{J}))
+\]
+
+*** Integral form
+
+For a material volume,
+
+\[
+\dv{}{t} \int_{V(t)} \rho(\bm{\mathbf{x}},t)\dd{V} = 0
+\]
+
+or
+
+\[
+\int_{V(t)} \pdv{\rho(\bm{\mathbf{x}},t)}{t} \dd{V} + \int_{A(t)} \rho(\bm{\mathbf{x}},t)\bm{u}(\bm{\mathbf{x}},t) \cdot \dd{\bm{A}} = 0
+\]
+
+For an arbitrarily moving control volume,
+
+Although the time derivative of the total mass is not the same as for a material volume, the above relation still holds and at the moment of intertia we pick $V(t) = V^*(t)$ and $A(t) = A^*(t)$. Thus:
+
+\[
+\dv{}{t}\int_{V^*(t)} \rho(\bm{\mathbf{x}},t)\dd{V} + \int_{A^*(t)} \rho(\bm{\mathbf{x}},t)(\bm{u}(\bm{\mathbf{x}},t)-\bm{b})\cdot\dd{\bm{A}} = 0
+\]
+
+*** Densities per unit mass
+When f is a density per unit mass, then, $\rho f$ is "f per unit volume", which can be plugged into the convection theorem. When q = 0.
+
+\[
+\dv{}{t} \int_{S_t} \rho f \dd{V_{\mathbf{x}}} = \int_{S_t} \rho \mdv{f}{t} \dd{V_\mathbf{x}}
+\]
+
+** Conservation of momentum
+
+Momentum of a fluid is defined as: $\rho \bm{u}$, per unit volume.
+
+In this case, sources and sinks of momentum are forces. If $F(\mathbf{x},t)$ is the force acting on the liquid, per unit volume, then we have *Cauchy's equation of motion*:
+
+\[
+\rho \mdv{\bm{u}}{t} = \bm{F}
+\]
+
+in eulerian form.
+
+The force $\bm{F}$ is assumed to take the form:
+
+\[
+F_i = f_i + \pdv{\sigma_{ij}}{x_j}
+\]
+where $\bm{f}$ is a body force, and $\sigma$ is the stress tensor. When integrated for a material volume, it gives:
+
+\[
+\dv{}{t} \int_{V(t)}\rho(\mathbf{x},t)\bm{u}(\mathbf{x},t)\dd{V} = \int_\mathcal{R} \bm{F} \dd{V_{\mathbf{x}}} = \int_{\mathcal{R}} \rho\bm{g} \dd{V_{\mathbf{x}}} + \int_{\partial{\mathcal{R}}} \sigma\cdot \bm{n}\dd{S_{\mathbf{x}}}
+\]
+
+Using convection theorem, this can be expanded into:
+
+\[
+\int_{V(t)} \pdv{}{t}(\rho\bm{u}) \dd{V} + \int_{A(t)} \rho\bm{u}(\bm{u}\cdot\dd{\bm{A}}) = \int_{V(t)} \rho\bm{g}\dd{V} + \int_{A(t)}\bm{\sigma}(\bm{n},\bm{x},t) \dd{A}
+\]
+
+For control volumes:
+
+\[
+\int_{V(t)} \pdv{}{t}(\rho\bm{u}) \dd{V} + \int_{A(t)} \rho\bm{u}(\bm{u} - \bm{b})\cdot\dd{\bm{A}}) = \int_{V(t)} \rho\bm{g}\dd{V} + \int_{A(t)}\bm{\sigma}(\bm{n},\bm{x},t) \dd{A}
+\]
+
+** Constitutive equation for a newtonian fluid
+
+An ideal fluid (or a fluid at rest) is defined by a stress tensor of the form:
+
+\[
+T_{ij} = -p\delta_{ij} = \mqty(\dmat{-p,-p,-p})
+\]
+
+Thus when pressure is positive, the force is opposite the outer normal. Note:
+
+\[
+\div \sigma = -\grad p
+\]
+
+
+When a fluid is moving, there is aditional stress components due to viscosity.
+
+\[
+T_{ij} = -p\delta_{ij} + \tau_{ij}
+\]
+
+This decomposition of stress into fluid static and fluid dynamics contributions is approximate as $p$ is only well defined for equilibrium conditions, but most of the time fluid particles reach local thermodynamic equilibrium in most fluid flows.
+Here, tau is the *deviatoric stress tensor*. Since it is invariant under galilean transformations, it can only depend on the velocity gradient tensor. Since stresses only develop in fluid elements that change shape, only the symmetric part matters, as the other part corresponds to pure rotation. The most general relation that produces $\tau_{ij} = 0$ when $S_{ij} = 0$ is: $\tau_{ij} = K_{ijmn} S_{mn}$. Since the relationship is independent of the orientation of the coordinate system, $K_{ijmn}$ must be an isotropic tensor. All fourth order isotropic tensors must be of the form:
+
+\[
+K_{ijmn} = \lambda \delta_{ij}\delta_{mn} + \mu\delta_{im}\delta_{jn} + \gamma\delta_{in}\delta_{jm}
+\]
+
+Since tau is symmetric in i and j, K must also be symmetric in i and j.
+Thus:
+
+\[
+\tau = 2\mu S_{ij} + \lambda S_{mm}\delta_{ij}
+\]
+
+where recall that $S_{mm} = \div \bm{u}$ is the volumetric strain rate.
+
+Thus:
+
+\[
+T_{ij} = -p\delta_{ij} + 2\mu S_{ij} + \lambda S_{mm}\delta_{ij}
+\]
+
+For compressible flow, On contraction:
+
+\[
+T_{ii} = -3p + (2\mu + 3\lambda)S_{mm}
+\]
+
+from which pressure is found to be:
+
+\[
+p = -\frac{1}{3}T_{ii} + (\frac{2}{3}\mu + \lambda)\div \bm{u}
+\]
+
+Defining mean pressure as $\bar{p} = - \frac{1}{3} T_{ii}$,
+
+\[
+p - \bar{p} = \left(\frac{2}{3}\mu + \lambda \right)\div\bm{u}
+\]
+
+The quantity in brackets is the *coefficient of bulk viscosity*, $\mu_v$. But the stokes assumption $\mu_v = 0$ is found to be accurate in many situation as itself or the flow's dilatation rate is small.
+
+But for incompressible fluids,
+
+\[
+T_{ij} = -p\delta_{ij} + 2\mu S_{ij}
+\]
+
+The linear relation between $\bm{T}$ and $\bm{S}$ is consistent with Newton's defintion of the viscosity coeffient in a simple parallel flow.
+
+** Navier stokes momentum equation
+
+Combining the stress tensor with Cauchy's equation gives:
+
+\[
+\rho\left(\pdv{u_j}{t} + u_i\pdv{u_i}{x_i}\right) = -\pdv{p}{x_i} + \rho g_j + \pdv{}{x_i}\left[\mu\left(\pdv{u_j}{x_j} + \pdv{u_i}{x_j}\right) + \left(\mu_v - \frac{2}{3}\mu\right)\pdv{u_m}{x_m}\delta_{ij} \right]
+\]
+
+When temperature differences are small, the viscosities can be taken outside the spatial derivative.
+
+\[
+\rho\mdv{u_j}{t} = -\pdv{p}{x_i} + \rho g_j + \mu\pdv[2]{u_j}{x_i} + \left(\mu_v + \frac{1}{3}\mu\right)\pdv{}{x_j}\pdv{u_m}{x_m}
+\]
+
+For incompressible flow,
+
+\[
+\rho\mdv{\bm{u}}{t} = -\grad p + \rho \bm{g} + \mu\laplacian \bm{u}
+\]
+
+The last term can be obtained from the curl of the vorticity, $\mu\laplacian\bm{u} = - \mu\curl\bm{\omega}$.
+
+When viscous effects are negligible for exterior flows away from solid boundaries, you get Euler's equation:
+
+\[
+\rho \mdv{\bm{u}}{t} = - \grad p + \rho\bm{g}
+\]
+
+
+An ideal fluid with no mass addition satisfies:
+
+
+\[
+\rho\mdv{\bm{u}}{t} + \grad p = 0
+\]
+
+and:
+
+\[
+\mdv{\rho}{t} + \rho\div \bm{u} = 0
+\]
+
+These are referred to as Euler's equations, which gives N+1 equations for the N+2 unknowns, $u_1,\ldots,u_N,\rho,p$. The additional equation can be the incompressible assumption $\div \bm{u} = 0$, or to assume constant density, or use conservation of energy.
+
+In Lagrangian form,
+
+\[
+\grad_{\mathbf{x}} p = \bm{J}^{-1} \grad_{\bm{a}} p
+\]
+
+** Non-intertial frames
+
+
+While the continuity equation is unchanged, the momentum equation must be modified.

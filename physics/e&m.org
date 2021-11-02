@@ -2,6 +2,8 @@
 #+TITLE: E&M
 #+OPTIONS: toc:nil
 #+STARTUP: latexpreview
+#+HUGO_SECTION: Physics
+
 
 Lorentz's force
 

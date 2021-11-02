@@ -1,6 +1,6 @@
 #+TITLE: energetics
 #+STARTUP: latexpreview
-#+OPTIONS: toc:nil
+#+HUGO_SECTION: chemistry
 
 
 * Why add acid to water?

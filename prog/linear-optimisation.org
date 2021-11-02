@@ -1,13 +1,15 @@
 #+TITLE: Linear optimisation
 #+STARTUP: latexpreview
+#+HUGO_SECTION: Prog
 
 * Definitions
 
 Standard form:
 
 minimise $\bm{c^T x}$,
-
 subject to $A\bm{x} = \bm{b}$
+$\bm{x} \geq \bm{0}$
+
 
 A problems can be converted to another problem by applying the following operations:
 
@@ -37,6 +39,7 @@ A concave function is defined similarly but inverse.
 
 =Note relation between local and global minima/maxima due to this property.=
 
+
 *Theorem*
 
 Let $f_1,\cdots,f_m : \mathcal{R}^n \mapsto \mathcal{R}$ be convex functions. Then the function $f$ defined by
@@ -56,6 +59,7 @@ When modulus appears:
 minimize $\sum_{i=1}^n c_i |x_i|$
 
 subject to $Ax\geq b$
+where the coefficients are nonnegative such that the function is convex.
 
 becomes:
 

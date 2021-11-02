@@ -1,5 +1,6 @@
 #+TITLE: Mathematical methods pt. 2
-#+STARTUP: latexpreview , inlineimages
+#+STARTUP: latexpreview,inlineimages
+#+HUGO_SECTION: Math
 
 * Fourier series
 

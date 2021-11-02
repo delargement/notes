@@ -1,6 +1,7 @@
 #+TITLE: Integration
 #+STARTUP: latexpreview
 #+OPTIONS: toc:nil
+#+HUGO_SECTION: Math
 
 
 \[

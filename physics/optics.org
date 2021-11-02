@@ -1,5 +1,7 @@
 #+TITLE: Optics
 #+STARTUP: latexpreview
+#+HUGO_SECTION: Physics
+
 * Propogation of light.
 
 Incident rays produce both a reflected and refracted ray, the latter of which follows snell's law. The index of refraction of an optical material is defined by c/v or equivalently  $\lambda_0 / \lambda$, as since boundary surfaces can't create or destroy waves, the frequency of a wave does not change when passing from one material to another.

@@ -1,6 +1,6 @@
 #+TITLE: Core EM
 #+STARTUP: latexpreview
-#+OPTIONS: toc:nil
+#+HUGO_SECTION: Physics
 
 * Linear differential equations
 

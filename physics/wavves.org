@@ -1,6 +1,6 @@
 #+TITLE: Waves
 #+STARTUP: latexpreview
-#+OPTIONS: toc:nil
+#+HUGO_SECTION: Physics
 
 \[
 y(x,t) = y_m sin(kx-\omega t)

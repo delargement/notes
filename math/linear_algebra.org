@@ -1,5 +1,6 @@
 #+TITLE: Linear Algebra
 #+STARTUP: latexpreview
+#+HUGO_SECTION: Math
 
 * Vector space
 
@@ -667,8 +668,8 @@ X|f> = |F>
 
 F(x) = xf(x)
 
-\[
+$$
 \bra{k}X\ket{k'} = i\delta'(k-k')
-\]
+$$
 
 [X,K] = iI

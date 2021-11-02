@@ -1,6 +1,6 @@
 #+TITLE: Rotation
 #+STARTUP: latexpreview
-#+OPTIONS: toc:nil
+#+HUGO_SECTION: Physics
 
 Moment of inertia
 

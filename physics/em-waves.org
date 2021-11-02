@@ -1,4 +1,0 @@
-#+TITLE: EM wave
-#+STARTUP: latexpreview
-
-* Optics
