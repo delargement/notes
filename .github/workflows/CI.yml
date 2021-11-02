@@ -29,6 +29,7 @@ jobs:
       - name: Clone Org-mode exporter
         run: git clone https://github.com/kaushalmodi/ox-hugo.git ox-hugo
       - run: mkdir -p /hugo/math/static/
+      - run: mkdir -p /hugo/static/
       - name: Render config into hugo
         run: emacs --load exportscript.el --batch kill
       - run: ls . -a
