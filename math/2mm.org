@@ -1,5 +1,5 @@
 #+TITLE: Mathematical methods pt. 2
-#+STARTUP: latexpreview,inlineimages
+#+STARTUP: latexpreview , inlineimages
 #+HUGO_SECTION: Math
 
 * Fourier series
@@ -534,7 +534,7 @@ An nth order linear ODE must have n linearly independent solutions for the compl
 
 
 *** Linear equations with constant coefficients
-The coefficients $a_m$ are constants.
+(The coefficients $a_m$ are constants)
 
 To find the complementary solution try a solution of the form Ae^kx, and we are left with an auxillary equation in k. If all roots are distinct then the solutions are linearly independent and can be superposed. If some roots are complex and all coefficients are real, then it for every complex root its complex conjugate is also a root. If some roots are repeated, then we must try solutions of the form $x^ne^{kx}$ are also solutions.
 
@@ -544,8 +544,7 @@ for particular solutions, use method of undetermined coefficients.
 - if f(x) = a sin(rx) + b cos(rx) (a or b may be zero), then try c sin(rx) + d cos(rx)
 - if f(x) = polynomial of degree N, where some coefficients may be zero, then try another polynomial of degree N.
 
-
-** Linear recurrence relations
+*** Linear recurrence relations
 
 Form:
 
@@ -557,7 +556,7 @@ where k may be a simple function of n.
 
 Equations involving terms whose indices differ by up to N are called Nth-order recurrence relations. If k=0, then the relation is called homogenous.
 
-*** First-order recurrence relations
+**** First-order recurrence relations
 
 For the equation:
 
@@ -576,3 +575,127 @@ when a = 1:
 \[
 u_n = u_0 + nk
 \]
+
+**** Second-order recurrence relations
+
+Similar to differential equations, Try a solution of the form $A\lambda^n$ for the homogenous solution and solve the characteristic equation in lambda. If there are repeated roots, then try the general solution $(A + Bn)\lambda_1^n$.
+
+*** Laplace transform
+
+The laplace transform is defined as:
+
+\[
+\bar{f}(s) = \int_0^\infty e^{-sx}f(x)\dd{x}
+\]
+
+Recall that the Laplace transform of the nth derivative of $f(x)$ is:
+
+\[
+\mathcal{L}\left[f^{(n)}(s)\right] = s^n\bar{f}(s) - s^{n-1}f(0) - s^{n-2}f'(0) - \ldots - sf^{(n-2)}(0) - f^{(n-1)}(0)
+\]
+
+After getting $\bar{f}(s)$, we may apply the inverse Laplace transform.
+
+
+** Linear equations with variable coefficients
+
+Although there is no generally applicable method, in certain cases a solution is possible.
+
+*** Legendre and Euler linear equations
+
+Legendre's linear equation has the form
+
+\[
+a_n(\alpha x+ \beta)^n \dv[n]{y}{x} + \ldots + a_1(\alpha x + \beta)\dv{y}{x} + a_0 y = f(x)
+\]
+
+By making the substitution $\alpha x + \beta = e^t$, we have:
+
+\[
+\dv{y}{x} = \dv{t}{x} \dv{y}{t} = \frac{\alpha}{\alpha x + \beta} \dv{y}{t}
+\]
+
+\[
+\dv[2]{y}{x} = \frac{\alpha^2}{(\alpha x + \beta)^2}\left(\dv[2]{y}{t} - \dv{y}{t})
+\]
+
+and so on.
+
+\[
+(\alpha x + \beta)^n \dv[n]{y}{x} = \alpha^n \dv{}{t}\left(\dv{}{t} - 1 \right)\ldots\left(\dv{}{t} -n + 1\right)y
+\]
+
+Legendre's linear equation thus becomes:
+
+\[
+a_n \alpha^n \dv{}{t}\left(\dv{}{t} - 1\right) \ldots \left(\dv{}{t} - n + 1\right)y + \ldots + a_1 \alpha \dv{y}{t} + a_0y = f\left(\frac{e^t - \beta}{\alpha}\right)
+\]
+
+which can be solved with previously discussed methods.
+
+**** Euler's equation
+
+Euler's equation is a special case where $\alpha = 1$ and $\beta = 0$.
+
+If $f(x) = 0$, then substituting $y = x^\lambda$ leads to a simple algebraic equation in $\lambda$. If $\lambda_1$ is a k-fold root, then $x^\lambda_1, x^\lambda_1\ln x, \ldots, x^\lambda_1(\ln x)^{k-1}$ are k LI solutions corresponding to the root.
+
+
+
+*** Exact equations
+
+Sometimes, an ODE is merely the derivative of another ODE of an order lower, in which case it is called exact. It can be shown the nth-order linear ODE:
+
+\[
+a_n(x)\dv[n]{y}{x} + \ldots + a_1(x)\dv{y}{x}  + a_0(x)y = f(x)
+\]
+
+is exact when $a_0(x) - a_1'(x) + a_2''(x) - \ldots + (-1)^na_n^{(n)}(x) = 0$. The lower order ODE with coefficients to be determined can be solved for by differentiating, comparing coefficents and then be integrated directly.
+
+In some cases, an integrating factor is required to turn an ODE exact.
+
+*** Partially known complementary function
+
+If we wish to solve an nth-order linear ODE and we already know one part of the complementary solution $u(x)$, we can make the substitution $y = uv$ to transform the ODE into one of order $n-1$ in $dv/dx$. The simpler equation may be soluble. The solution will contain both the full complementary function.
+
+*** Variation of parameters
+
+If the whole complementary solution of a linear ODE is known, then assume a particular integral of the same form with constants replaced by functions of x, and impose a system of LI equations for the unknowns including the ODE itself.
+
+
+*** Canonical form for second order equations
+
+For nth-order linear ODEs with variable coefficients to those of order 2, rearrange the equation till the coefficient of the second derivative is unity.
+
+\[
+\dv[2]{y}{x} + a_1(x)\dv{y}{x} + a_0(x)y = f(x)
+\]
+
+By making the substitution $y = uv$, where
+
+\[
+u(x) = \exp\left\{-\frac12 \int a_1(z) \dd{z}\right\}
+\]
+we obtain an equation of the form:
+
+\[
+\dv[2]{v}{x} + g(x)v = h(x)
+\]
+
+where:
+\[
+g(x) = a_0(x) - \frac14[a_1(x)]^2 - \frac12 a_1'(x)
+\]
+
+\[
+h(x) = f(x)\exp\left\{\frac12 \int a_1(z) \dd{z}\right\}
+\]
+
+Which may be easier to solve.
+
+** General ordinary differential equations
+
+*** Dependent variable absent
+
+Substitute $p = \dv{y}{x}$.
+
+Can be extended to absence of lower derivatives.

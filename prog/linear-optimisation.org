@@ -145,3 +145,9 @@ The *convex hull*, of the vectors $x^1,\ldots,x^k$ is the set of all convex comb
 ** Corners
 
 *Definition*
+
+Let P be a polyhedron. A vector $x \in P$ is an *extreme-point* of P if we cannot find two vectors y,z in P both different from x and a scalar $\lambda \in [0,1]$ such that $x = \lambda y + (1-\lambda)z$.
+
+*Definition*
+
+Let P be a polyhedron. A vector $x \in P$ is a *vertex* of P if there exists some $c$ such that $c'x < c'y$ for all $y \in P$, $y \neq x$.

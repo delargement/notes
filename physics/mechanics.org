@@ -37,15 +37,150 @@ or r(theta):
 The motion of particles is like (earth-sun model):
 
 \[
-\frac{1}{r} = \frac{m\alpha}{L^2}(1+\epsilon\cos\theta)
+\frac{1}{r} = \frac{m\alpha}{L^2}(1+e\cos\theta)
 \]
 
-where epsilon is eccentricity.
+Or in terms of specific angular momentum, h.
+
+\[
+r = \frac{h^2 / \mu}{1+e\cos\theta}
+\]
+
+where the eccentricity $e = \sqrt{1 + \frac{2EL^2}{m\alpha^2}} = \sqrt{1+\frac{2\epsilon h^2}{\mu^2}}$ , and $\alpha = GMm$, $\mu = GM$.
 
 *** Eccentricity and orbits
 
+**** Circle (e = 0)
+**** Ellipse (0 < e < 1)
 
-- Circle (e = 0)
-- Ellipse (0 < e < 1)
-- Parabola (e = 1)
-- Hyperbola (e > 1)
+  WLOG, let a be the semi-major axis and b be the semi-minor axis. c is the distance of a focus to the centre.
+
+\[
+e = \sqrt{1 - \frac{b^2}{a^2}}
+\]
+
+From the geometrical definition of a ellipse and the above definition,
+
+\[
+c = ae
+\]
+
+\[
+r = \frac{a(1-e^2)}{1+e\cos\theta}
+\]
+
+***** Orbits
+
+\[
+\epsilon = -\frac{\mu}{2a}
+\]
+
+Vis-viva equation:
+
+\[
+v^2 = \mu\left( \frac{2}{r} - \frac{1}{a} \right)
+\]
+
+
+**** Parabola (e = 1)
+
+In polar coordinates, $r = \frac{p}{1+\cos\theta}$
+
+For a left facing parabola, $y^2 = -4ax$, where a is the distance between the vertex and the focus of the parabola.
+
+\[
+r = \frac{2a}{1+\cos\theta}
+\]
+
+
+***** Orbits
+
+\[
+\epsilon = 0
+\]
+
+\[
+h = \sqrt{2a\mu}
+\]
+
+**** Hyperbola (e > 1)
+
+\[
+\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1
+\]
+
+\[
+e = \sqrt{1+\frac{b^2}{a^2}}
+\]
+
+\[
+r = \frac{a(e^2-1)}{1+e\cos\theta}
+\]
+
+***** Orbits
+
+\[
+\epsilon = \frac{\mu}{2a}
+\]
+\[
+h = \sqrt{\mu a (e^2 - 1)}
+\]
+
+* Special relativity
+
+** Loss of simultaneity
+
+Last car first: The clock on the back of a moving train is ahead of the front clock.
+
+** Time dilation
+
+Lorentz factor:
+
+\[
+\gamma = \frac{1}{\sqrt{1-v^2/c^2}} \geq 1
+\]
+
+
+\[
+t_B = \gamma t_A
+\]
+
+** Length contraction
+
+
+For distances along the direction of relative velocity.
+
+\[
+l = \frac{l'}{\gamma}
+\]
+
+** Lorentz tranform
+
+If S' is a coordinate system moving at speed v wrt S.
+
+\[
+x = \gamma(x' + vt')
+\]
+
+\[
+t = \gamma(t' + vx'/c^2)
+\]
+
+The inverse Lorentz transforms are given by the tranformation v-> v'.
+
+\[
+\mqty(x \\ ct) = \mqty(\gamma & \gamma \beta \\ \gamma\beta & \gamma ) \mqty(x' \\ ct')
+\]
+
+where $\beta = v/c$.
+
+** Velocity addition
+
+S' moves $v_2$ wrt to frame S. An object moves $v_1$ wrt to frame S'. The velocity of the object wrt S is:
+
+\[
+u = \frac{v_1 + v_2}{1+v_1v_2/c^2}
+\]
+
+
+This scenario is equivalent to A moving $v_1$ wrt C to the right and B moving $v_2$ wrt C to the left, and we ask the velocity of A wrt to B.
