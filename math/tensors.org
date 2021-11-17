@@ -1,0 +1,188 @@
+#+TITLE: Tensors
+#+STARTUP: latexpreview
+#+HUGO_SECTION: Math
+
+
+* Cartesian tensors
+** Change of basis
+
+When basis vectors change by:
+
+\[
+\bm{e}_j' = S_{ij}\bm{e}_i
+\]
+
+\[
+\bm{x}' = S^{-1}x
+\]
+
+As components change inversely with the basis vectors. Thus a linear operator $\mathcal{A}$ represented by $A$ in a given coordinate system is represented by $A' = S^{-1}AS$ in a new coordinate system.
+
+For rigid body rotations, the transformation matrix $L$ is orthogonal (since it must preserve inner products).
+
+The transformation matrix is given by $L_{ij} = \bm{e}_i'\cdot\bm{e}_j = \partial{x_j}/\partial{x_i'}$. The following orthogonality relations hold:
+
+\[
+L_{ik}L_{jk} = \delta_{ij}
+\]
+\[
+L_{ki}L_{kj} = \delta_{ij}
+\]
+
+** First and zero-order cartesian tensors
+
+Consider any set of three quantities $v_i$ which are functions of coordinates $x_i$.
+
+If the form of $v_i'$ in new variables can be obtained from old ones as follows,
+
+\[
+v_i' = L_{ij}v_j
+\]
+
+$v_i$ are said to form the components of a /vector/ or /first-order Cartesian tensor/ $\bm{v}$, such that $\bm{v} = v_i\bm{e}_i = v_i'\bm{e}_i'$.
+
+*** Example: Do the following form the components of a first-order Cartesian tensor?
+
+Denoting $\sin\theta$ by $s$ and $\cos\theta$ by $c$,
+
+1. $v = (x_2,-x_1)$
+
+\[
+v_1' = x_2' = -sx_1 + cx_2
+\]
+
+\[
+v_2' = -x_1' = -cx_1 - sx_2
+\]
+
+For a cartesian tensor,
+
+\[
+v_1' = L_{11}v_1 + L_{12}v_2 = cx_2 + s(-x_1)
+\]
+
+\[
+v_2' = L_{21}v_1 + L_{22}v_2 = -s(x_2) + c(-x_1)
+\]
+
+Since the expressions are the same regardless of $\theta$, the pair $(x_2,-x_1)$ is a first-order cartesian tensor.
+
+*** Zero-order tensors
+
+Scalars or tensors of zero-order contain only one element. An example is the square of the distance of a point from the origin. In fact, any scalar product of two first-order tensors is a zero-order tensor (can be shown using orthogonality of transformation matrix).
+
+** Second- and higher-order Cartesian tensors
+
+\[
+T_{ij}' = L_{ik}L_{jl}T_{kl}
+\]
+\[
+T_{ij} = L_{kl}L_{lj}T_{kl}'
+\]
+
+
+For higher orders;
+
+\[
+T_{ij\ldots k}' = L_{ip}L_{jq}\ldots L_{kr}T_{pq\ldots r}
+\]
+\[
+T_{ij\ldots k} = L_{pi}L_{qj}\ldots L_{rk}T_{pq\ldots r}'
+\]
+
+In three dimensions, an Nth order Cartesian tensor has $3^{N}$ components. Linear operators are not always tensors as the two subscripts in the 2nd order tensor must refer to the same coordinate system.
+
+*** Outer product
+
+\[
+T_{ij} = u_iv_j
+\]
+
+Denoted as:
+
+\[
+\bm{T} = \bm{u}\otimes\bm{v}
+\]
+
+*** Gradient of vector
+
+\[
+T_{ij} = \pdv{v_i}{x_j}
+\]
+
+Denoted as:
+
+\[
+\bm{T} = \nabla\bm{v}
+\]
+
+*** Levi-Civita symbol
+
+$\epsilon_{ijk}$ is totally antisymmetric (swapping indices turns it negative), and is the only three-subscript quantity with the property.
+
+It can be turned into a Laplace (cofactor) expansion for finding the determinant of a 3x3 matrix by choosing l,m,n.
+
+
+\[
+\vert A \vert \epsilon_{lmn} = A_{li}A_{mj}A_{nk}\epsilon_{ijk}
+\]
+
+Note:
+
+\[
+\epsilon_{lmn}' = L_{li}L_{mj}L_{nk}\epsilon_{ijk} = |L|\epsilon_{lmn}
+\]
+
+Since $|L|$ is unity as $L$ is orthogonal, is a third order Cartesian tensor.
+
+Cross product $\bm{a} = \bm{b}\times\bm{c}$, can be represented as:
+
+\[
+a_i = \epsilon_{ijk}b_jc_k
+\]
+
+**** Curl
+
+\[
+(\curl \bm{v})_i = \epsilon_{ijk}\pdv{v_k}{x_j}
+\]
+
+**** Grad of div
+
+\[
+[\grad(\div \bm{v})]_i = \pdv{}{x_i}\left(\pdv{v_j}{x_j}\right) = \delta_{jk} \pdv{v_j}{x_i,x_k}
+\]
+
+**** Curl of curl
+
+\[
+[\curl (\curl \bm{v})]_i = \epsilon_{ijk}\pdv{}{x_j}\left(\epsilon_{klm}\pdv{v_m}{x_l}\right) = \epsilon_{ijk}\epsilon_{klm}\pdv{v_m}{x_j,x_l}
+\]
+
+**** Scalar triple product
+
+\[
+(\bm{a} \times \bm{b}) \cdot \bm{c} = \delta_{ij}c_i\epsilon_{jkl}a_kb_l = \epsilon_{ikl}c_ia_kb_l
+\]
+
+
+**** Relationship with kronecker delta
+
+\[
+\epsilon_{ijk}\epsilon_{klm} = \delta_{il}\delta_{jm} - \delta_{im}\delta_{jl}
+\]
+
+\[
+\epsilon_{ijk}\epsilon_{pqr} = \mqty|\delta_{ip} & \delta_{iq} & \delta_{ir} \\ \delta_{jp} & \delta_{jq} & \delta_{jr} \\ \delta_{kp} & \delta_{kq} & \delta_{kr}|
+\]
+
+Variations:
+
+\[
+\epsilon_{ijk}\epsilon_{ilm} = \delta_{jl}\delta_{km} - \delta_{jm}\delta_{kl}
+\]
+
+
+** Isotropic tensors
+
+Tensors whose component values are independent of coordinate frames are called isotropic (or invariant) tensors. Kronecker delta and Levi-civita (and scalar multiples) are the only second and third order isotropic tensors.

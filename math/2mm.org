@@ -487,7 +487,6 @@ then it can be reduced to:
 
 which can be factorized
 
-
 *** Equations soluble for y
 
 If the equation can be expressed as:
@@ -699,3 +698,62 @@ Which may be easier to solve.
 Substitute $p = \dv{y}{x}$.
 
 Can be extended to absence of lower derivatives.
+
+* Series solutions of ODEs
+
+** Second-order linear ODE
+
+A homogenous 2nd order linear ODE can be written
+
+\[
+y'' + p(x)y' + q(x) = 0
+\]
+
+The general form of the solution is:
+
+\[
+y_h(x) = c_1y_1(x) + c_2y_2(x)
+\]
+
+If the wronskian W(x) does not vanish in a given interval, then the two solutions are linearly independent.
+
+
+\[
+W(x) = \mqty| y_1 && y_2 \\ y'_1 && y_2' \\| = C\exp\left\{-\int^x p(u) \dd{u} \right\}
+\]
+
+If p and q can be expressed as a complex power series at a certain point, then they are *analytic* at that point. If they diverge at a point, then that is a *singular point* of the ODE.
+
+Even if an ODE is singular at a point, it may have a non-singular finite solution iff $(z-z_0)p(z)$ and $(z-z_0)^2q(z)$ are both analytic at $z=z_0$. These are called *regular singular points*. A point which does not satisfy both criteria is called an *irregular* or *essential singularity*.
+
+To test for singularity at infinity, sub $w = 1/z$ and set $w = 0$.
+
+** Solution about regular singular points
+
+*Fuch's Theorem*
+
+For an equation of the above form, there exists at least one solution of the form:
+
+\[
+y = z^\sigma \sum_{n=0}^\infty a_nz^n
+\]
+
+where $\sigma$ may be complex and where $a_0 \neq 0$. The series is called a *Frobenius series*.
+
+By subbing and obtaining a indical equation in $\sigma$, if the two roots of $\sigma$ don't differ by a real integer, then two independent solutions are expected. If they do, then only the larger root is expected to give a solution.
+
+** Finding a second solution
+
+
+*** Wronskian method
+
+\[
+y_2(z) = y_1(z) \int^z \frac{1}{y_1^2(u)} \exp\left\{ -\int^u p(v)\dd{v} \right\} \dd{u}
+\]
+
+
+*** Derivative method
+
+Who cares
+
+* Eigenfunction methods for differential equations
