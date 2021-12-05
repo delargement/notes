@@ -757,3 +757,7 @@ y_2(z) = y_1(z) \int^z \frac{1}{y_1^2(u)} \exp\left\{ -\int^u p(v)\dd{v} \right\
 Who cares
 
 * Eigenfunction methods for differential equations
+
+\[
+\mathcal{L} y(x) = f(x)
+\]

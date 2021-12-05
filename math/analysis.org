@@ -16,3 +16,13 @@ If $x < y$, then there exists a $p \in Q$ such that $x < p < y$
 *Theorem*
 
 For every positive real x and every positive integer n, there is only one positive real y such that $y^n = x$
+
+*Defintion*
+
+An ordered field is a field which is an ordered set, such that:
+
+1. $x + y < x + z$ and  $y < z$
+2. $xy > 0$ and $x > 0, y > 0$
+
+
+*

@@ -71,3 +71,115 @@ Note that given any partition of A, there is exactly one equivalence relation fr
 - The union of a sequence of countable sets is countable: Cantor diagonalisation
 
 - If $A$ is a countable set, and $B_n$ is the set of all n-tuples $(a_1,\ldots,a_n)$, where $a_k \in A (k = 1,\ldots,n)$ and the elements $a_1, \ldots, a_n$ need not be distinct. Then $B_n$ is countable
+
+*Theorem*
+
+The set of all sequences whose elements are the digits 0 and 1 is uncountable.
+
+** Metric Spaces
+
+A set X, whose elements we shall call points, is said to be a metric space if any two points p,q of X there is associated a real number d(p,q), such that
+
+1. $d(p,q) > 0$, if $p \neq q$; $d(p,p) = 0;
+2. $d(p,q) = d(q,p)$
+3. $d(p,q) \leq d(p,r) + d(r,q)$ for any $r \in X$
+
+Any function with these properties is called a *distance function* or *metric*.
+
+*Definition*
+
+If  $a_i < b_i$ for all i, then the set of points in euclidean space that satisfies the inequality $a_i \leq x_i \leq b_i$ for all i is called a *k-cell*.
+
+If $x \in R^k$ and $r > 0$, the *open* or *closed ball* B, with center at x and radius r is defined to be the set of all $y \in R^k$ such that $\vert y - x \vert < r$ or likewise for closed balls.
+
+A set $E \subset R^k$ is *convex* if $\lambda \bm{x} + (1-\lambda)\bm{y} \in E$, where $\bm{x},\bm{y} \in E$ and $0 < \lambda < 1$.
+
+
+*Definition*
+
+1. A *neighbourhood* of p is a set $N_r(p)$ consisting of all q such that $d(p,q) < r$, for some $r > 0$. r is the *radius* of $N_r(p)$.
+2. A point p is a *limit point* of the set E if /every/ neighbourhood of p contains a point $q \neq p$ such that $q \in E$.
+3. If $p \in E$ and p is not a limit point of E, then p is called an *isolated point* of E.
+4. E is *closed* if every limit point of E is a point of E.
+5. A point p is an *interior* point of E if there is a neighbourhood N of p such that $N \subset E$.
+6. E is *open* if every point of E is an interior point of E.
+7. The *complement* of E (denoted by $E^c$) is the set of all points $p \in X$ such that $p \notin E$
+8. E is *perfect* if E is closed and every point of E is a limit point of E. i.e. a point is a limit point of E iff $p \in E$.
+9. E is *bounded* if there is a real number M and a point $q \in X$ such that $d(p,q) < M \forall p \in E$.
+10. E is *dense* in X if every point of X is a limit point of E, or a point of E or both.
+
+*Theorem*
+
+Every neighbourhood is an open set.
+
+*Theorem*
+
+If p is a limit point of a set E, then every neighbourhood of p contains infinitely many point of E.
+
+*Corollary*
+
+A finite point set has no limit points.
+
+
+[[file:/static/flopen.png]]
+
+*Theorem*
+
+Let $\left{E_\alpha \right}$ be a collection of sets. Then
+
+\[
+\left(\bigcup_\alpha E_\alpha \right)^c = \bigcap_\alpha (E_\alpha^c)
+\]
+
+
+*Theorem*
+
+A set is open iff its complement is closed
+
+A set F is closed iff its complement is open.
+
+*Theorem*
+
+1. For any collection of open sets, $\{G_\alpha\}$, $\cup_\alpha G_\alpha$ is open.
+2. For any collection of closed sets, $\{F_\alpha\}$, $\cap_\alpha G_\alpha$ is closed.
+3. For any finite collection of open sets, $\cap_i G_i$ is open.
+4. For any finite collection of closed sets, $\cup_i F_i$ is closed.
+
+
+*Definition*
+
+If X is a metric space, E is a subset of X and if E' is the set of limit points of E in X, then the *closure* of E is the set $\bar{E} = E \cup E'$.
+in
+*Theorem*
+
+1. $\bar{E}$ is closed.
+2. $E = \bar{E}$ iff E is closed.
+3. $\bar{E} \subset F$ for every closed set $F \subset X$ such that $E \subset F$.
+
+
+*Theorem*
+Let E be a nonempty set of real numbers which is bounded above. Let $y = \sup E$, then $y \in \bar{E}$. Hence, $y \in E$ if E is closed.
+
+*Theorem*
+
+Suppose $Y \subset X$. A subset E of Y is open relative to Y iff $E = Y \cap G$ for some open subset G of X.
+
+(???)
+
+** Compact sets
+
+*Definition*
+
+An *open cover* of a set E in a metric space X, we mean a collection of open subsets of X such that $E \subset \cup_\alpha G_\alpha$.
+
+*Definition*
+
+A subset K of of a metric space X is said to be *compact* if every open cover of K contains a subcover. i.e. if $\left\{G_\alpha \right\}$ is an open cover of K, then there are finitely many indices $\alpha_1, \ldots, \alpha_n$, such that:
+
+\[
+K \subset G_{\alpha_1} \cup \ldots \cup G_{\alpha_n}
+\]
+
+*Theorem*
+
+Suppose $K \subset Y \subset X$. Then K is compact relative to X iff K is compact relative to Y.

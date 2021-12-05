@@ -1,4 +1,4 @@
-#+TITLE: Core EM
+#+TITLE: Oscillations
 #+STARTUP: latexpreview
 #+HUGO_SECTION: Physics
 
