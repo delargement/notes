@@ -1,7 +1,0 @@
-
-
-* Chromium/copper's anomalous electron config. f-block elements as well
-
-There is added stability associated with the half filled/completely filled subshell
-
-*
