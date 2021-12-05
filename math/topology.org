@@ -183,3 +183,57 @@ K \subset G_{\alpha_1} \cup \ldots \cup G_{\alpha_n}
 *Theorem*
 
 Suppose $K \subset Y \subset X$. Then K is compact relative to X iff K is compact relative to Y.
+
+
+*Theorem*
+
+Compact subsets of metric spaces are closed.
+
+*Theorem*
+
+Closed subsets of compact sets are compact.
+*Corollary*: If F is closed and K is compact, then $F \cap K$ is compact.
+
+*Theorem*
+
+If $\{K_\alpha\}$ is a collection of compact subsets of a metric space X such that the intersection of every finite subcollection of $\{\K_alpha\}$ is non-empty, then $\cap K_\alpha$ is nonempty.
+*Corollary*: If $\{K_n\}$ is a sequence of nonempty compact sets such that $K_n \supset K_{n+1}$ then $\cap_1^\infty K_n$ is not empty.
+
+*Theorem*
+If E is an infinite subset of a compact set K, then E has a limit point in K.
+
+*Theorem*
+If $\{I_n\}$ is a sequence of intervals in $R^1$, such that $I_n \supset I_{n+1}$ then $\cap^\infty_1 I_n$ is not empty.
+
+*Theorem*
+If $\{I_n\}$ is sequence of k-cells such that $I_n \superset I_{n+1}$, then $\cap^\infty_1 I_n$ is not empty.
+
+*Theorem*
+Every k-cell is compact.
+
+*Theorem*
+If a set in $R^k$ has one of the following three properties, it has the other two.
+
+1. E is closed and bounded
+2. E is compact
+3. Every infinite subset of E has a limit point in E.
+
+   (b) and (c) are equivalent in any metric space but (a) does not in general imply (b) and (c).
+
+*Theorem (Weierstrass)*
+
+Every bounded infinite subset of $R^k$ has a limit point in $R^k$.
+
+** Perfect sets
+
+*Theorem*
+
+A nonempty perfect set in $R^k$ is uncountable.
+
+** Connected sets
+
+Two subsets A,B of a metric space X are /seperated/ if $A \cap \bar{B}$ and $\bar{A}\cap B$ are empty. A subset of X is connected if it is not a union of two nonempty seperated sets.
+
+*Theorem*
+
+A subset E of the real line $R^1$ is connected iff it has the following property: If $x,y \in E$, $x < z < y$, then $z \in E$.
