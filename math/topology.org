@@ -80,7 +80,7 @@ The set of all sequences whose elements are the digits 0 and 1 is uncountable.
 
 A set X, whose elements we shall call points, is said to be a metric space if any two points p,q of X there is associated a real number d(p,q), such that
 
-1. $d(p,q) > 0$, if $p \neq q$; $d(p,p) = 0;
+1. $d(p,q) > 0$, if $p \neq q$; $d(p,p) = 0$;
 2. $d(p,q) = d(q,p)$
 3. $d(p,q) \leq d(p,r) + d(r,q)$ for any $r \in X$
 
