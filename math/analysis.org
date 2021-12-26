@@ -27,4 +27,184 @@ An ordered field is a field which is an ordered set, such that:
 
 * Sequences
 
-A sequence converges if it fulfills epsilon-delta.
+A sequence converges if it fulfills epsilon-delta, i.e. for every $\epsilon > 0$, there is an integer N, such that $n \geq N$ implies $d(p_n,p) < \epsilon$.
+
+*Other properties*
+
+1. Every neighbourhood of p contains $p_n$ for all but finitely many $n$.
+2. If $E \subset X$, and $p$ is a limit point of E, then there is a sequence $\{p_n\}$ in $E$ such that $p = \lim_{n\to\infty} p_n$.
+
+
+*Definition*
+
+If a subsequence of a sequence converges, its limit is called a subsequential limit of the sequence. A sequence only converges iff every subsequence of $\left{p_n\right}$ converges to p.
+
+*Theorem*
+
+1. If $\{p_n\}$ is sequence in a compact space X, the nsome subsequence of $\{p_n\}$ converges to a point of X.
+2. Every bounded sequence in $R^k$ contains a convergent subsequence.
+
+*Theorem*
+
+The subsequential limits of a sequence $\{p_n\}$ in a metric space X form a closed subset of X.
+
+
+** Cauchy sequences
+
+A sequence $\{p_n\}$ is a Cauchy sequence iff for every $\epsilon > 0$ there is an integer N such that $d(p_n,p_m) < \epsilon$ if $n,m \geq N$.
+
+Let E be a nonempty subset of a metric space X, and let S be the set of all real numbers of the form $d(p,q)$, with $p\in E$ and $q\in E$. THe sup of S is called the diameter of E.
+
+If $E_N$ is the set of all points $p_{N+i}$, then $\{p_n\}$ is a Cauchy sequence iff $\lim_{N\to\infty} \text{diam} E_N = 0$.
+
+*Theorem*
+1. If $\bar{E}$ is the closure of a set $E$ in a metric space X, then $\text{diam } \bar{E} = \text{diam } E$.
+2. If $K_n$ is a sequence of compact sets in X such that $K_{n+1} \subset K_n$, and its diameter tends to 0 with n, then the intersection consists of exactly one point.
+
+
+*Theorem*
+1. In any metric space X, every convergent sequence is a Cauchy sequence.
+2. If X is a compact metric space and if $\{p_n\}$ is a Cauchy sequence in X, then $\{p_n\}$ converges to some point of X.
+3. In $R^k$, every Cauchy sequence converges.
+
+
+*Definition*
+
+A metric space in which every Cauchy sequence converges is complete.
+
+*Theorem*
+
+A monotonic sequence converges iff it is bounded.
+
+** Upper and lower limits
+
+*Definition*
+Let E be the set of all subsequential limits of a sequence $s_n$.
+
+\[
+s^* = \sup E = \lim_{n\to\infty} \sup s_n
+\]
+
+\[
+s_* = \inf E = \lim_{n\to\infty} \inf s_n
+\]
+
+*Theorem*
+
+1. $s^* \in E$
+2. If $x > s^*$, there is an integer, there is an integer $N$ such that $n \geq N$ implies $s_n < x$.
+
+   Moreover, $s^*$ is the only number with the two properties.
+
+** Convergence
+
+*Definition*
+
+Cauchy criterion:
+
+$\sum a_n$ converges iff for every $\epsilon > 0$, there is an integer $N$ such that:
+
+\[
+\left\vert \sum_{k=n}^m a_k \right\vert \leq \epsilon
+\]
+
+if $m \geq n \geq N$.
+
+or when m equals n,
+
+\[
+\vert a_n \vert \leq \epsilon
+\]
+
+
+*Theorem*
+
+Suppose $a_n$ is non-negative monotonically decreasing sequence. Then its series converges iff the following series converges:
+
+\[
+\sum_{k=0}^\infty 2^ka_{2^k} = a_1 + 2a_2 + 4a_4 + 8a_8 + \ldots
+\]
+
+*Theorem*
+
+\[
+\sum_{n=2}^\infty  \frac{1}{n (\log n)^p}
+\]
+
+converges when p is greater than one, and diverges otherwise.
+
+
+** Root and ratio test
+
+*Theorem (Root test)*
+Given $\sum a_n$, put $\alpha = \lim_{n\to\infty}\sup\sqrt[n]{|a_n|}$
+
+If $\alpha < 1$, it converges, if $\alpha > 1$, it diverges.
+
+*Theorem (Ratio test)*
+
+A series converges if $\lim_{n\to\infty} \vert\frac{a_{n+1}}{a_n}\vert < 1$, and diverges if the sequence is monotonically increasing at some finite point.
+
+
+*Theorem*
+
+\[
+\lim_{n\to\infty} \frac{c_{n+1}}{c_n} \leq \lim_{n\to\infty} \inf \sqrt[n]{c_n}
+\]
+
+\[
+\lim_{n\to\infty} \sup \sqrt[n]{c_n} \leq \lim_{n\to\infty} \sup \frac{c_{n+1}}{c_n}
+\]
+
+*Theorem*
+
+Given a power series $\sum c_n z^n$, put $\alpha = \lim_{n\to\infty}\sup \sqrt[n]{|c_n|}$, and $R = \alpha^{-1}$. Then the series converges if $|z| < R$, and diverges if $|z| > R$.
+
+*** Summation by parts
+
+\[
+\sum_{n=p}^q a_n b_n = \sum_{n=p}^{q-1} A_n (b_n - b_{n+1}) + A_q b_q - A_{p-1}b_p
+\]
+
+*Theorem*
+
+If:
+1. The partial sums of $A_n$ of $a_n$ form a bounded sequence.
+2. $\{b_n\}$ is monotonoically decreasing
+3. $\lim_{n\to\infty}b_n = 0$
+
+Then $\sum a_n b_n$.
+
+*Theorem*
+If:
+1. $\{|c_n|\}$ is a monotonically decreasing sequence.
+2. $\{c_n\}$ is an alternating series.
+3. $\lim_{n\to\infty}c_n = 0$.
+
+   Then $\sum c_n$ converges.
+
+*** Absolute convergence
+
+If a series converges absolutely, then it converges regularly. But a convergent series may not converge absolutely. Consider $(-1)^n / n$.
+
+*Theorem*
+
+If $\sum a_n$ converges absolutely, and $c_n = \sum_{k=0}^n a_k b_{n-k}$, then $\sum_{n=0}^\infty c_n = AB$
+
+This theorem also holds if no assumption is made iwth absolute convergence.
+
+*** Rearrangements
+
+*Theorem (Riemann)*
+
+Let $\sum a_n$ be a series of real numbers which converges but not absolutely. Suppose $-\infty \leq \alpha \leq \beta \leq \infty$. Then there exists a rearrangement $\sum a'_n$ with partial sums $s'_n$ such that:
+
+\[
+\lim_{n\to\infty}\inf s'_n = \alpha
+\]
+
+\[
+\lim_{n\to\infty}\sup s'_n = \beta
+\]
+
+If $\sum a_n$ is a series of complex numbers which converges absolutely, then every rearrangement of $\sum a_n$ converges, and they all converge to the same sum.
