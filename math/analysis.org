@@ -24,7 +24,6 @@ An ordered field is a field which is an ordered set, such that:
 1. $x + y < x + z$ and  $y < z$
 2. $xy > 0$ and $x > 0, y > 0$
 
-
 * Sequences
 
 A sequence converges if it fulfills epsilon-delta, i.e. for every $\epsilon > 0$, there is an integer N, such that $n \geq N$ implies $d(p_n,p) < \epsilon$.
@@ -173,7 +172,7 @@ If:
 2. $\{b_n\}$ is monotonoically decreasing
 3. $\lim_{n\to\infty}b_n = 0$
 
-Then $\sum a_n b_n$.
+Then $\sum a_n b_n$ converges.
 
 *Theorem*
 If:
@@ -208,3 +207,309 @@ Let $\sum a_n$ be a series of real numbers which converges but not absolutely. S
 \]
 
 If $\sum a_n$ is a series of complex numbers which converges absolutely, then every rearrangement of $\sum a_n$ converges, and they all converge to the same sum.
+
+* Continuity
+
+*Definition*
+
+Let X and Y be metric spaces, suppose $E \subset X$, f maps E into Y, and p is a limit point of E.
+
+We say $ \lim_{x\to p}f(x) = q$, if there is a point $q \in Y$ with the property:
+
+For every $\epsilon > 0$, there exists a $\delta > 0$ such that $d_Y(f(x),q) < \epsilon$ for all points $x\in E$ for which $0 < d_X(x,p) < \delta$.
+
+*Theorem*
+
+$\lim_{x \to p} f(x) = q$ iff $\lim_{n \to \infty} f(p_n) = q$ for every sequence $\{p_n\}$ in E such that $p_n \neq p$, $\lim_{n \to \infty} p_n = p$.
+
+This also says that this limit is unique.
+
+*Definition*
+
+f is continuous at p if for every $\epsilon > 0$, there exists a $delta > 0$ such that $d_Y(f(x),f(p)) < \epsilon$ for all points $x \in E$ for which $d_X(x,p) < \delta$.
+
+If p is also a limit point of E, then f is continuous at p iff $\lim_{x \to p} f(x) = f(p)$.
+
+*Theorem*
+
+A mapping f of a metric space X into a metric space Y is continous on X iff $f^{-1}(V)$ is open/closed in X for every open/closed set V in Y.
+
+
+** Compactness
+
+A mapping into $R^n$ is bounded if there is a real number M such that $| \bm{f}(x) | \leq M$ for all x.
+
+*Theorem*
+
+If f is a continuous mapping of a compact metric space X into a metric space Y, then f(X) is compact.
+
+*Theorem*
+
+If f is a continuous mapping of a compact metric space X into $R^n$, then f(X) is closed and bounded, thus f is bounded.
+
+*Theorem*
+
+Suppose f is a continous real function on a compact metric space X, and:
+
+\[
+M = \sup_{p\in X} f(p)
+\]
+
+\[
+m = \inf_{p\in X}f(p)
+\]
+
+Then there exists points $p,q \in X$ such that $f(p) = M$ and $f(q) = m$.
+
+*Theorem*
+
+Suppose f is a continous, injective mapping of a copmact metric space X onto a metric space Y. The inverse mapping is a continous mapping of Y onto x.
+
+*Theorem*
+
+A mapping f is /uniformly continuous/ on X if for every $\epsilon > 0$, there exists $\delta > 0$ such that:
+
+\[
+d_Y(f(p),f(q)) < \epsilon
+\]
+
+for all p,q in X for which $d_X(p,q) < \delta$
+
+*Theorem*
+
+Let f be a continuous mapping of a compact metric space X into a metric space Y. Then f is uniformly continuous on X.
+
+*Theorem* - Compactness is essential
+
+Let E be a noncompact set in $R^1$. Then:
+
+1. There exists a continuous function on E which is not bounded.
+2. There exists a continuous and bounded function on E which has no maximum.
+
+If in addition E is bounded, then:
+
+3. There exists a continuous function on E which is not uniformly continuous.
+
+
+*Theorem*
+
+If f is a continuous mapping of a metric space X into a metric space Y, and if E is a connected subset of X, then f(E) is connected.
+
+*Theorem* - Intermediate value theorem
+
+Let f be a continuous real function on the interval [a,b]. If f(a) < f(b), and if c is a number such that f(a) < c f(b), then there exists a point $x \in (a,b)$ such that $f(x) = c$
+
+
+** Monotonic functions
+
+*Theorem*
+
+f(x+) and f(x-) exist at every point for monotonic functions. That is, monotonic functions have no discontinuities of the second kind.
+
+*Theorem*
+
+Let f be monotonic on (a,b). Then the set of points at which f is discontinuous is at most countable. (you can establish a 1-1 correspondence between E and a subset of the rational numbers)
+
+* Differentiation
+
+** Mean value theorems
+
+*Theorem* - Generalised mean theorem
+
+If f and g are continuous real functions on [a,b] which are differential in (a,b), then there is a point $x\in(a,b)$ at which:
+
+\[
+[f(b)-f(a)]g'(x) = [g(b)-g(a)]f'(x)
+\]
+
+Since when defining $h(t) =[f(b)-f(a)]g(x) = [g(b)-g(a)]f(x)$, $h(a) = h(b)$.
+
+** Continuity of derivatives
+*Theorem*
+
+Suppose f is real differentiable function on [a,b] and suppose $f'(a) < \lambda < f'(b)$, then there exists a point where $f'(x) = \lambda$.
+
+It also means f' does not have any simple discontinuities.
+
+** Taylor's theorem
+
+The error of a taylor expansion about $\alpha$ up to the n-1th derivative at $\beta$ is equal to:
+
+\[
+R(\beta) = \frac{f^{(n)}(x)}{n!} (\beta - \alpha)^n
+\]
+
+for some x between $\beta - \alpha$
+
+* Riemann-Stieltjes Integral
+
+*Definition*
+
+Let $[a,b]$ be a given interval. By a /partition/ P of [a,b], we mean a finite set of points $a=x_0,x_1,\ldots,x_n=b$, where $x_i < x_{i+1}$.
+
+
+Suppose f is a bounded real function defined on $[a,b]$. Corresponding to each partition, we put:
+
+\[
+M_i = \sup f(x), x\in [x_{i-1},x_i]
+\]
+\[
+m_i = \inf f(x), x\in [x_{i-1},x_i]
+\]
+
+\[
+U(P,f) = \sum_{i=1}^n M_i \Delta x_i
+\]
+
+\[
+L(P,f) = \sum_{i=1}^n m_i \Delta x_i
+\]
+
+\[
+\overline{\int_a^b} f \dd{x} = \inf U(P,f)
+\]
+
+\[
+\underline{\int_a^b} f \dd{x} = \sup L(P,f)
+\]
+
+where inf and sup are taken over all partitions P of [a,b].
+
+When the upper and lower integrals are equal, we say that f is Riemann-integrable on $[a,b]$, we write $f \in \mathcal{R}$, where $\mathcal{R}$ denotes the set of Riemann-integrable functions.
+
+
+Let $\alpha$ be a monotonically increasing function on [a,b]. Letting $\Delta\alpha_i = \alpha(x_i) - \alpha(x_{i-1})$. Replacing $x$ with $\alpha$, we get the Stieltjes integral.
+
+** Refinement
+
+*Definition*
+
+A partition $P^*$ is a refinement of P if $P^* \supset P$. Given two partitions $P_1$ and $P_2$, $P^*$ is their common refinement if $P^* = P_1 \cup P_2$.
+
+*Theorem*
+
+\[
+L(P,f,\alpha) \leq L(P^*,f,\alpha)
+\]
+
+\[
+U(P^*,f,\alpha) \leq U(P,f,\alpha)
+\]
+
+*Theorem*
+
+$f \in \mathcal{R}(\alpha)$ on [a,b] iff for every $\epsilon > 0$ there exists a partition P such that:
+
+\[
+U(P,f,\alpha) - L(P,f,\alpha) < \epsilon
+\]
+
+Additional properties:
+
+1. If the equation holds for some P and $\epsilon$, then it holds (with the same $\epsilon$) for every refinement of P.
+2. If it holds for $P = \{x_0,\ldots,x_n\}$, and if $s_i,t_i$ are arbitrary points in $[x_{i-1},x_i]$, then:
+\[
+\sum_{i=1}^n \vert f(s_i) - f(t_i) \vert \Delta \alpha_i < \epsilon
+\]
+
+3. If $f \in \mathcal{R}(\alpha)$ and the hypotheses of 2. hold, then:
+
+\[
+\left\vert \sum_{i=1}^n f(t_i)\Delta\alpha_i - \int_a^b f\dd{\alpha} \right\vert < \epsilon
+\]
+
+*Theorem*
+
+If f is continuous on $[a,b]$, then $f \in \mathcal{R}(\alpha)$ on [a,b].
+
+*Theorem*
+
+If f is monotonic on [a,b], and if $\alpha$ is continuous on [a,b], then $f \in \mathcal{R}(\alpha)$.
+
+*Theorem*
+
+If f is bounded on [a,b], f has only finitely many points of discontinuity on [a,b], and $\alpha$ is continuous at every point at which f is discontinuous. Then $f \in \mathcal{R}(\alpha)$.
+
+* Sequences and series of functions
+
+
+** Uniform convergence
+
+A sequence of functions $\{f_n\}$ converges uniformly on E to a function f if for every $\epsilon > 0$, there is an integer N such that $n \geq N$ implies:
+
+\[
+\vert f_n(x) - f(x) \vert \leq \epsilon
+\]
+
+for all $x \in E$.
+
+
+Whereas if the sequence converges pointwise on E, there is an N depending on $\epsilon$ and $x$ such that epsilon-delta holds. If it converges uniformly on E, there is an N that will do for all $x \in E$.
+
+*Theorem* - Cauchy criterion
+
+The sequence of functions $\{f_n\}$ definde on E converges uniform;y on E iff for every $\epsilon > 0$ there exists an integer N such that $m,n \geq N$, $x \in E$ implies:
+
+\[
+\vert f_n(x) - f_m(x) \vert \leq \epsilon
+\]
+
+*Theorem*
+
+Suppose $f_n(x) \to f(x)$. Let:
+
+\[
+M_n = \sup_{x\in E}\vert f_n(x) - f(x) \vert
+\]
+
+Then $f_n \to f$ uniformly on E iff $M_n \to 0$ as $n \to \infty$.
+
+
+*Theorem* - Weierstrass
+
+Suppose $\{f_n\}$ is a sequence of functions defined on E, and suppose:
+
+\[
+\vert f_n(x) \vert \leq M_n
+\]
+
+for all x and n.
+
+Then $\sum f_n$ converges uniformly on E if $\sum M_n$ converges.
+
+Note that the converse is not true.
+
+
+*Theorem*
+
+Suppose $f_n \to f$ uniformly on a set E in a metric space. Let $x$ be a limit point of $E$ and suppose that:
+
+\[
+\lim_{t\to x}f_n(t) = A_n
+\]
+
+Then $\{A_n\}$ converges, and:
+
+\[
+\lim_{t\to x}f(t) = \lim_{n\to\infty}A_n$
+\]
+
+That is to say:
+
+\[
+\lim_{t\to x} \lim_{n\to\infty} f_n(t) = \lim_{n\to\infty}\lim_{t\to x}f_n(t)
+\]
+
+*Theorem*
+
+If $\{f_n\}$ is a sequence of continuous functions on E, and if $f_n \to f$ uniformly on E, then if f is continuous on E.
+
+*Theorem*
+
+Suppose K is compact,
+
+1. $\{f_n\}$ is a sequence of continuous functions on K
+2. $\{f_n\}$ converges pointwise to a continuous function f on K.
+3. $\{f_n\}$ is a monotonically decreasing sequence.
+
+Then $f_n \to f$ uniformly on K.
