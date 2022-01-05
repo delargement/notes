@@ -513,3 +513,7 @@ Suppose K is compact,
 3. $\{f_n\}$ is a monotonically decreasing sequence.
 
 Then $f_n \to f$ uniformly on K.
+
+*Definition*
+
+If X is a metric space, $\mathcal{C}(X)$ denotes the set of all complex-valued, continuous, bounded functions with domain X.
