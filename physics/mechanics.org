@@ -88,6 +88,10 @@ r = \frac{a(1-e^2)}{1+e\cos\theta}
 \epsilon = -\frac{\mu}{2a}
 \]
 
+\[
+h = \sqrt{\mu a (1-e^2)}
+\]
+
 Vis-viva equation:
 
 \[
