@@ -42,9 +42,6 @@ or Binet's equation:
 \dv[2]{u}{\theta} = -\frac{m}{L^2}U_{eff}'(u)
 \]
 
-
-
-
 ** Gravitation
 
 The motion of particles is like (earth-sun model):
@@ -146,6 +143,226 @@ r_{min} = \sqrt{\frac{\mu^2}{v_0^4} + b^2} - \frac{\mu}{v_0^2}
 \[
 h = \sqrt{\mu a (e^2 - 1)}
 \]
+
+* Waves
+
+** Energy density
+
+In general.
+
+\[
+\epsilon \propto A^2
+\]
+
+For string waves:
+
+KE:
+\[
+\epsilon_{KE} = \frac12 \mu \left(\pdv{\psi}{t}\right)^2
+\]\
+PE:
+
+\[
+\dd{W} = T\Delta = T \frac12 \left(\pdv{\psi}{x}\right)^2 \dd{x} = \dd{U}
+\]
+
+The total energy per unit length is thus:
+
+\[
+\epsilon(x,t) = \frac{\mu}{2} \left(\left(\pdv{\psi}{t}\right)^2 + v^2\left(\pdv{\psi}{x}\right)^2 \right)
+\]
+
+Further more, for a travelling wave, we can use the relationship $\psi_t = \mp v \psi_x$ to get:
+
+\[
+\epsilon(x,t) = \mu \psi_t^2
+\]
+
+Note that this implies that segments of string the possess the greatest KE also have the greatest PE.
+
+** Power
+
+Power is similarly proportional to the square of the amplitude.
+
+For string waves, note that the transverse (vertical) force on a point Q on the string on the left of Q is $-T\sin\theta = -T\psi_x$. Power is thus:
+
+\[
+P = -T\psi_x\psi_t
+\]
+
+Again using $\psi_t = \mp v \psi_x$ for a rightwards/leftwards travelling wave,
+
+\[
+P = \pm \epsilon(x,t) v
+\]
+
+** Sound waves
+
+
+\[
+\psi^p = \dd{P} = -B\frac{\dd{V}}{V}
+\]
+
+Taking a control small control volume that gets compressed,
+
+\[
+\dd{V} = A[\psi(x+\dd{x}) - \psi(x)]
+\]
+
+It can then be seen that:
+
+\[
+-B\psi_x = \psi^p
+\]
+
+Using N2L:
+
+\[
+-[\psi^p(x+\dd{x}) - \psi^p(x)] A = \rho A \dd{x} \psi_{tt}
+\]
+
+
+It can then be shown that both $\psi$ and $\psi^p$ obey the wave equation, though for sinusoidal equation for instance $\psi^p$ leads $psi$ by $\pi/2$ in the direction of propogation (From the second last equation).
+
+Due to collisions, heat flow is much slower than oscillation so the process is usually adiabatic and $B =\gamma p_0$.
+
+*** Energy density
+
+\[
+\epsilon_{KE} = \frac12 \rho (\psi_t)^2
+\]
+
+Since the potential energy is given by $-\int p \dd{V}$ from $\p_0$ to $\p_0 +\psi^p$, using our $B$ we can show:
+
+\[
+\epsilon_{PE} = \frac{B}{2} \psi_x^2
+\]
+
+Again for travelling waves:
+
+\[
+\epsilon = \rho \psi_t^2
+\]
+
+*** Power
+
+Same as strings but $Av$ instead of $v$.
+
+** Plane waves
+
+$\psi = \Re\left\{ e^{\bm{k}\cdot\bm{r}-\omega t}\right\}$
+
+where $\norm{\bm{k}}^2 = { \omega^2 \over v^2 }$
+
+For spherically symmetric waves, the general solution is:
+
+\[
+\psi(r) = \frac{A}{r} \cos(kr-\omega t + \phi)
+\]
+
+** Wave at boundary
+
+A wave is traveling towards a boundary from the left, which results in a reflected and transmitted wave. We impose a continuity constraint:
+
+\[
+\psi^i(0,t) + \psi^r(0,t) = \psi^t(0,t)
+\]
+
+Furthermore, transverse tension must cancel.
+
+\[
+T_1[ \psi^i_x(0,t) + \psi^r_x(0,t) ] = T_2 \psi_x^t(0,t)
+\]
+
+
+Then defining the impedence $Z = \frac{T}{v} = \sqrt{T\mu}$, we get:
+
+\[
+Z_1 \psi^i(0,t) - Z_1 \psi^r(0,t) = Z_2 \psi^t(0,t)
+\]
+
+We obtain the transmission and reflection relations:
+
+\[
+\psi^r(0,t) = \frac{Z_1 - Z_2}{Z_1 + Z_2}\psi^i(0,t)
+\]
+
+\[
+\psi^t(0,t) = \frac{2Z_1}{Z_1 + Z_2} \psi^i(0,t)
+\]
+
+(Notice the analogy with elastic collisions, with impedence being analagous to mass)
+
+We call each coefficient the reflection and transmission coefficients ($R$ and $T$) respectively, where $T = 1 + R$.
+
+To find the resultant waves after collision, we makes use of the fact that the waves are travelling (like in /method of characteristics/).
+
+\[
+\psi^t(x,t) = T\psi^i\left(\frac{v_1}{v_2}x,t\right)
+\]
+
+(the wavelength is broadened by $v_2/v_1$)
+
+\[
+\psi^r(x,t) = R\psi^i(-x,t)
+\]
+
+
+** Limiting cases of impedences
+
+For non-negative impedences,
+
+\[
+\abs{R} \leq 1
+\]
+
+\[
+0 \leq T \leq 2
+\]
+
+*** z2 > z1
+
+The large force at the ring wrests the incoming wave down.
+
+\[
+-1 \leq R < 0
+\]
+
+\[
+0 \leq T < 1
+\]
+
+Since R is negative, it goes through a $\pi$-radian phase shift.
+
+At the extreme, the entire incident wave is reflected
+
+*** z2 < z1
+
+\[
+0 < R \leq 1
+\]
+
+\[
+1 < T \leq 2
+\]
+
+There is no longer a phase shift. At the extreme, the displacement at the origin is twice the displacement than what would have been produced by incident wave alone.
+
+
+*** z2=z1
+
+\[
+T = 1, R=0
+\]
+
+Fully transmitted. Can occur even when the string is inhomogenous by scaling tension and mass density equally.
+
+*** Sound waves
+
+For sound waves
+
+$Z = \frac{p_0}{v} = \sqrt{\frac{\rho p_0}{\gamma}} = \frac{\rho v}{\gamma}$
+
 
 * Special relativity
 
