@@ -654,6 +654,10 @@ if $E$ has a limit point in S, then $a_n = b_n$.
 
 *Theorem*
 
+A linear operator on a vector space is one-to-one iff its range is all of that vector space.
+
+*Theorem*
+
 Let $\Omega$ be the set of all invertible linear operators on $R^n$.
 
 1. If $A \in \Omega, B \in L(R^n)$ and:
@@ -731,3 +735,23 @@ As a consequence of (1),
 *Theorem*
 
 IF $\bm{f}$ is a $\mathcal{C}'$ -mapping of an open set $E \subset R^n \to R^n$, $\bm{f'(a)}$ is invertible for some $\bm{a} \in E$, then $\bm{f}(W)$ is an open subset of $R^n$ for every open set $W \subset E$. i.e. $\bm{f}$ is an open mapping of $E$ into $R^n$.
+
+** Implicit function theorem
+
+
+*Theorem*
+
+Let $\bm{f}$ be a $\mathcal{C}'$ -mapping of $E \subset R^n \to R^m$, such that $\bm{f(a,b)}$ vanishes for some point $\bm{(a,b)} \in E$. Put $A = \bm{f'(a,b)}$ and assume $A_x$ is invertible. Then there exists open sets $U \subset R^{n+m}$ and $W \subset R^m$ with the property, To every $\bm{y}\in W$, corresponds a unique $\bm{x}$ such that $\bm{f}(\bm{x,y})$ vanishes. If this $\bm{x}$ is defined to be $\bm{g(y)}$, $\bm{g'(b)} = -(A_x)^{-1}A_y$.
+
+** Rank theorem
+
+*Theorem*
+
+Suppose $m,n,r$ are nonnegative integers, $m,n \geq r$,$\bm{F}$ is a $\mathcal{C}'$ -mapping of an open set $E \subset R^n \to R^m$, and $\bm{F'(x)}$ has rank $r$ for every for every $\bm{x}\in E$. Fix $\bm{a}\in E$, put $A = \bm{F'(a)}$, and let $Y_1$ be the range of $A$, and let $P$ be a projection in $R^m$ whose range is $Y_1$. Let $Y_2$ be the null space of $P$.
+Then there are open sets $U,V \in R^n$, with $\bm{a} \in U \subset E$ and there is a 1-1 $\mathcal{C}'$-mapping $\bm{H}$ of $V$ onto $U$, (whose inverse is also of class $\mathcal{C}'$) such that:
+
+\[
+\bm{F(H(x))} = A\bm{x} + \phi(Ax)
+\]
+
+for all $x\in V$, where $\phi$ is a $\mathcal{C}'$ - mapping of the open set $A(V) \subset Y_1$ into $Y_2$.
