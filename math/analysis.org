@@ -755,3 +755,131 @@ Then there are open sets $U,V \in R^n$, with $\bm{a} \in U \subset E$ and there 
 \]
 
 for all $x\in V$, where $\phi$ is a $\mathcal{C}'$ - mapping of the open set $A(V) \subset Y_1$ into $Y_2$.
+
+*Theorem*
+
+When $f \in \mathcal{C}''(E)$
+
+\[
+D_{21} f = D_{12} f
+\]
+
+** Differentiation of Integrals
+
+
+*Theorem*
+
+To insert an derivative into an integral, note that the integrand has to continuous wrt the differentiation variable.
+
+* Integration of differential forms
+
+*Theorem*
+
+For every $f\in\mathcal{C}(I_k)$, $L(f) = L'(f)$.
+
+*Definition*
+
+The support of a complex function on $R^k$ is the closure of the set of all points $\bm{x} \in R^k$ at which $f(\bm{x})\neq 0$.
+
+** Primitive mappings
+
+*Definition*
+
+If $\bm{G}$ maps on a open set $E \subset R^n \to R^n$, and if there is an integer $m$ and a real function $g$ with domain $E$ such that $G(x) = \sum_{i\neq m} x_i \bm{e}_i + g(\bm{x})\bm{e}_m$, then $\bm{G}$ is primitive. (i.e. it changes at most one coordinate)
+
+The jacobian of $\bm{G}$ at $\bm{a}$ is given by $J_{\bm{G}} (\bm{a}) = \det \bm{G}'(\bm{a}) = (D_m g)(\bm{a})$.
+
+*Definition*
+
+A linear operator that interchanges some members of the standard basis is called a *flip*.
+
+*Theorem*
+
+Suppose $\bm{F}$ is a $\mathcal{C}'$ mapping of an open set $\E \subset R^n \to R^n$, $\bm{0} \in E$, $\bm{F(0)=0}$, and $\bm{F'(0)}$ is invertible. Then there is a neighbourhood of $\bm{0}$ in $R^n$ in which a representation:
+
+\[
+\bm{F(x)} = B_1\ldots B_{n-1} G_n \circ\ldots\circ G_1 (x)
+\]
+
+is valid.
+
+Each $\bm{G}_i$ is a primitive $\mathcal{C}'$ is a primitive $\mathcal{C}'$ -mapping in some neighborhood of $\bm{0}$ ; $\bm{G_i(0)=0}$, $\bm{G_i'(0)}$ is invertible and each $B_i$ is either a flip or identity operator.
+
+
+** Partitions of unity
+
+*Theorem*
+
+Suppose $K$ is a compact subset of $R^n$ and $\{V_\alpha\}$ is an open cover of $K$. Then there exists functions $\psi_1,\ldots,\psi_s \in \mathcal{C}'(R^n)$ such that:
+
+1. $0 \leq \psi_i \leq 1$
+2. each $\psi_i$ has its support in some $V_\alpha$, and
+3. $\sum_i \psi_i(\bm{x}) = 1$ for every $\bm{x} \in K$
+
+Thus, $\{\psi_i\}$ is called a *parition of unity* and (b) is expressed by saying that $\{\psi_i\}$ is *subordinate* to the cover $\{V_\alpha\}$.
+
+** Differential forms
+
+*Definition*
+
+To say that $\bm{f}$ is a $\mathcal{C}'$ -mapping of a compact set $D \subset R^k$ into $R^n$ means that there is a $\mathcal{C}'$ mapping $g$ of an open set $W \subset R^k, D\subset W$ into $R^n$ such that $\bm{g(x)= f(x)}$ for all $\bm{x} \in D$.
+
+*Definition*
+
+Suppose $E$ is an open set in $R^n$. A *k-surface* in $E$ is a $\mathcal{C}'$ mapping $\Phi$ from a compact set $D \subset R^k$ into $E$.  $D$ is called the *parameter domain* of $\Phi$. (Points of $D$ will be denoted by $\bm{u}$).
+
+For example, 1-surfaces are the same as continuously differentiable curves.
+
+*Definition*
+
+Suppose $E$ is an open set in $R^n$. A differential form of order $k \geq 1$ in $E$ (a k-form in E) is a function $\omega$:
+
+\[
+\omega = \sum a_{i_1 \ldots i_k}(\bm{x}) \dd{x_{i_1}} \wedge \ldots \wedge \dd{x_{i_k}}
+\]
+
+which assigns to each k-surface $\phi$ in E a number $\omega(\Phi) = \int_\Phi \omega$, according to the rule:
+
+\[
+\int_\Phi \omega = \int_D \sum a_{i_1 \ldots i_k}(\Phi(\bm{u})) \frac{\partial(x_i_1,\ldots,x_i_k)}{\partial(u_1,\ldots,u_k)}  \dd{\bm{u}}
+\]
+
+*** Examples
+
+A k-form is said to be of class $\mathcal{C}'$ or $\mathcal{C}''$ if the functions $a_{i_k\ldots i_k}$ are all of class $\mathcal{C}'$ or $\mathcal{C}''$.
+
+A 0-form in $E$ is defined to be continuous function in $E$.
+
+Integrals of 1-forms are called line integrals.
+
+
+
+*** Standard presentation
+
+
+\[
+\omega = \sum_j b_{I}(\bm{x}) \dd{x_I}
+\]
+
+where the $I$ is a set of increasing k-indices.
+
+*Theorem*
+
+If $\omega = 0$ in $E$, then $b_{I}(\bm{x}) = 0$ for every increasing k-inex $I$ for every $\bm{x} \in E$
+
+
+*** Product of forms
+
+\[
+\dd{x_I} \wedge \dd{X_J} = (-1)^\alpha \dd{x_{[I,J]}}
+\]
+
+where $\alpha$ is the number of differences $j_t - i_s$ that are /negative/.
+
+*Theorem*
+
+1. If $\omega$ and $\lambda$ are k- and m- forms respectively, of class $\mathcal{C}'$ in E, then:
+
+\[
+d(\omega \wedge \lambda) = \dd{\omega} \wedge \lambda + (-1)^k \omega \wedge \dd{\lambda}
+\]
