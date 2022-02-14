@@ -366,3 +366,86 @@ A basis can be derived in a similar form. (replace Y with B).
 *Lemma*
 
 If $U$ is open in $Y$ and $Y$ is open in $X$, then $U$ is open in $X$.
+
+** Closed sets
+
+Defining topological space with closed sets.
+
+*Theorem*
+
+In a topological space,
+
+1. the empty set and the whole set are closed
+2. Arbitrary intersections of closed sets are closed
+3. Finite unions of closed sets are closed
+
+*** Closures
+
+*Theorem*
+
+Let A be a subset of the topological space X.
+1. Then $x \in \bar{A}$ iff every neighbourhood of x intersects A.
+2. If X is given by a basis, $x \in \bar{A}$ iff every basis element containing x intersects A.
+
+
+** Hausdorff spaces
+
+Usually it is nicer to have one-point sets closed like in euclidean space, as this means that sequences don't converge to multiple values for instance.
+
+*Definition*
+
+A topological space X is a *Hausdorff space*, if for each pair of distinct points in X, there exist neighborhoods of each point that are disjoint.
+
+*Theorem*
+
+Every finite point set in a hausdorff space is closed.
+
+The Hausdorff space condition is stronger than the condition that finite point sets be closed ($T_1$ axiom) but that's fine. But for fun:
+
+*Theorem*
+
+Let X be a space satisfying the $T_1$ axiom. Let A be a subset of X, then the point x is a limit point of A iff every neighbourhood of x contains infinitely many points of A.
+
+Back to hausdorff spaces:
+
+*Theorem*
+
+Every simply ordered set is a Hausdorff space in the order topology. Product and subspaces of hausdorff spaces are hausdorff spaces.
+
+** Continuous functions
+
+*Definition*
+
+A function $f : X \to Y$ is continuous if for each open subset V of Y, the set $f^{-1}(V)$ is an open subset of X.
+
+It also suffices to show that the inverse image of each basis/subbasis element is open.
+
+Other definitions:
+
+*Theorem*
+
+1. For every subset of X, one has $f(\bar{A}) \subset \bar{f}(A)$.
+2. For every closed set of B of Y, the set $f^{-1}(B)$ is closed in X.
+3. For every $x \in X$ and each neighbourhood $V$ of f(x), there is a neighbourhood $U$ of x such that $f(U) \subset V$.
+
+
+*** Homeomorphisms
+
+Let $f : X \to Y$ be a bijection. If both $f$ and its inverse function are continuous, $f$ is called a homeomorphism.
+
+
+Another way to define it is to say it is a bijective correspondence such that $f(U)$ is open iff U is open.
+
+** Metric topology
+
+*Definition*
+
+The collection of all $\epsilon$-balls $B_d(x,\epsilon)$ is a basis for a topology on X, called the *metric topology*, induced by d.
+
+*Definition (alt)*
+
+A set U is open in the metric topology induced by d iff for each $y \in U$, there is a $\delta > 0$ s.t. $B_d(y,\delta) \subset U$.
+
+*Definition*
+
+A topological space X is *metrizable* if there exists a metric on X that induces the topology of X. A *metric space* is a metrizable space together with a specific metric that gives the topology of X.
