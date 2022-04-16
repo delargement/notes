@@ -231,7 +231,6 @@ The matrix representation of $\hat{A}$ in basis x is $A_{ij} = \bra{i}\hat{A}\ke
 passive: rotating the axes
 active: rotating the vector expressed in the same axes.
 
-
 * Stern-Gerlach
 
 The intrinsic spin angular momentum of a particle, we write
@@ -313,4 +312,10 @@ Since it commutes with each generator, these operators have simulataneous eigens
 
 \[
 \hat{J}_z\ket{\lambda,m} = m \hbar \ket{\lambda,m}
+\]
+
+* 1D problems
+
+\[
+i \hbar\ket{\dot{\psi}} = H\ket{\psi}
 \]

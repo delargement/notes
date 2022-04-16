@@ -120,7 +120,7 @@ Denoted as:
 
 $\epsilon_{ijk}$ is totally antisymmetric (swapping indices turns it negative), and is the only three-subscript quantity with the property.
 
-It can be turned into a Laplace (cofactor) expansion for finding the determinant of a 3x3 matrix by choosing l,m,n.
+It can be turned into a Laplace (cofactor) expansion for finding the determinant of a 3x3 matrix by choosing l,m,n. (Sarrus' law)
 
 
 \[
@@ -133,7 +133,13 @@ Note:
 \epsilon_{lmn}' = L_{li}L_{mj}L_{nk}\epsilon_{ijk} = |L|\epsilon_{lmn}
 \]
 
-Since $|L|$ is unity as $L$ is orthogonal, is a third order Cartesian tensor.
+Since $|L|$ is unity as $L$ is orthogonal,it is a third order Cartesian tensor.
+
+Upon contraction:
+
+\[
+\epsilon_{ijk}\epsilon_{ijk} = 6
+\]
 
 Cross product $\bm{a} = \bm{b}\times\bm{c}$, can be represented as:
 
@@ -186,3 +192,269 @@ Variations:
 ** Isotropic tensors
 
 Tensors whose component values are independent of coordinate frames are called isotropic (or invariant) tensors. Kronecker delta and Levi-civita (and scalar multiples) are the only second and third order isotropic tensors.
+
+** Operations
+
+*** Contraction
+
+You set two indices to be the same.
+
+*** Quotient law
+
+It can be shown that if:
+
+\[
+A_{ij..k..m}B_{np..k..t} = C_{ij..mnp..t}
+\]
+
+and B and C are tensors, then A is also a tensor.
+
+** Parity
+
+If we include improper rotations, $|L| = -1$, which is equivalent to shifting from a right-handed to left-handed coordinate system under a passive transformation, we must distinguish pseudotensors, which change parity under improper rotations, and tensors which always maintain parity under all rotations.
+
+When looking at active transforms, then you have axial (maintain direction under inversion of coordinate system) and polar vectors (which don't).
+
+No physical quantity can be described with pseudotensors.
+
+The levi-civita tensor is an example of a pseudotensor.
+
+** Dual tensors
+
+Pseudotensors have their uses.
+
+We may associate every /antisymmetric/ second-order tensor $A_{ij}$ with a pseudovector $p_i$ given by:
+
+\[
+p_i = \frac12 \epsilon_{ijk}A_{jk}
+\]
+
+For example,
+
+The dual of the antisymmetric tensor $A$:
+
+\[
+\text{A} = [A_{ij}] = \mqty( 0 & A_{12} & -A_{31} \\ -A_{12} & 0 & A_{23} \\ A_{31} & -A_{23} & 0)
+\]
+
+is $(A_{23},A_{31},A_{12})$.
+
+Notice that the following identity holds:
+
+\[
+A_{ij} = \epsilon_{ijk}p_k
+\]
+
+*** Third rank
+
+We may extend this to associate a dual pseudoscalar $s$ with every totally antisymmetric third-rank tensor $A_{ijk}$. $s$ is given by:
+
+\[
+s = \frac{1}{3!}\epsilon_{ijk}A_{ijk}
+\]
+
+Similarly,
+
+\[
+A_{ijk} = s \epsilon_{ijk}
+\]
+
+** Integral theorems
+
+The usual integral theorems can be extended trivially to tensor fields
+
+* Non-Cartesian coordinates
+
+
+A position of a point in space may be expressed in terms of three curvilinear coordinates $u_1,u_2,u_3$. if $\bm{r}(u_1,u_2,u_3)$ is the position vector of the point P then at P there exist two sets of basis vectors.
+
+\[
+\bm{e}_i = \pdv{\bm{r}}{u_i}
+\]
+
+and
+
+\[
+\bm{\epsilon}_i = \grad u_i
+\]
+
+these sets are reciprocal systems of vectors so:
+
+\[
+\bm{e}_i \cdot \bm{\epsilon}_j = \delta_{ij}
+\]
+
+
+Introducing superscripts, this can be written:
+
+\[
+\bm{e}_i \cdot \bm{e}^j = \delta_i^j
+\]
+
+
+When we write a general vector $\bm{a}$ in terms of either basis:
+
+\[
+\bm{a} =  a^i\bm{e}_i = a_i\bm{e}^i
+\]
+
+$a^i$ are called the *contravariant* components and $a_i$ the *covariant* components.
+
+
+For Cartesian coordinates, two two sets are identical.
+
+
+** Metric tensor
+
+Any particularly curvilinear coordinate system is completely characterized by the nine quantities:
+
+\[
+g_{ij} = \bm{e}_i \cdot \bm{e}_j
+\]
+
+which are the covariant components of a symmetric second-order tensor called the metric tensor.
+
+\[
+(\dd{s})^2 = g_{ij}\dd{u}^i\dd{u}^j
+\]
+
+\[
+\dd{V} = \sqrt{g}\dd{u}^1\dd{u}^2\dd{u}^3
+\]
+
+where g is the determinant of the tensor $[g_{ij}]$.
+
+The metric tensor is diagonal for orthogonal coordinate systems, with the diagonal elements being equal to the squares of the scale factors of the coordinate system.
+
+
+The metric tensor can be used to lower or raise an index:
+
+\[
+g_{ij}b^j = b_i
+\]
+
+\[
+g^{ij}b_j = b^i
+\]
+
+
+It may also be shown that:
+
+\[
+\vert\bm{e}_1 \cdot (\bm{e}_2 \times \bm{e}_3)\vert = \sqrt{g}
+\]
+
+
+\[
+g^{ij}g_{jk} = \delta_k^i
+\]
+
+** Coordinate transforms
+
+
+
+The defining property for a set of quantities $a^i$ to form the contravariant components of a vector is:
+
+\[
+a'^i = \pdv{u'^i}{u^j}a^j
+\]
+
+The relation for basis vectors is this relation's inverse.
+
+
+Analagously for covariant components of a vector, the relation is the inverse of that of contravariant components. (the prime is on the denominator of the partial derivative)
+
+** Relative tensors
+
+Similar to the discussion on pseudotensors, we are led to the notion of relative tensors for arbitrary coordinate transformations.
+
+We may define the Jacobian of the transformation as the determinant of the transformation matrix $[\partial u'^i / \partial u^j]$. Interchanging the primed and unprimed coordinates gives $1/J$.
+
+
+We define a relative tensor of weight $w$ as one whose components transform as:
+
+\[
+T'^i_j = \pdv{u'^i}{u^a}\pdv{u^j}{u'^b}T^a_b \left\vert \pdv{u}{u'} \right\vert^w
+\]
+
+and so on for higher rank tensors.
+
+- A *true* (or *absolute*) general tensor is a relative tensor of weight 0.
+- If $w = -1$, the relative tensor is a general *pseudotensor
+- If $w = 1$, it's a *tensor density*.
+
+
+*** Properties
+
+The levi cevita tensor is a relative tensor of weight -1. If you define a contravariant version, it is numerically equal to its covariant counterpart but it has weight +1.
+
+If two relative tensors have weights $w_1$ and $w_2$, the outer product or any contraction of them is a relative tensor of weight $w_1 + w_2$.
+
+** Derivatives of basis vectors & Christoffel symbols
+
+In general curvilinear coordinates, the basis vectors can change and are a functions of the coordiantes. In general, derivatives can be written as so.
+
+
+\[
+\pdv{\bm{e}_i}{u^j} = \Gamma^k_{ij}\bm{e}_k
+\]
+
+Using the reciprocity relation:
+
+\[
+\Gamma^k_{ij} = \bm{e}^k \cdot \pdv{\bm{e}_i}{u^j}
+\]
+
+Similarly for contravariant basis vectors:
+
+\[
+\pdv{\bm{e}^i}{u^j} = -\Gamma^i_{kj}\bm{e}^k
+\]
+
+The symbol $\Gamma^k_{ij}$ is a *Christoffel symbol* (of the second kind). Note that these quantities do not form the components of a third-order tensor.
+
+Note that the Christoffel symbol is symmetric with respect to interchange of its two subscripts.
+
+The quickest way to find the Christoffel symbol is by using the metric tensor.
+
+\[
+\Gamma^m_{ij} = \frac12 g^{mk}\left(\pdv{g_{jk}}{u^i} + \pdv{g_ki}{u^j} - \pdv{g_ij}{u^k}\right)
+\]
+
+** Covariant differentiation
+
+In general, the derivative of a scalar is a covariant vector.
+
+\[
+\dd{\phi} = \pdv{\phi}{u^i}\dd{u^i}
+\]
+
+By quotient law, the quantities $\partial \phi / \partial u^i$ must form the components of a covariant vector.
+
+However, the derivative of the components of a general tensor does not in general result in the components of another tensor, e.g. $\partial v^i / \partial u^j$.
+
+However, we may define a new /covariant/ derivative that does result in the components of another tensor.
+
+We find in general:
+
+\[
+\pdv{\bm{v}}{u^j} = \pdv{v^i}{u^j}\bm{e}_i + v^i \pdv{\bm{e}_i}{u^j}
+\]
+
+This can be rewritten:
+
+\[
+\pdv{\bm{v}}{u^j} = \left(\pdv{v^i}{u^j} + v^k \Gamma^i_{kj}\right) \bm{e}_i.
+\]
+
+The quantity in parentheses is the *covariant derivative*:
+
+\[
+v^i_{;j} \equiv \pdv{v^i}{u^j} + v^k \Gamma^i_{kj}
+\]
+
+For covariant components of a vector, the corresponding result is:
+
+\[
+v_{i;j} = \pdv{v_i}{u^j} -  \Gamma^k_{ij}v_k
+\]

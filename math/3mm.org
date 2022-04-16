@@ -1,0 +1,3 @@
+#+TITLE: Mathematical methods pt. 3
+#+STARTUP: latexpreview , inlineimages
+#+HUGO_SECTION: Math
