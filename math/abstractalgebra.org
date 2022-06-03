@@ -64,8 +64,6 @@ Relations are any equations satisfied by the generators. Groups can be represent
 D_2n = < $r,s | r^n = s^2 = 1, rs = sr^{-1}$>
 
 
-
-
 ** Symmetric groups
 
 Let $\Omega$ be any nonempty set and $S_\Omega$ to be the set of all bijections from $\Omega$ to itself. Then $S_\Omega$ is a group under function composition.
@@ -153,7 +151,162 @@ A group action of a group G acting on a set A is a map from $G \times A$ to A (w
 ** Orbits & cosets
 
 Let G be a group of transformations of a set S. Then G defines an equivalence relation on S of $x \sim_G y$ if $y = \alpha(x)$ for some $\alpha \in G$. The G-orbit of $x \in S$ is the set $Gx = \{\alpha(x) \vert \alpha \in G\}$. When there is just one orbit, that is, $S = Gx$ for some x, G is a *transitive* group of transformations of the set S. e.g. $S_n$ is transitive on $\{1,2,\ldots,n\}$.
-
 ** Congruences
 
 A congruence is an equivalence relation which can be multiplied.
+
+** Subgroups
+
+*** Some subgroups
+
+Let A be any nonempty subset of G.
+
+**** Centralizers
+
+$g a g^{-1}$ is called the conjugate of a by g.
+
+\[
+C_G(A) = \{ g \in G \vert gag^{-1}=a \forall a\in A\}
+\]
+
+**** Center
+
+\[
+Z(G) = \{ g \in G \vert gx = xg \forall x \in G\}
+\]
+
+**** Normalizer
+
+Define $gAg^{-1} = \{ gag^{-1} \vert a \in A\}$ as the conjugate of A by g.
+
+\[
+N_G(A) = \{g \in G \vert gAg^{-1} = A\}
+\]
+
+Each g in the normalizer normalizes A.
+
+A subgroup of a group G is called normal if every element of G normalizes the group.
+
+**** Stabilizer
+
+\[
+G_s = \{g \in G | g \cdot s = s\}
+\]
+
+**** Kernel
+
+Kernel of action of G on S
+
+\[
+\ker = \{ g\in G | g\cdot s = s \forall s \in S\}
+\]
+
+**** Cosets
+
+For $N \leq G$ and $g \in G$
+
+\[
+gN = \{gn | n \in N\}
+\]
+
+is a left coset. A right coset is defined similarly. Any element of a coset is a representative for the coset.
+
+** Quotient groups
+
+Let $\phi : G\to H$ be a homomorphism with kernel K. The *quotient group* or *factor group*, $G/K$ is the group whose elements are the fibers of $\phi$.
+
+*** Cosets
+
+Fibers of a homomorphism are the left cosets of the kernel. (Also the right).
+
+
+*Theorem*
+
+Let N be any subgroup of the gorup G. The set of left cosets of N in G form a partition of G. Furthermore, for all $u,v \in G$, $uN = vN$ iff $v^{-1}u \in N$. In particular, $uN = vN$ iff u,v are representatives of the same coset.
+
+*Theorem*
+
+Let G be a group and N be a subgroup of G.
+
+The operation on the set of left cosets of N in G described by $uN \cdot vN = (uv) N$ is well defined (the group action can be any arbitrary representative) iff $gng^{-1} \in N$ for all $g \in G, n\in N$
+
+If the above operation is well defined , it makes the set of left cosets of N into a group.
+
+*Theorem*
+
+Let N be a subgroup of group G.
+
+TFAE
+
+1. N is a normal subgroup of G (note this is not transitive)
+2. $N_G(N) = G$
+3. $gN = Ng \forall g\in G$
+4. The left cosets are made into a group
+5. $gNg^{-1} \subseteq N \forall g \in G$
+6. N is the kernel of some homomorphism
+
+
+*Theorem*
+
+If H and K are subgroups of a group, HK is a subgroup iff HK = KH.
+
+If H and K are subgroups and $H \leq N_G(K)$, then HK is a subgroup of G.
+
+
+
+
+**** Lagrange's theorem
+
+If G is a finite group, $H \leq G$, then $|H|$ divides $|G|$.
+
+***** Converses
+
+The converse, the group has a subgroup of order $n$ for each divisor of |G| is true for finite abelian groups.
+
+*Theorem (Cauchy)*
+
+If G is a finite group and p is a prime dividing |G|, then G has an element of order p.
+
+*Theorem (Sylow)*
+
+If G is a finite group of order $p^\alpha m$, where p is prime and p does not divide m, then G has a subgroup of order $p^\alpha$
+
+
+***** Corollaries
+
+1. If G is a finite group and $x\in G$, then the order of x divides the order of G.
+2. If G is a group of finite order, then G is cyclic.
+3. $|HK| = \frac{|H||K|}{|H\cap K|}$
+
+
+*** Isomorphism theorems
+
+1. If $\phi : G\to H$ is a homomorphism of groups, then $\ker \phi \unlhd G$ and $G / \ker \phi \cong \phi(G)$.
+
+   - A homomorphism is injective iff its kernel is 1.
+
+   - $|G : \ker \phi| = |\phi(G)|$ This is equivalently the rank-nullity theorem.
+
+2. Let G be a group, and A,B be subgroups such that $A \leq N_G(B)$. Then AB is a subgroup of G, $B \unlhd AB$, $A \cap B \unlhd A$ and $AB/B \cong A/A\cap B$.
+
+3. Let G be a group and let H and K be normal subgroups of G with $H \leq K$. Then $K/H \unlhd G/H$ and $(G/H)/(K/H) \cong G/K$
+
+4. Let G be a group and N be a normal subgroup of G. Then there is a bijection from the set of subgroups A of G which contain N onto the set of subgroups $\bar{A} = A/N$ of $G/N$. In particular, every subgroup of $\bar{G}$ is of the form A/N for some subgroup A of G containing N (namely, its preimage in G under the natural projection homomorphism form G to G/N). This bijection has the following properties.
+
+   For all A,B subgroups of G, with N a subgroup of A and B,
+
+   - $A \leq B$ iff $\bar{A} \leq \bar{B}$
+
+   - if $A \leq B$, then $|B : A| = | \bar{B} : \bar{A}|$
+
+   - $\overline{\langle A,B \rangle} =  \langle \bar{A},\bar{B} \rangle}$
+
+   - $\overline{A\cap B} = \bar{A} \cap \bar{B}$
+
+   - $A \unlhd G$ iff $\bar{A} \unlhd \bar{G}$
+
+
+
+** Group actions
+
+An action is faithful if its kernel is the identity.

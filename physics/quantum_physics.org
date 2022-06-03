@@ -161,6 +161,12 @@ Hamiltonian equations may be written as:
 \end{align*}
 
 
+In general,
+
+\[
+[X,P] = i\hbar\{x,p\}
+\]
+
 *** Legendre transform
 
 Say that we wish to 'invert':
@@ -186,6 +192,82 @@ Or
 \[
 G(s) = sx(s) - F(x(s))
 \]
+
+** Operators
+*** Differential operator
+
+\[
+D\ket{f} = \ket{\dv{f}{x}}
+\]
+
+implies
+
+In the |x> basis,
+\[
+\bra{x}D\ket{x'} = D_{x,x'}=\delta'(x-x')=\delta(x-x')\dv{x'}
+\]
+
+where it is integrated over the second index (x') and pulls out the derivative of f at the first index (x).
+
+We can turn it hermitian by turning it into the form:
+
+\[
+K = -iD
+\]
+
+but in infinite dimensions, K^t = K is not sufficient to be hermitian. It is only hermitian in the space of functions that obey:
+
+
+\[
+-ig^*(x)f(x) | \given_a^b = 0
+\]
+
+so that <g|K|f> = <f|K|g>*.
+
+**** eigeneverything
+
+X-basis
+
+\[
+K\ket{k} = k\ket{k}
+\]
+
+\[
+-i\dv{x}\psi_k(x) = k\psi_k(x)
+\]
+
+where $\psi_k(x) = \braket{x}{k}$.
+
+the solution is:
+
+\[
+\psi_k(x) = Ae^{ikx}
+\]
+
+where we choose $A = (1/2\pi)^{-1/2}$
+
+and <k|k>
+
+*** X basis
+
+X|x> = x|x>
+
+\[
+\bra{x'}X\ket{x} = x\delta(x'-x)
+\]
+
+Action on functions:
+
+X|f> = |F>
+
+F(x) = xf(x)
+
+$$
+\bra{k}X\ket{k'} = i\delta'(k-k')
+$$
+
+[X,K] = iI
+
 
 * Statevectors
 
@@ -319,3 +401,150 @@ Since it commutes with each generator, these operators have simulataneous eigens
 \[
 i \hbar\ket{\dot{\psi}} = H\ket{\psi}
 \]
+
+Steps for problem:
+
+1. Find the classical hamiltonian. Then find the quantum hamiltonian operator analogue.
+2. Expand the H in terms of its eigenbasis to solve the time-independent problem, $H\ket{E} = E\ket{E}$ by solving the differential equation in some basis.
+3. To find the state as it evolves over time, we expand $\ket{\psi(t)}$ in terms of E. and find that the propogator is given by $\sum_E \ketbra{E}{E}e^{-i E t / \hbar}$. The propogator is also given by $U(t) = e^{-i H t/\hbar}$, which can be expanded.
+
+
+** Ehrenfest's theorem
+
+\[
+\dv{}{t} \langle \Omega \rangle = \frac{1}{i\hbar}\langle [\Omega,H]\rangle
+\]
+
+
+** Particle in a box
+
+
+n odd,positive:
+
+\[
+\psi_n(x) = \sqrt{\frac{2}{L}} \cos(\frac{n\pi x}{L})
+\]
+
+n even,positive:
+
+\[
+\psi_n(x) = \sqrt{\frac{2}{L}} \sin(\frac{n\pi x}{L})
+\]
+
+
+\[
+E_n = \frac{\hbar^2 k_n^2}{2m} = \frac{\hbar^2 \pi^2 n^2}{2mL^2}
+\]
+
+** Probability continuity
+
+
+\[
+\pdv{(\psi^* \psi)}{t} = -\div \frac{\hbar}{2mi}(\psi^* \grad\psi - \psi\grad\psi^*)
+\]
+
+** Theorems
+
+1. There is no degeneracy in 1D bound states. $\psi(x\to\infty) \to 0$
+2. The eigenfunctions of H can always be chosen pure real in the coordinate basis.
+
+
+** Harmonic oscillator
+
+
+\[
+H = \frac{P^2}{2m} + \frac12 m\omega^2 X^2
+\]
+
+Step 1. Introduce dimensionless variables natural to the problem.
+Step 2. Extract the asymptotic behavior of $\psi$.
+Step 3. Write iv as a product of the asymptotic form and an unknown function $u$.
+The function $u$ will usually be easier to find than $\psi$.
+Step 4. Try a power series to see if it will yield a recursion relation.
+
+
+Solving the time independent shrodinger's equation using series solutions with hermite polynomials, we get:
+
+
+\[
+E_n = (n+\frac12)\hbar \omega
+\]
+
+
+\[
+\psi_n = \left(\frac{m\omega}{\pi\hbar 2^{2n} (n!)^2}\right)^{1/4} \exp(-\frac{m\omega x^2}{2\hbar})H_n\left[\left(\frac{m\omega}{\hbar}\right)^{1/2} x\right]
+\]
+
+
+\[
+U(x,t;x',t') = \sqrt{\frac{m\omega}{2\pi i \hbar\sin\omega T}\right} \exp\left[\frac{im\omega}{\hbar} \frac{(x^2 + x'^2)\cos\omega T -2xx'}{2\sin\omega T}\right]
+\]
+
+where $T = t-t'$
+
+The energies can also be found using heisenberg's uncertainty principle, gaussian packets which saturate the relation, and trying to find the minimize energy for the minimal state.
+
+
+*** Method of factorization
+
+
+Introducing the operator,
+
+\[
+a = \sqrt{\frac{m\omega}{2\hbar}}X + i \sqrt{\frac{1}{2m\omega\hbar}}P
+\]
+
+and its adjoint which satisfy $[a,a^\dagger] = 1$,
+
+(notice $m\omega \leftrightarrow \frac{1}{m\omega}$ as $X \leftrightarrow P$)
+
+Since $a^\dagger a = \frac{H}{\hbar \omega} - \frac12$, define an operator $\hat{H}$:
+
+\[
+\hat{H} = \frac{H}{\hbar\omega} = (a^\dagger a+1/2)
+\]
+
+which has the properties,
+
+\[
+[a,\hat{H}] = a
+\]
+\[
+[a^\dagger,\bar{H}] = -a^\dagger.
+\]
+
+We wish to solve the eigenvalue equation for $\hat{H}$, $\hat{H}\ket{\epsilon} = \epsilon\ket{\epsilon}$.
+
+It can then be shown that $a\ket{\epsilon}$ is an eigenstate with eigenvalue $\epsilon -1$ and so is $a^\dagger \ket{\epsilon}$ with eigenvalue $\epsilon +1$.
+
+There is a lower bound to the energy, $\epsilon_0 = \frac{1}{2}$, and thus we get back the energy levels we derived earlier.
+
+In addition, we have,
+
+\[
+a\ket{n} = \sqrt{n}\ket{n-1}
+\]
+\[
+a^\dagger\ket{n}=\sqrt{n+1}\ket{n+1}
+\]
+\[
+a^\dagger a\ket{n} = n\ket{n}
+\]
+
+These relations allow us to compute the matrix elements of operators in the $\ket{n}$ basis by inverting the earlier relations for $X$ and $P$.
+
+We can also express
+
+\[
+\ket{n} = \frac{(a^\dagger)^n}{\sqrt{n}}\ket{0}
+\]
+
+
+
+**** X-basis
+
+\[
+\braket{x}{n} = \frac{1}{\sqrt{n!}}\left[\frac{1}{\sqrt{2}}\left(y-\dv{}{y}\right)\right]^n\left(\frac{m\omega}{\pi\hbar}\right)^{1/4} e^{-y^2/2}
+\]
+
+where $y = \sqrt{\frac{\hbar}{m\omega}}x$

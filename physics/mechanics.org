@@ -2,6 +2,138 @@
 #+STARTUP: latexpreview
 #+HUGO_SECTION: Physics
 
+* Analytical mechanics
+** EL equations
+
+L = T - V
+
+\[
+\dv{t}\left(\pdv{L}{\dot x}\right) = \pdv{L}{x}
+\]
+
+- Generalised momentum
+
+\[
+\pdv{L}{\dot q} = p
+\]
+
+- Generalised force
+
+\[
+\pdv{L}{q} = \dot{p}
+\]
+
+
+*** Cyclic coordinate
+
+When the Lagrangian does not depend on a coordinate qk:
+
+\[
+\pdv{L}{\dot q_k} = C
+\]
+
+This is also generalised momentum.
+
+q_k is thus a cyclic coordinate.
+
+*** Energy conservation
+
+\[
+\pdv{E}{t} = -\pdv{L}{t}
+\]
+
+
+\[
+E = \left(\sum_{i=1}^N \pdv{L}{\dot q_i}\dot{q_i}\right) - L
+\]
+
+If L has no time dependence, then E is conserved.
+
+E is indeed total energy when the new coordinate q is not related to the old coordinate x with a time dependence $x = x(q,t)$ or qdot dependence $x = x(q,\dot{q})$.
+
+*** Noether's theorem
+
+For each symmetry of the Lagrangian, there is a conserved quantity.
+
+Let the Lagrangian be invariant to first order in the small number $\epsilon$.
+
+\[
+q_i \to q_i + \epsilon K_i(q)
+\]
+
+each K_i(q) may be a function of all the q_i and need not be constant.
+
+The quantity:
+
+\[
+P(q,\dot{q}) = \sum_i \pdv{L}{\dot q_i}K_i(q)
+\]
+
+does not change with time and has the generic name of consered momentum.
+
+Example:
+
+For $L = (m/2)(5\dot{x}^2 - 2\dot{x}\dot{y} + 2\dot{y}^2) + C(2x-y)$, K_x = 1 and K_y = 2:
+
+\[
+P = \pdv{L}{\dot{x}}K_x + \pdv{L}{\dot y}K_y = m(3\dot{x} + 3\dot{y})
+\]
+
+
+** Constraints
+
+When the constraint has the form,
+
+\[
+f(\bm{r_1},\bm{r_2},\ldots,t) = 0
+\]
+
+then it is said to be *holonomic*. Otherwise they are nonholonomic.
+
+Equations of constraints which explicitly contain time as a variable are called *rheonomous* while those which don't are called *scleronomous*.
+
+** Velocity-dependent potentials
+
+\[
+Q_j = -\pdv{U}{q_j} + \dv{}{t} \pdv{U}{\dot{q}_j}
+\]
+
+** Dissipation forces
+
+If not all the forces can be derivable from a potential, then EL equations can be written in the form,
+
+\[
+\dv{}{t} \pdv{L}{\dot{q}_j} - \pdv{L}{q_j} = Q_j
+\]
+
+Often the frictional force is proportional to the velocity of the particle. e.g. $F_{x} = -k_xv_x$. Thus we may derive them from *Rayleigh's dissipation function*, $\mathcal{F}$.
+
+\[
+\mathcal{F} = \frac12 \sum_i \left \left(k_x v^2_{ix} + k_y v^2_{iy} + k_z v^2_{iz}\right)
+\]
+
+where the summation is over the particles of the system.
+
+Thus, $F_{x_i} = - \pdv{\mathcal{F}}{v_{x_i}}$.
+
+Or symbolically,
+
+\[
+\bm{F} = -\grad_v\mathcal{F}
+\]
+
+$2\mathcal{F}$ is the also the rate of energy dissipation due to friction.
+
+The generalized force is given by,
+
+\[
+Q_j = -\pdv{\mathcal{F}}{\dot{q}_j}
+\]
+
+
+
+
+
 * Central forces
 
 Only depends of radius from source. Motion takes place in a plane.
@@ -362,7 +494,6 @@ Fully transmitted. Can occur even when the string is inhomogenous by scaling ten
 For sound waves
 
 $Z = \frac{p_0}{v} = \sqrt{\frac{\rho p_0}{\gamma}} = \frac{\rho v}{\gamma}$
-
 
 * Special relativity
 
