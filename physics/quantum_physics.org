@@ -313,89 +313,6 @@ The matrix representation of $\hat{A}$ in basis x is $A_{ij} = \bra{i}\hat{A}\ke
 passive: rotating the axes
 active: rotating the vector expressed in the same axes.
 
-* Stern-Gerlach
-
-The intrinsic spin angular momentum of a particle, we write
-
-\[
-\bm{\mu} = \frac{gq}{2mc}\bm{S}
-\]
-
-The force by the magnet equals:
-
-\[
-F_z = \mu_B \pdv{B}{z}
-\]
-
-where u_b is the bohr magneton
-
-* Angular momentum
-
-In general:
-
-\[
-\hat{R}(\phi \bm{n}) = e^{-i \bm{\hat{J}\cdot n} \phi / \hbar}
-\]
-
-We can represent 2d rotation in the cartesian plane like this:
-
-\begin{bmatrix}
-\bra{x}\hat{R}(\phi \bm{k})\ket{x} & \bra{x}\hat{R}(\phi \bm{k})\ket{y} \\
-\bra{y}\hat{R}(\phi \bm{k})\ket{x} & \bra{y}\hat{R}(\phi \bm{k})\ket{y} \\
-\end{bmatrix}
-
-which just gives:
-
-\begin{bmatrix}
-\cos\phi & -\sin\phi \\
-\sin\phi & \cos\phi \\
-\end{bmatrix}
-
-
-
-Note that rotations and generators don't commute as:
-
-\[
-[\hat{J}_x,\hat{J}_y] = i\hbar \hat{J}_z
-\]
-
-which holds for cyclic permutations
-
-** Commuting operators
-
-Consider two linear Hermitian operators $\Omega, \Lambda$ which commute.
-
-Suppose only a single state $\ket{\omega}$ that is an eigenstate of $\Omega$ with eigenvalue $\omega$.
-
-Then from the commutativity relation: $\Lambda\ket{\omega}$ is also an eigenstate of operator $\Omega$.
-Since we presumed there is only one such state, this shows that $\Lambda\ket{\omega} = \lambda\ket{\omega}$.
-
-We can then label the eigenvector as $\ket{\omega,\lambda}$.
-
-
-*** Degeneracy
-
-If there is more than one eigenstate of the operator $\Omega$ with eigenvalue $\omega$, we say there is degeneracy.
-
-** Eigenvalues and eigenstates of angular momentum
-
-Although the generators of rotations about different axes do not commute, the following operator commutes with each of the gneerators.
-
-\[
-\bm{\hat{J}}^2 = \hat{J}_x^2 + \hat{J}_y^2 + \hat{J}_z^2
-\]
-
-
-Since it commutes with each generator, these operators have simulataneous eigenstates in common.
-
-\[
-\bm{\hat{J}}^2\ket{\lambda,m} = \lambda \hbar^2 \ket{\lambda,m}
-\]
-
-\[
-\hat{J}_z\ket{\lambda,m} = m \hbar \ket{\lambda,m}
-\]
-
 * 1D problems
 
 \[
@@ -548,3 +465,90 @@ We can also express
 \]
 
 where $y = \sqrt{\frac{\hbar}{m\omega}}x$
+
+* Path integral formulation
+
+Finding propogators has been hard.
+
+* Stern-Gerlach
+
+The intrinsic spin angular momentum of a particle, we write
+
+\[
+\bm{\mu} = \frac{gq}{2mc}\bm{S}
+\]
+
+The force by the magnet equals:
+
+\[
+F_z = \mu_B \pdv{B}{z}
+\]
+
+where u_b is the bohr magneton
+
+* Angular momentum
+
+In general:
+
+\[
+\hat{R}(\phi \bm{n}) = e^{-i \bm{\hat{J}\cdot n} \phi / \hbar}
+\]
+
+We can represent 2d rotation in the cartesian plane like this:
+
+\begin{bmatrix}
+\bra{x}\hat{R}(\phi \bm{k})\ket{x} & \bra{x}\hat{R}(\phi \bm{k})\ket{y} \\
+\bra{y}\hat{R}(\phi \bm{k})\ket{x} & \bra{y}\hat{R}(\phi \bm{k})\ket{y} \\
+\end{bmatrix}
+
+which just gives:
+
+\begin{bmatrix}
+\cos\phi & -\sin\phi \\
+\sin\phi & \cos\phi \\
+\end{bmatrix}
+
+
+
+Note that rotations and generators don't commute as:
+
+\[
+[\hat{J}_x,\hat{J}_y] = i\hbar \hat{J}_z
+\]
+
+which holds for cyclic permutations
+
+** Commuting operators
+
+Consider two linear Hermitian operators $\Omega, \Lambda$ which commute.
+
+Suppose only a single state $\ket{\omega}$ that is an eigenstate of $\Omega$ with eigenvalue $\omega$.
+
+Then from the commutativity relation: $\Lambda\ket{\omega}$ is also an eigenstate of operator $\Omega$.
+Since we presumed there is only one such state, this shows that $\Lambda\ket{\omega} = \lambda\ket{\omega}$.
+
+We can then label the eigenvector as $\ket{\omega,\lambda}$.
+
+
+*** Degeneracy
+
+If there is more than one eigenstate of the operator $\Omega$ with eigenvalue $\omega$, we say there is degeneracy.
+
+** Eigenvalues and eigenstates of angular momentum
+
+Although the generators of rotations about different axes do not commute, the following operator commutes with each of the gneerators.
+
+\[
+\bm{\hat{J}}^2 = \hat{J}_x^2 + \hat{J}_y^2 + \hat{J}_z^2
+\]
+
+
+Since it commutes with each generator, these operators have simulataneous eigenstates in common.
+
+\[
+\bm{\hat{J}}^2\ket{\lambda,m} = \lambda \hbar^2 \ket{\lambda,m}
+\]
+
+\[
+\hat{J}_z\ket{\lambda,m} = m \hbar \ket{\lambda,m}
+\]
