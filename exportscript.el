@@ -1,7 +1,6 @@
 (add-to-list 'load-path "./ox-hugo/")
-(add-to-list 'load-path "./tomelr/")
-(require 'ox-hugo)
 (load-file "./minimal-config.el")
+(require 'ox-hugo)
 (require 'seq)
 (defvar *blacklisted-dirs* (seq-filter (lambda (fi)
                                          (not (member fi '("math" "physics" "prog"))))
