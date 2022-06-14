@@ -190,6 +190,19 @@ r = \frac{h^2 / \mu}{1+e\cos\theta}
 
 where the eccentricity $e = \sqrt{1 + \frac{2EL^2}{m\alpha^2}} = \sqrt{1+\frac{2\epsilon h^2}{\mu^2}}$ , and $\alpha = GMm$, $\mu = GM$.
 
+
+*** Kepler's equation
+
+\[
+r = a(1-e\cos\psi)
+\]
+
+*Kepler's equation*
+
+\[
+\omega t =\psi - e \sin\psi
+\]
+
 *** Eccentricity and orbits
 
 **** Circle (e = 0)
@@ -275,6 +288,7 @@ r_{min} = \sqrt{\frac{\mu^2}{v_0^4} + b^2} - \frac{\mu}{v_0^2}
 \[
 h = \sqrt{\mu a (e^2 - 1)}
 \]
+
 
 * Waves
 
