@@ -22,7 +22,6 @@ A submonoid of the monoid M(S) of all transformations of the set S is a *monoid 
 
 If $a \in M$, the *centralizer* $C_M(a)$ is the subset of M of elements of b which commute with a. It can be shown to be a submonoid (or subgroup). The centralizer of a subset of M is defined similarly but take the intersection. C(M) is the *center* of M.
 
-
 * Groups
 
 
@@ -138,7 +137,6 @@ Any two cyclic groups of the same order are isomorphic
 2. Let g and h be elements of an abelian group G having finite relatively prime orders m and n respectively. Then o(gh) = mn.
 3. Let g be an element of a finite abelian group of maximal order. Then $\exp G = o(g)$
 4. Let $\exp G$ be the smallest integer $e$ such that $x^e = 1$ for all $x \in G$. A finite abelian group is cyclic iff $\exp G = |G|$.
-
 
 
 ** Group actions
@@ -281,8 +279,10 @@ If G is a finite group of order $p^\alpha m$, where p is prime and p does not di
 
 *** Isomorphism theorems
 
-1. If $\phi : G\to H$ is a homomorphism of groups, then $\ker \phi \unlhd G$ and $G / \ker \phi \cong \phi(G)$.
+These follow from the canonical decomposition of group homomorphisms into a projection, isomorphism and inclusion map.
 
+1. If $\phi : G\to H$ is a homomorphism of groups, then $\ker \phi \unlhd G$ and $G / \ker \phi \cong \phi(G)$.
+mote.php/dav/files/delargement
    - A homomorphism is injective iff its kernel is 1.
 
    - $|G : \ker \phi| = |\phi(G)|$ This is equivalently the rank-nullity theorem.
@@ -310,3 +310,22 @@ If G is a finite group of order $p^\alpha m$, where p is prime and p does not di
 ** Group actions
 
 An action is faithful if its kernel is the identity.
+
+*Theorem*
+
+Let G be a group, H a subgroup of G and let G act by left multiplication on the set A of left cosets of H in G. Let $\pi_H$ be the associated permutation representation afforded by this action.
+
+1. G acts transitively on A
+2. The stabilizer in G of the point 1H is the subgroup H
+3. The kernel of the action is $\ker \pi_H = \cap_{x\in G}xHx^{-1}$ and $\ker \pi_H$ is the largest normal subgroup of G contained in H.
+
+*Corollary (Cayley's Theorem)*
+
+Every group is isomorphic to a subgroup of some symmetric group. IF G is a group of order n, then G is isomorphic to a subgropu of $S_n$.
+
+
+*Corollary*
+
+If G is a finite group of order n and p is the smallest prime dividing $|G|$, then any subgroup of index p is normal.
+
+* Rings

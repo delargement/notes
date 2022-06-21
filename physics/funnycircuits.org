@@ -1,7 +1,0 @@
-#+TITLE: DC circuit tricks
-#+STARTUP: latexpreview
-#+HUGO_SECTION: Physics
-
-KCL, KVL
-
-* Mesh Current Analysis/Maxwell's Circulating Currents
