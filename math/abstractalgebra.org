@@ -2,12 +2,13 @@
 #+STARTUP: latexpreview
 #+HUGO_SECTION: Math
 
+From readings of Aluffi's "Algebra: Chapter 0" and Dummit & Foote.
 
 * Monoids
 
 A *monoid* is a triple (M,p,1), in which M is a non-vacuous set, p is an associative binary composition in M, and 1 is an element of M such that p(1,a) = a = p(a,1) for all $a \in M$.
 
-A monad without an associative p is sometimes called a *monad*. If there is no requirement on 1, then its a *semigroup* (M,p).
+A monoid without an associative p is sometimes called a *monad*. If there is no requirement on 1, then its a *semigroup* (M,p).
 
 A *submonoid* of a set M, contains 1 and N is closed under the product in M.
 
@@ -17,10 +18,6 @@ A submonoid of the monoid M(S) of all transformations of the set S is a *monoid 
 
 1. Any monoid is isomorphic to a monoid of transformations.
 2. Any group is isomorphic to a transformation group.
-
-** Centralizer
-
-If $a \in M$, the *centralizer* $C_M(a)$ is the subset of M of elements of b which commute with a. It can be shown to be a submonoid (or subgroup). The centralizer of a subset of M is defined similarly but take the intersection. C(M) is the *center* of M.
 
 * Groups
 
@@ -61,7 +58,6 @@ D_2n = <r,s>
 Relations are any equations satisfied by the generators. Groups can be represented by a presentation of G.
 
 D_2n = < $r,s | r^n = s^2 = 1, rs = sr^{-1}$>
-
 
 ** Symmetric groups
 
@@ -126,9 +122,7 @@ If $\psi : G \mapsto H$, then
 2. G is abelian iff H is abelian
 3. for all $x \in G$, $|x| = |\psi(x)|$
 
-
 Any two cyclic groups of the same order are isomorphic
-
 
 
 ** Group properties
@@ -138,13 +132,11 @@ Any two cyclic groups of the same order are isomorphic
 3. Let g be an element of a finite abelian group of maximal order. Then $\exp G = o(g)$
 4. Let $\exp G$ be the smallest integer $e$ such that $x^e = 1$ for all $x \in G$. A finite abelian group is cyclic iff $\exp G = |G|$.
 
-
 ** Group actions
 
 A group action of a group G acting on a set A is a map from $G \times A$ to A (written $g \cdot a$ for all $g \in G$ and $a \in A$) satisfying the following properties:
 1. $g_1 \cdot (g_2 \cdot a) = (g_1g_2)\cdot a$, for all g1,g2 in G, a in A
 2. $1 \cdot a  = a$, for all a in A.
-
 
 ** Orbits & cosets
 
@@ -188,7 +180,7 @@ A subgroup of a group G is called normal if every element of G normalizes the gr
 **** Stabilizer
 
 \[
-G_s = \{g \in G | g \cdot s = s\}
+stab_G(s) = \{g \in G | g \cdot s = s\}
 \]
 
 **** Kernel
@@ -228,7 +220,7 @@ Let G be a group and N be a subgroup of G.
 
 The operation on the set of left cosets of N in G described by $uN \cdot vN = (uv) N$ is well defined (the group action can be any arbitrary representative) iff $gng^{-1} \in N$ for all $g \in G, n\in N$
 
-If the above operation is well defined , it makes the set of left cosets of N into a group.
+If the above operation is well defined, it makes the set of left cosets of N into a group.
 
 *Theorem*
 
@@ -251,8 +243,6 @@ If H and K are subgroups of a group, HK is a subgroup iff HK = KH.
 If H and K are subgroups and $H \leq N_G(K)$, then HK is a subgroup of G.
 
 
-
-
 **** Lagrange's theorem
 
 If G is a finite group, $H \leq G$, then $|H|$ divides $|G|$.
@@ -265,7 +255,7 @@ The converse, the group has a subgroup of order $n$ for each divisor of |G| is t
 
 If G is a finite group and p is a prime dividing |G|, then G has an element of order p.
 
-*Theorem (Sylow)*
+*Theorem (Sylow's 1st theorem)*
 
 If G is a finite group of order $p^\alpha m$, where p is prime and p does not divide m, then G has a subgroup of order $p^\alpha$
 
@@ -323,9 +313,514 @@ Let G be a group, H a subgroup of G and let G act by left multiplication on the 
 
 Every group is isomorphic to a subgroup of some symmetric group. IF G is a group of order n, then G is isomorphic to a subgropu of $S_n$.
 
-
 *Corollary*
 
 If G is a finite group of order n and p is the smallest prime dividing $|G|$, then any subgroup of index p is normal.
 
+
+*** Conjugation action
+
+Based on the earlier discussion on Lagrange's theorem,
+
+*Theorem*
+
+\[
+\vert S | = | Z | + \sum_{a\in A}[G: G_a]
+\]
+
+where $G_a$ is the stabilizer and Z is the set of fixed points of the action.
+
+
+*Corollary*
+
+For a p-group acting on a finite set S, and letting Z be the fixed point set of the action,
+
+\[
+\vert Z | \equiv |S | \mod p
+\]
+
+
+We will now define Z to be the centralizer.
+
+*Lemma*
+
+Let G be a finite group. If G/Z(G) is cyclic, then G is commutative and G/Z(G) is trivial.
+
+We may now derive the Class Formula
+
+*Theorem (Class Formula)*
+
+\[
+\vert G | = |Z(G)| + \sum_{a\in A}[G:Z(a)]
+\]
+
+*Corollary*
+
+A non-trivial p-group has nontrivial center.
+
+
+In fact, every group of order p^2 is commutative.
+
+
+** Sylow's theorems
+
+
+*Definition*
+
+A p-Sylow subgroup of a finite group is a subgroup of order p^r where the order of G is p^r m and gcd(p,m) = 1.
+
+
+*Theorem (Sylow's 1st theorem)*
+
+If G is a finite group of order $p^\alpha m$, where p is prime and p does not divide m, then G has a subgroup of order $p^\alpha$
+
+Equivalently, if p^k divides the order of G, then G has a subgroup of order p^k.
+
+
+*Theorem (Sylow's 2nd theorem)*
+
+Let G be a ﬁnite group, let P be a p-Sylow subgroup, and let $H \subset G$ be a p-group. Then H is contained in a conjugate of P: There exists g ∈ G such that $H \subset gPg^{-1}$.
+
+*Theorem (Sylow's 3rd theorem)*
+
+Let p be a prime integer, and G be a finite group of order p^r m. If p does not divide m, then the number of p-sylow subgroups of G divides m and is congruent to 1 mod p.
+
 * Rings
+
+A ring is an abelian group with a second binary operation which has the properties of a monoid, with distributive properties with +.
+
+** Element properties
+
+$a$ is a:
+
+*Left-zero divisor*, if there is a $b\in R,b\neq 0$ such that ab=0. $a$ is non-zero-divisor iff left multiplication is an injective function.
+
+*Left unit*, if there is a b such that ab=1. (invertible)
+Properties:
+- Left multiplication is a surjective function (equivalent definition)
+- Right multiplication is injective / $a$ is not a right zero-divisor
+- The inverse of a two-sided unit is unique
+- Two-sided unit form a group under multiplication.
+
+** Types of rings
+
+*Integral domain*: A nonzero commutative ring such that ab=0 implies a=0 or b=0 (has no left-zero divisors). Thus cancellation laws work.
+
+*Field*: A nonzero commutative ring where every nonzero element is a unit. (i.e. a nonzero commutative division ring) All fields are integral domains. All integral domains are fields when the ring is finite. It can be shown using *Wedderburn's little theorem* that finite division rings necessarily commute.
+
+A field is algebraically closed if for every non-constant f(x) in k[x] there is a r such that f(r) = 0. e.g. the complex field.
+
+The only ideals of a field is the trivial ideal and itself.
+
+*Subring*: A ring whose subset inclusion function is a ring homomorphism.
+
+*Noetherian*: A commutative ring whose every ideal is finitely generated.
+
+*Principal Ideal domain (PID):* An integral domain where whose every ideal is principal.
+
+*Unique Factorization domain (UFD):*
+
+
+** Polynomial rings
+
+A polynomial is a finite linear combination of monomials in a certain indeterminate with ring elements as coefficients. Polynomial rings clearly inherit properties such as commutativity, Noetherian, integral domain and UFD. Those inherited from fields are PIDs.
+
+** Cayley's theorem analog for rings
+
+The function $r\mapsto \lambda_r, \lambda : R \to End_{Ab}(R)$ is an injective ring homomorphism.
+
+** Ideals
+
+A subgroup I of R is a left ideal if $rI \subset I$ for all $r \in R$. In general, the only ideal containing 1 is the ring itself.
+
+Ideals define a canonical projection, in fact a projection from R->R/I is a ring homomorphism iff I is an ideal of R. Every ideal is the kernel of some ring homomorphism and all kernels are ideals. The canonical decomposition lead to analogs of the isomorphism theorems for rings.
+
+
+Ideals may be generated by multiplication of a ring element with the ring. In the commutative case, aR is denoted by (a). Intersections and products of ideals are ideals. Products of ideals are subsets of their intersection. The sum of ideals is also an ideal. Each element of this ideal is a linear combination of the elements generating the ideals. These ideals are finitely generated. These lead to the defintions of Noetherian and PIDs (defined above). While Z is a PID, Z[x] isn't.
+
+
+*Theorem*
+
+Let R be a commutative ring, and f(x) a monic polynomial of degree d. The function $\varjphi: R[x] \to R^{\otimes d}$ defined by sending $g(x) \in R[x]$ to the remainder of the division of g by f induces an isomorphism of abelian groups, $R[x]/(f(x)) \cong R^{\otimes d}$.
+
+
+** Primes and maximal ideals
+
+*Definition*
+
+Let I be a proper ideal of a commutative ring.
+
+- I is a *prime ideal* if $R/I$ is an integral domain.
+- I is a *maximal ideal* if $R/I$ is a field. (maximal implies prime)
+
+
+Equivalently,
+
+- I is prime iff for all $a,b \in R$
+
+\[
+ a b \in I \implies (a\in I \text{ or } b \in I)
+\]
+
+The equivalence is related to the nature of cancellation on integral domains.
+
+- I is maximal iff for all ideals of R,
+
+\[
+ I \subseteq J \implies (I = J \text{ or } J = R)
+\]
+
+This follows from a commutative ring being a field iff its ideals are (0) and (1).
+
+Prime and maximal are equivalent under these cases:
+
+- I is an ideal of a commutative ring and R/I is finite. This follows from the earlier proposition on equivalence between fields and integral domains for finite rings.
+- R is a PID and I is a nonzero ideal in R.
+
+
+*** Polynomial rings
+
+The set of prime ideals of a commutative ring is called the *spectrum* of R.
+
+The krull dimension of a commutative ring is the length of the longest chain (by inclusion) of *prime* ideals in R. PIDs and fields necessarily have dimension 1 (Why?). Using Hilbert's Nullenstatz however, it can be shown that the Krull dimension of k[x1,x2,...,xn] is precisely n.
+
+For polynomials induced by an algebraically closed field, the maximal ideals are exactly those of the form (x-c).
+
+** Modules
+
+R-modules are abelian groups endowed with an action of R. The left action fulfills the following requirements.
+
+1. The two kinds of distributivity
+2. $rs \cdot m$ = $r\cdot (s\cdot m)$
+3. Existence of identity action.
+
+Note the similarity with scalar multiplication in vector spaces.
+
+Every abelian group is a Z-module in exactly one way, as Z is initial in the category of Ring.
+
+*Definition*
+
+In a commutative ring, an R-algebra is a ring homomorphism $\alpha: R\to S$ such that $\alpha(R)$ is contained in the center of S. this allows $(r_1s_1)(r_2s_2) = (r_1r_2)(s_1s_2)$.
+
+
+*** Submodules & Quotients
+
+A submodule N is a subgroup preserved by the action of R. That is rn is in N for all r and n. This is akin to ideals and thus submodules are exactly the ideals of R.
+
+rM where r is in the center of R and M is an R-module is a submodule of M. If I is any (left)-ideal, $IM = \left\{\sum_i r_i m_i \vert r_i \in I, m_i \in M\right\}$ is a submodule. A submodule has a corresponding canonical projection, and thus for all submodules N, the corresponding quotient group is an R-module on M/N.
+
+If R is a ring and I is a two-sided ideal of R, then I, R and R/I are R-modules. I is a submodule of R, and R and R/I are R-algebras if R is commutative.
+
+The three ismomorphism theorems also follow.
+
+
+*** Noetherian modules
+
+A module is finitely generated
+
+*Theorem*
+
+On an R-module V, every submodule of V is finitely generated iff it fulfills the ascending chain condition (a.c.c): There is no infinite strictly increasing chain of submodules of V.
+
+An R-module M is noetherian if every submodule of M is finitely generated as an R-module. Equivalently, a ring is notheritan iff it is noetherian as a module over itself.
+
+*Theorem*
+
+Let M be an R-module, and N a submodule of M. then M is Noetherian iff both N and M/N are Noetherian.
+
+*** Generation of R-algebras
+
+An R-algebra is *finitely generated* as a module over R if there is an onto homomorphism of R-modules from the free R-module on a finite set to S. (Think vector spaces). S is thus *finite type*.
+
+An R-algebra is *finitely generated* as an algebra if there is an onto homomorphism of R-algebras from the free R-algebra on a finite set to S. (Think complex numbers or polynomial rings). S is thus called of *finite type.*
+
+Finite implies finite type but not the other way around, like the polynomial ring.
+
+* Irreducibility and factorization
+
+[[file:./aluffione.png]]
+
+By default, we will be only considering commutative rings which are integral domains.
+
+
+Recall that a ring is Noetherian if every ideal of R is finitely generated.
+
+*Proposition*
+
+R is a commutative ring and M is an R-module.
+
+TFAE:
+
+- M is noetherian.
+- M fulfills the acc condition
+- Every nonempty family of submodules of M has a maximal element w.r.t. inclusion
+
+
+*Theorem*
+
+Let R be a Noetherian ring, and J be an ideal of the polynomial ring $R[x_1,\ldots,x_n]$. Then the ring $R[x_1,\ldots,x_n]/J$ is Noetherian.
+
+This follows from the Hilbert's basis theorem, and expresses the fact that every finite-type algebra over a Noetherian ring is Noetherian.
+
+
+*Lemma (Hilbert's basis theorem)*
+
+$R$ noetherian implies $R[x_1,\ldots,x_n]$ Noetherian.
+
+
+** Prime and irreducible elements
+
+*Definition*
+
+$a,b\in R$ where R is a (commutative) ring. $a \vert b$ if $b \in (a)$. Two elements are associates if $(a) = (b)$, or when a|b and b|a.
+
+
+In integral domains, we can relax the definition of associates to:
+
+*Lemma*
+
+Let a,b be nonzero elements of an integral domain R. Then a and b are associates iff $a = ub$ for some unit u in R.
+
+
+*Definition*
+
+Let R be an integral domain.
+
+An element $a$ is *prime* if the ideal $(a)$ is prime; that is, a is not a unit and:
+
+\[
+a | bc \implies (a | b \text{ or } a | c)
+\]
+
+An element $a$ is *irreducible* if a is not invertible (not a unit) and
+
+\[
+a=bc \implies (\text{b is a unit or c is a unit})
+\]
+
+Some other definitions include:
+
+*Definition*
+
+A nonunit $a$ is irreducible iff
+- a = bc implies that a is an associate of b or of c
+- a = bc implies (a) = (b) or (a) = (c)
+- $(a) \subseteq (b) \implies (b) = (a)$  or $(b) = (1)$.
+- (a) is maximal among proper principal ideals (rephrasing the previous point)
+
+
+It can be shown that in an integral domain, a non zero prime element is always irreducible. The converse holds in UFDs.
+
+** Factorization
+
+An element in an integral domain has a factorization into irreducibles if it is equal to a product of irreducible elements. The factorization is unique if the elements are determined up to order and associates.
+
+*Definition*
+
+An integral domain is a *domain with factorization* if every nonzero, non-invertible element has a factorization into irreducibles. If the factorizations are unique, the domain is called *factorial* or a *unique factorization domain (UFD)*.
+
+
+Here are some conditions for factorizations to exist:
+
+- If every ascending chain of principal ideals starting with a nonzero, non-invertible element stabilizes, then that element has a factorization into irreducibles.
+- Noetherian rings fullfill the a.c.c so factorizations exist in them.
+
+
+** UFDs
+
+Alternate definitions:
+
+- The acc for principal ideals holds in R and every irreducible element of R is prime.
+
+Properties:
+
+Let R be a UFD, and a,b,c be nonzero elements of R.
+
+- $(a) \subseteq (b)$ $\iff$ the multiset of irreducible factors of b is contained in the multiset of irreducible factors of a.
+- a and b are associates iff the two multisets coincide
+- the irreducible factors of a product 'bc' are the collection of all irreducible factors of b and of c.
+- All PIDs are UFDs.
+
+
+In UFDs, the gcd always exists, where we define the gcd as an element d such that d | a and d | b and any element which also divides a and b also divides d. This can be shown by constructing the gcd from the 'prime factorization' as with integers.
+
+** Euclidean domains
+
+Rings where one can perform division with remain (recall euclid's algorithm).
+
+*Definition*
+
+A *valuation* on an integral domain is any function $v : R\ \{0\} \to \mathbb{Z}^{\geq 0}$.
+A *Euclidean valuation* on an integral domain is a valuation such that for all a and nonzero b, there exist q and r such that:
+
+\[
+a = qb + r
+\]
+
+with either $r=0$ or $v(r) < v(b)$. An integral domain is a *Euclidean domain* if it admits a Euclidean valuation.
+
+Euclid's algorithm can thus be proved by noting that $a = bq + r \implies (a,b) = (b,r)$. Thus $\gcd(a,b) = \gcd(b,r)$. (given it exists)
+
+
+
+** Unique factorization in polynomial rings
+
+We would like to establish that R[x] is a UFD when R is a UFD. But first we would need to prove Gauss' lemma and introduce the idea of primitivity.
+
+
+*Definition*
+
+Let R be a commutative ring and let $f(x) \in R[x]$. $f$ is *primitive* if for all principal prime ideals $\mathfrak{p}$, $f \notin \mathfrak{p}R[x]$. If the requirement of being principal is removed, then you could call it 'very primitive'.
+
+Products of polynomials are primitive iff the constituents are primitive.
+
+*Properties:*
+
+- f is very primitive iff $(a_0,\ldots,a_d) = (1)$.
+- If R is a UFD, then f is primitive iff $\gcd(a_0,\ldots,a_d)=1$.
+
+*Definition*
+
+The *content* of a nonzero polynomial $f \in R[x]$ denoted $cont_f$ is the gcd of its coefficients. Uniqueness is only definde up to units but usually only the principal ideal generated by the content matters.
+
+*Properties:*
+
+Let R be a UFD and $f \in R[x]$. Then,
+
+- $(f) = (cont_f)(\underbar{f})$, where $\underbar{f}$ is primitive.
+- if $(f) = (c)(g)$ with $c\in R$ and $g$ primitive, then $(c) =(cont_f)$.
+
+
+We may now cite Gauss' lemma
+
+*Theorem*
+
+Let R be a UFD, and $f,g \in R[x]$. Then,
+
+\[
+(cont_{fg})=(cont_f)(conf_g)
+\]
+
+
+Thus when $(f) \subseteq (g)$, then $(cont_f)\subseteq (cont_g)$
+
+
+** Localization and the field of fractions
+
+The field of fractions is the smallest field containing R. K(Z) = Q.
+
+*Definition*
+
+The field of rational functions is the field of fractions of the ring R[x].
+
+*Theorem*
+
+If R is a UFD and K is the field of fractions of R, then a nonconstant polynomial in R is irreducible in R[x] iff it is irreducible in K[x] and primitive.
+
+
+Using this construction, we can show that if R is a UFD, then R[x] is a UFD. (Analagous to Hilbert's basis theorem). Note that this does not apply to power series as counter examples exist.
+
+The idea is that since K is a field thus K[x] is a PID hence a UFD, it can be prime factorized, and by the earlier theorem factorization of K[x] is essentially factorization in K[x].
+
+
+** Irreducibility of polynomials
+
+Preliminary results:
+
+- The number of roots of a polynomial induced by an integral domain is at most n. This can be shown by noting that K(R)[x] can have at most n roots corresponding to its irreducible degree 1 factors.
+- If R is an infinite integral domain, then for f,g in R[x], f = g iff $r\mapsto f(r)$, $r\mapsto g(r)$ agree. This shown by noting a nonzero polynomial can't have infinite roots.
+- A polynomial of degree 2 or 3 in a polynomial ring induced by a field is irreducible iff it has no roots.
+
+
+*** Algebraically closed fields
+
+We can construct algebraic extension to a field to add more roots. A homomorphism of fields is necessarily injective so the inclusion map is quite natural.
+
+*Theorem*
+
+Let k be a field, and $f(t) \in k[t]$ be a nonzero irreducible polynomial. Then,
+
+\[
+F :=k[t] / (f(t))
+\]
+
+is a field endowed, with a natural homomorphism ($k \to k[x] \to F$), realizing it as an extension of k. Further, if $f(x) \in k[x] \subseteq F[x]$ has a root in F, namely the coset of t.
+
+It is a field because k is a field thus k[t] is a PID, all PIDs are UFDs and thus f(t) irreducible implies prime implies maximal thus the quotient is a field.
+
+
+**** Algebraic closure
+
+*Definition*
+
+A field is *algebraically closed* if all irreducible polynomials in k[x] have degree 1 iff every nonconstant polynomial factors completely as a product of linear factors iff every nonconstant polynoimal has a root in k.
+
+Similar to Euclid's argument proving the infinitude of prime integers, algebraically closed fields are infinite.
+
+
+**** Polynomials
+
+We may ask if irreduciblity is preserved to some extent under homomorphisms.
+
+For example for Z[x],
+
+*Proposition*
+
+let $f \in \mathbb{Z}[x]$ be a primitive polynomial, and p a prime integer. If f mod p has the same degree as f and is irreducible in $Z/pZ[x]$, then f is irreducible in Z[x].
+
+But in general there are irreducible polynomials which are reducible modulo all primes.
+
+
+*Theorem (Eisenstein's criterion)*
+
+Let R be a (commutative) ring, and let $\mathfrak{p}$ be a prime ideal of R.
+
+If a polynomial fulfills,
+
+1. $a_n \notin \mathfrak{p}$
+2. $a_i \notin \mathfrak{p}$ for $0 \leq i < n-1$
+3. $a_0 \notin \mathfrak{p}^2$.
+
+Then f is not the product of polynomials of degree < n in R[x].
+
+In particular it says that cyclotomic polynomials with prime number of terms are irreducible.
+
+** Chinese remainder theorem
+
+How much information is needed to reconstruct an integer based on its modulo classes?
+
+Assume commutative ring.
+
+*Theorem*
+
+Let $I_1,\ldots,I_k$ be ideals of R such that $I_i + I_j = (1)$ for all $i\neq j$. Then the natural homomorphism
+
+\[
+\varphi : R \to \frac{R}{I_1} \times \ldots \times \frac{R}{I_k}
+\]
+
+is surjective and induces an isomorphism
+
+\[
+\tilde{\varphi} : \frac{R}{I_1\ldots I_k} \tilde{\to} \frac{R}{I_1} \times \ldots \times \frac{R}{I_k}
+\]
+
+In PIDs since gcd(a,b) = 1 iff (a,b) = (1) as ideals,
+
+*Corollary*
+
+Let $a_i \in R$ be the elements such that $\gcd(a_i,a_j) = 1$ for all $i\neq j$. Let $a = a_1\ldots a_k$. Then the map
+
+\[
+\varphi : \frac{R}{(a)} \to \frac{R}{(a_1)} \times \ldots \times \frac{R}{(a_k)}
+\]
+
+defined by $r + (a) \mapsto (r+(a_1),\ldots,r+(a_k))$ is an isomorphism.
+
+** Gaussian integers
+
+Gaussian integers are an example of Euclidean domains besides the integer ring and F[x] where F is a field.
+
+\[
+\mathbb{Z}[i] := \frac{Z[x]}{(x^2 + 1)}
+\]

@@ -4,12 +4,13 @@
 Archived entries from file /home/spongiforma/documents/notes/math/abstractalgebra.org
 
 
-* Isomorphism theorems
+* Irreducibility and factorization
 :PROPERTIES:
-:ARCHIVE_TIME: 2022-05-31 Tue 15:29
+:ARCHIVE_TIME: 2022-06-22 Wed 16:31
 :ARCHIVE_FILE: ~/documents/notes/math/abstractalgebra.org
-:ARCHIVE_OLPATH: Groups/Quotient groups
 :ARCHIVE_CATEGORY: abstractalgebra
 :END:
 
-1. If $\phi : G\to H$ is a homomorphism of groups, then $\ker \phi \unlhd G$ and $G / \ker \phi \cong \phi(G).
+[[file:./aluffione.png]]
+
+By default, we will be only considering commutative rings which are integral domains.
