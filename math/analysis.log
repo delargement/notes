@@ -1,0 +1,1034 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.7.1)  30 JUN 2022 16:50
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**analysis.tex
+(./analysis.tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-05-11>
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count179
+\c@section=\count180
+\c@subsection=\count181
+\c@subsubsection=\count182
+\c@paragraph=\count183
+\c@subparagraph=\count184
+\c@figure=\count185
+\c@table=\count186
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2020/08/01 v1.3d Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen139
+\Gin@req@width=\dimen140
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/grffile/grffile.sty
+Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
+y)
+Package grffile Info: This package is an empty stub for compatibility on input 
+line 40.
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
+\LTleft=\skip49
+\LTright=\skip50
+\LTpre=\skip51
+\LTpost=\skip52
+\LTchunksize=\count187
+\LTcapwidth=\dimen141
+\LT@head=\box47
+\LT@firsthead=\box48
+\LT@foot=\box49
+\LT@lastfoot=\box50
+\LT@cols=\count188
+\LT@rows=\count189
+\c@LT@tables=\count190
+\c@LT@chunks=\count191
+\LT@p@ftn=\toks18
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen142
+\WF@size=\dimen143
+\c@WF@wrappedlines=\count192
+\WF@box=\box51
+\WF@everypar=\toks19
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count193
+\rotFPtop=\skip53
+\rotFPbot=\skip54
+\rot@float@box=\box52
+\rot@mess@toks=\toks20
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box53
+\UL@hyphenbox=\box54
+\UL@skip=\skip55
+\UL@hook=\toks21
+\UL@height=\dimen144
+\UL@pe=\count194
+\UL@pixel=\dimen145
+\ULC@box=\box55
+Package: ulem 2019/11/18
+\ULdepth=\dimen146
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/09/23 v2.17i AMS math features
+\@mathmargin=\skip56
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks22
+\ex@=\dimen147
+))
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen148
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count195
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count196
+\leftroot@=\count197
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count198
+\DOTSCASE@=\count199
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box56
+\strutbox@=\box57
+\big@size=\dimen149
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count266
+\c@MaxMatrixCols=\count267
+\dotsspace@=\muskip16
+\c@parentequation=\count268
+\dspbrk@lvl=\count269
+\tag@help=\toks23
+\row@=\count270
+\column@=\count271
+\maxfields@=\count272
+\andhelp@=\toks24
+\eqnshift@=\dimen150
+\alignsep@=\dimen151
+\tagshift@=\dimen152
+\tagwidth@=\dimen153
+\totwidth@=\dimen154
+\lineht@=\dimen155
+\@envbody=\toks25
+\multlinegap=\skip57
+\multlinetaggap=\skip58
+\mathdisplay@stack=\toks26
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2021/texmf-dist/tex/latex/capt-of/capt-of.sty
+Package: capt-of 2009/12/29 v0.2 standard captions outside of floats
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+)
+\@linkdim=\dimen156
+\Hy@linkcounter=\count273
+\Hy@pagecounter=\count274
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
+File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel la
+nguages
+) (/usr/local/texlive/2021/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count275
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4192.
+Package hyperref Info: Link nesting OFF on input line 4197.
+Package hyperref Info: Hyper index ON on input line 4200.
+Package hyperref Info: Plain pages OFF on input line 4207.
+Package hyperref Info: Backreferencing OFF on input line 4212.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4445.
+\c@Hy@tempcnt=\count276
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4804.
+\XeTeXLinkMargin=\dimen157
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count277
+\Field@Width=\dimen158
+\Fld@charsize=\dimen159
+Package hyperref Info: Hyper figures OFF on input line 6075.
+Package hyperref Info: Link nesting OFF on input line 6080.
+Package hyperref Info: Hyper index ON on input line 6083.
+Package hyperref Info: backreferencing OFF on input line 6090.
+Package hyperref Info: Link coloring OFF on input line 6095.
+Package hyperref Info: Link coloring with OCG OFF on input line 6100.
+Package hyperref Info: PDF/A mode OFF on input line 6105.
+LaTeX Info: Redefining \ref on input line 6145.
+LaTeX Info: Redefining \pageref on input line 6149.
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
+ge
+with kernel methods
+)
+\Hy@abspage=\count278
+\c@Item=\count279
+\c@Hfootnote=\count280
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2021-02-27 v7.00k Hyperref driver for pdfTeX
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
+e
+with kernel methods
+)
+\Fld@listcount=\count281
+\c@bookmark@seq@number=\count282
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip59
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/siunitx/siunitx.sty
+Package: siunitx 2021-05-21 v3.0.4 A comprehensive (SI) units package
+\l__siunitx_angle_tmp_dim=\dimen160
+\l__siunitx_angle_marker_box=\box58
+\l__siunitx_angle_unit_box=\box59
+\l__siunitx_compound_count_int=\count283
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/translations/translations.sty
+Package: translations 2021/01/17 v1.10a internationalization of LaTeX2e package
+s (CN)
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count284
+))
+\l__siunitx_number_exponent_fixed_int=\count285
+\l__siunitx_number_min_decimal_int=\count286
+\l__siunitx_number_min_integer_int=\count287
+\l__siunitx_number_round_precision_int=\count288
+\l__siunitx_number_group_minimum_int=\count289
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+\l__siunitx_print_tmp_box=\box60
+\l__siunitx_table_tmp_box=\box61
+\l__siunitx_table_tmp_dim=\dimen161
+\l__siunitx_table_column_width_dim=\dimen162
+\l__siunitx_table_integer_box=\box62
+\l__siunitx_table_decimal_box=\box63
+\l__siunitx_table_before_box=\box64
+\l__siunitx_table_after_box=\box65
+\l__siunitx_table_carry_dim=\dimen163
+\l__siunitx_unit_tmp_int=\count290
+\l__siunitx_unit_position_int=\count291
+\l__siunitx_unit_total_int=\count292
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2021-05-11 L3 programming layer (loader) 
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count293
+\l__pdf_internal_box=\box66
+))
+Package: l3keys2e 2021-05-07 LaTeX2e option processing using LaTeX3 keys
+)
+
+LaTeX3 Info: Defining command \DeclareBinaryPrefix with sig. '+mmm' on line
+(LaTeX3)     6937.
+
+
+LaTeX3 Info: Defining command \DeclareSIPrePower with sig. '+mm' on line 6942.
+
+
+LaTeX3 Info: Defining command \DeclareSIPostPower with sig. '+mm' on line
+(LaTeX3)     6947.
+
+
+LaTeX3 Info: Defining command \si with sig. 'O{}m' on line 6956.
+
+
+LaTeX3 Info: Defining command \SI with sig. 'O{}mom' on line 6970.
+
+
+LaTeX3 Info: Defining command \SIlist with sig. 'O{}>{\SplitList
+(LaTeX3)     {;}}m>{\TrimSpaces }m' on line 6980.
+
+
+LaTeX3 Info: Defining command \SIrange with sig. 'O{}mm>{\TrimSpaces }m' on
+(LaTeX3)     line 6989.
+
+
+LaTeX3 Info: Defining command \DeclareSIPower with sig. '+m+mm' on line 7100.
+
+
+LaTeX3 Info: Defining command \DeclareSIPrefix with sig. '+mmm' on line 7104.
+
+
+LaTeX3 Info: Defining command \DeclareSIQualifier with sig. '+mm' on line
+(LaTeX3)     7108.
+
+
+LaTeX3 Info: Defining command \DeclareSIUnit with sig. 'o+mm' on line 7114.
+
+
+LaTeX3 Info: Defining command \qty with sig. 'O{}m>{\TrimSpaces }m' on line
+(LaTeX3)     7134.
+
+
+LaTeX3 Info: Defining command \ang with sig. 'O{}>{\SplitArgument {2}{;}}m' on
+(LaTeX3)     line 7142.
+
+
+LaTeX3 Info: Defining command \num with sig. 'O{}m' on line 7151.
+
+
+LaTeX3 Info: Defining command \unit with sig. 'O{}>{\TrimSpaces }m' on line
+(LaTeX3)     7161.
+
+
+LaTeX3 Info: Defining command \qtylist with sig. 'O{}>{\SplitList
+(LaTeX3)     {;}}m>{\TrimSpaces }m' on line 7171.
+
+
+LaTeX3 Info: Defining command \numlist with sig. 'O{}>{\SplitList {;}}m' on
+(LaTeX3)     line 7179.
+
+
+LaTeX3 Info: Defining command \qtyproduct with sig. 'O{}>{\SplitList
+(LaTeX3)     {x}}m>{\TrimSpaces }m' on line 7189.
+
+
+LaTeX3 Info: Defining command \numproduct with sig. 'O{}>{\SplitList
+(LaTeX3)     {x}}>{\TrimSpaces }m' on line 7198.
+
+
+LaTeX3 Info: Defining command \qtyrange with sig. 'O{}mm>{\TrimSpaces }m' on
+(LaTeX3)     line 7207.
+
+
+LaTeX3 Info: Defining command \numrange with sig. 'O{}mm' on line 7215.
+
+
+LaTeX3 Info: Defining command \complexnum with sig. 'O{}m' on line 7223.
+
+
+LaTeX3 Info: Defining command \complexqty with sig. 'O{}mm' on line 7232.
+
+
+LaTeX3 Info: Defining command \tablenum with sig. 'O{}m' on line 7242.
+
+
+LaTeX3 Info: Defining command \sisetup with sig. 'm' on line 7244.
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/tools/array.sty
+Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
+\col@sep=\dimen164
+\ar@mcellbox=\box67
+\extrarowheight=\dimen165
+\NC@list=\toks27
+\extratabsurround=\skip60
+\backup@length=\skip61
+\ar@cellbox=\box68
+)
+
+LaTeX3 Info: Defining command \qty (pdfstring context) with sig. 'omm' on line
+(LaTeX3)     7311.
+
+
+LaTeX3 Info: Defining command \ang (pdfstring context) with sig. 'm' on line
+(LaTeX3)     7312.
+
+
+LaTeX3 Info: Defining command \num (pdfstring context) with sig. 'om' on line
+(LaTeX3)     7313.
+
+
+LaTeX3 Info: Defining command \unit (pdfstring context) with sig. 'om' on line
+(LaTeX3)     7314.
+
+
+LaTeX3 Info: Defining command \numlist (pdfstring context) with sig. 'om' on
+(LaTeX3)     line 7321.
+
+
+LaTeX3 Info: Defining command \qtylist (pdfstring context) with sig. 'omm' on
+(LaTeX3)     line 7328.
+
+
+LaTeX3 Info: Defining command \numproduct (pdfstring context) with sig. 'om'
+(LaTeX3)     on line 7329.
+
+
+LaTeX3 Info: Defining command \qtyproduct (pdfstring context) with sig. 'omm'
+(LaTeX3)     on line 7330.
+
+
+LaTeX3 Info: Defining command \numrange (pdfstring context) with sig. 'omm' on
+(LaTeX3)     line 7332.
+
+
+LaTeX3 Info: Defining command \qtyrange (pdfstring context) with sig. 'ommm'
+(LaTeX3)     on line 7334.
+
+
+LaTeX3 Info: Defining command \si (pdfstring context) with sig. 'om' on line
+(LaTeX3)     7335.
+
+
+LaTeX3 Info: Defining command \SI (pdfstring context) with sig. 'omO{}m' on
+(LaTeX3)     line 7336.
+
+
+LaTeX3 Info: Defining command \SIlist (pdfstring context) with sig. 'omm' on
+(LaTeX3)     line 7343.
+
+
+LaTeX3 Info: Defining command \SIrange (pdfstring context) with sig. 'ommm' on
+(LaTeX3)     line 7345.
+
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/physics/physics.sty
+Package: physics 
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse-2020-10-
+01.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.
+tex)))) (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 209.
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/derivative/derivative.sty
+Package: derivative 2020/07/20 v0.98 Nice and easy derivatives
+\l__deriv_vmo_int=\count294
+\l__deriv_tmpa_int=\count295
+\l__deriv_numerical_int=\count296
+\l__deriv_sort_counter_int=\count297
+\l__deriv_sort_max_int=\count298
+\l__deriv_position_int=\count299
+\l__deriv_rebuild_int=\count300
+\l__deriv_odv_sep_inf_ord_muskip=\muskip18
+\l__deriv_odv_sep_inf_fun_muskip=\muskip19
+\l__deriv_odv_sep_ord_fun_muskip=\muskip20
+\l__deriv_odv_sep_var_ord_muskip=\muskip21
+\l__deriv_odv_sep_inf_var_muskip=\muskip22
+\l__deriv_odv_sep_eval_sb_muskip=\muskip23
+\l__deriv_odv_sep_eval_sp_muskip=\muskip24
+\l__deriv_mdv_sep_inf_ord_muskip=\muskip25
+\l__deriv_mdv_sep_inf_fun_muskip=\muskip26
+\l__deriv_mdv_sep_ord_fun_muskip=\muskip27
+\l__deriv_mdv_sep_var_ord_muskip=\muskip28
+\l__deriv_mdv_sep_inf_var_muskip=\muskip29
+\l__deriv_mdv_sep_eval_sb_muskip=\muskip30
+\l__deriv_mdv_sep_eval_sp_muskip=\muskip31
+\l__deriv_fdv_sep_inf_ord_muskip=\muskip32
+\l__deriv_fdv_sep_inf_fun_muskip=\muskip33
+\l__deriv_fdv_sep_ord_fun_muskip=\muskip34
+\l__deriv_fdv_sep_var_ord_muskip=\muskip35
+\l__deriv_fdv_sep_inf_var_muskip=\muskip36
+\l__deriv_fdv_sep_eval_sb_muskip=\muskip37
+\l__deriv_fdv_sep_eval_sp_muskip=\muskip38
+\l__deriv_adv_sep_inf_ord_muskip=\muskip39
+\l__deriv_adv_sep_inf_fun_muskip=\muskip40
+\l__deriv_adv_sep_ord_fun_muskip=\muskip41
+\l__deriv_adv_sep_var_ord_muskip=\muskip42
+\l__deriv_adv_sep_inf_var_muskip=\muskip43
+\l__deriv_adv_sep_eval_sb_muskip=\muskip44
+\l__deriv_adv_sep_eval_sp_muskip=\muskip45
+\l__deriv_jdv_sep_inf_ord_muskip=\muskip46
+\l__deriv_jdv_sep_inf_fun_muskip=\muskip47
+\l__deriv_jdv_sep_ord_fun_muskip=\muskip48
+\l__deriv_jdv_sep_var_ord_muskip=\muskip49
+\l__deriv_jdv_sep_inf_var_muskip=\muskip50
+\l__deriv_jdv_sep_eval_sb_muskip=\muskip51
+\l__deriv_jdv_sep_eval_sp_muskip=\muskip52
+\l__deriv_pdv_sep_inf_ord_muskip=\muskip53
+\l__deriv_pdv_sep_inf_fun_muskip=\muskip54
+\l__deriv_pdv_sep_ord_fun_muskip=\muskip55
+\l__deriv_pdv_sep_inf_var_muskip=\muskip56
+\l__deriv_pdv_sep_var_ord_muskip=\muskip57
+\l__deriv_pdv_sep_var_inf_muskip=\muskip58
+\l__deriv_pdv_sep_ord_inf_muskip=\muskip59
+\l__deriv_pdv_sep_eval_sb_muskip=\muskip60
+\l__deriv_pdv_sep_eval_sp_muskip=\muskip61
+)
+(../latexheader.tex
+(/usr/local/texlive/2021/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen166
+\lightrulewidth=\dimen167
+\cmidrulewidth=\dimen168
+\belowrulesep=\dimen169
+\belowbottomsep=\dimen170
+\aboverulesep=\dimen171
+\abovetopsep=\dimen172
+\cmidrulesep=\dimen173
+\cmidrulekern=\dimen174
+\defaultaddspace=\dimen175
+\@cmidla=\count301
+\@cmidlb=\count302
+\@aboverulesep=\dimen176
+\@belowrulesep=\dimen177
+\@thisruleclass=\count303
+\@lastruleclass=\count304
+\@thisrulewidth=\dimen178
+)
+\c@thrm=\count305
+\c@theorem=\count306
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/mdframed/mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/zref/zref-abspage.sty
+Package: zref-abspage 2020-07-03 v2.32 Module abspage for zref (HO)
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/zref/zref-base.sty
+Package: zref-base 2020-07-03 v2.32 Module base for zref (HO)
+Package zref Info: New property list: main on input line 764.
+Package zref Info: New property: default on input line 765.
+Package zref Info: New property: page on input line 766.
+)
+\c@abspage=\count307
+Package zref Info: New property: abspage on input line 66.
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/needspace/needspace.sty
+Package: needspace 2010/09/12 v1.3d reserve vertical space
+)
+\mdf@templength=\skip62
+\c@mdf@globalstyle@cnt=\count308
+\mdf@skipabove@length=\skip63
+\mdf@skipbelow@length=\skip64
+\mdf@leftmargin@length=\skip65
+\mdf@rightmargin@length=\skip66
+\mdf@innerleftmargin@length=\skip67
+\mdf@innerrightmargin@length=\skip68
+\mdf@innertopmargin@length=\skip69
+\mdf@innerbottommargin@length=\skip70
+\mdf@splittopskip@length=\skip71
+\mdf@splitbottomskip@length=\skip72
+\mdf@outermargin@length=\skip73
+\mdf@innermargin@length=\skip74
+\mdf@linewidth@length=\skip75
+\mdf@innerlinewidth@length=\skip76
+\mdf@middlelinewidth@length=\skip77
+\mdf@outerlinewidth@length=\skip78
+\mdf@roundcorner@length=\skip79
+\mdf@footenotedistance@length=\skip80
+\mdf@userdefinedwidth@length=\skip81
+\mdf@needspace@length=\skip82
+\mdf@frametitleaboveskip@length=\skip83
+\mdf@frametitlebelowskip@length=\skip84
+\mdf@frametitlerulewidth@length=\skip85
+\mdf@frametitleleftmargin@length=\skip86
+\mdf@frametitlerightmargin@length=\skip87
+\mdf@shadowsize@length=\skip88
+\mdf@extratopheight@length=\skip89
+\mdf@subtitleabovelinewidth@length=\skip90
+\mdf@subtitlebelowlinewidth@length=\skip91
+\mdf@subtitleaboveskip@length=\skip92
+\mdf@subtitlebelowskip@length=\skip93
+\mdf@subtitleinneraboveskip@length=\skip94
+\mdf@subtitleinnerbelowskip@length=\skip95
+\mdf@subsubtitleabovelinewidth@length=\skip96
+\mdf@subsubtitlebelowlinewidth@length=\skip97
+\mdf@subsubtitleaboveskip@length=\skip98
+\mdf@subsubtitlebelowskip@length=\skip99
+\mdf@subsubtitleinneraboveskip@length=\skip100
+\mdf@subsubtitleinnerbelowskip@length=\skip101
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
+File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
+)
+\mdf@frametitlebox=\box69
+\mdf@footnotebox=\box70
+\mdf@splitbox@one=\box71
+\mdf@splitbox@two=\box72
+\mdf@splitbox@save=\box73
+\mdfsplitboxwidth=\skip102
+\mdfsplitboxtotalwidth=\skip103
+\mdfsplitboxheight=\skip104
+\mdfsplitboxdepth=\skip105
+\mdfsplitboxtotalheight=\skip106
+\mdfframetitleboxwidth=\skip107
+\mdfframetitleboxtotalwidth=\skip108
+\mdfframetitleboxheight=\skip109
+\mdfframetitleboxdepth=\skip110
+\mdfframetitleboxtotalheight=\skip111
+\mdffootnoteboxwidth=\skip112
+\mdffootnoteboxtotalwidth=\skip113
+\mdffootnoteboxheight=\skip114
+\mdffootnoteboxdepth=\skip115
+\mdffootnoteboxtotalheight=\skip116
+\mdftotallinewidth=\skip117
+\mdfboundingboxwidth=\skip118
+\mdfboundingboxtotalwidth=\skip119
+\mdfboundingboxheight=\skip120
+\mdfboundingboxdepth=\skip121
+\mdfboundingboxtotalheight=\skip122
+\mdf@freevspace@length=\skip123
+\mdf@horizontalwidthofbox@length=\skip124
+\mdf@verticalmarginwhole@length=\skip125
+\mdf@horizontalspaceofbox=\skip126
+\mdfsubtitleheight=\skip127
+\mdfsubsubtitleheight=\skip128
+\c@mdfcountframes=\count309
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- success******
+
+\mdf@envdepth=\count310
+\c@mdf@env@i=\count311
+\c@mdf@env@ii=\count312
+\c@mdf@zref@counter=\count313
+Package zref Info: New property: mdf@pagevalue on input line 895.
+)
+\c@defff=\count314
+Package translations Info: No language package found. I am going to use `englis
+h' as default language. on input line 34.
+
+(./analysis.aux)
+\openout1 = `analysis.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+
+(/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count315
+\scratchdimen=\dimen179
+\scratchbox=\box74
+\nofMPsegments=\count316
+\nofMParguments=\count317
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count318
+\MPscratchDim=\dimen180
+\MPnumerator=\count319
+\makeMPintoPDFobject=\count320
+\everyMPtoPDFconversion=\toks29
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package hyperref Info: Link coloring OFF on input line 34.
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count321
+)
+LaTeX Info: Redefining \ref on input line 34.
+LaTeX Info: Redefining \pageref on input line 34.
+LaTeX Info: Redefining \nameref on input line 34.
+ (./analysis.out) (./analysis.out)
+\@outlinefile=\write3
+\openout3 = `analysis.out'.
+
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/translations/translations-basic-d
+ictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `english'. on input line 34.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
+
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
+
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Warning: No \author given.
+
+./analysis.tex:37: Undefined control sequence.
+<recently read> \tableofcon 
+                            
+l.37 \tableofcon
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[1
+
+{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+./analysis.tex:84: Missing delimiter (. inserted).
+<to be read again> 
+                   {
+l.84 ...onverges iff every subsequence of \(\left{
+                                                  p_n\right}\) converges to p.
+I was expecting to see something like `(' or `\{' or
+`\}' here. If you typed, e.g., `{' instead of `\{', you
+should probably delete the `{' by typing `1' now, so that
+braces don't get unbalanced. Otherwise just proceed.
+Acceptable delimiters are characters whose \delcode is
+nonnegative, or you can use `\delimiter <delimiter code>'.
+
+./analysis.tex:84: Missing } inserted.
+<inserted text> 
+                }
+l.84 ...iff every subsequence of \(\left{p_n\right
+                                                  }\) converges to p.
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./analysis.tex:84: Missing delimiter (. inserted).
+<to be read again> 
+                   }
+l.84 ...ff every subsequence of \(\left{p_n\right}
+                                                  \) converges to p.
+I was expecting to see something like `(' or `\{' or
+`\}' here. If you typed, e.g., `{' instead of `\{', you
+should probably delete the `{' by typing `1' now, so that
+braces don't get unbalanced. Otherwise just proceed.
+Acceptable delimiters are characters whose \delcode is
+nonnegative, or you can use `\delimiter <delimiter code>'.
+
+./analysis.tex:84: Extra }, or forgotten $.
+<recently read> }
+                 
+l.84 ...ff every subsequence of \(\left{p_n\right}
+                                                  \) converges to p.
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+[2] [3] [4] [5] [6] [7] [8] [9] [10]
+./analysis.tex:577: Display math should end with $$.
+<to be read again> 
+                    
+l.577 \lim_{t\to x}f(t) = \lim_{n\to\infty}A_n$
+                                               
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+./analysis.tex:578: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.578 \]
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./analysis.tex:578: Missing $ inserted.
+<inserted text> 
+                $
+l.578 \]
+        
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./analysis.tex:578: Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.578 \]
+        
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+[11]
+./analysis.tex:640: Undefined control sequence.
+l.640 ...at the sequence converges for all \(x\inE
+                                                  _1\).
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[12] [13] [14]
+
+./analysis.tex:800: LaTeX Error: \mathcal allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.800 ...n \mathcal{C}'(E)\) or it is a \$\mathcal
+                                                  {C}'\$-mapping.
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[15]
+
+./analysis.tex:858: LaTeX Error: \mathcal allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.858 ...\subset E\) and there is a 1-1 \$\mathcal
+                                                  {C}'\$-mapping \(\bm{H}\) ...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[16]
+./analysis.tex:908: Undefined control sequence.
+l.908 ...mathcal{C}'\) mapping of an open set \(\E
+                                                   \subset R^n \to R^n\), \(...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[17]
+Overfull \hbox (0.46507pt too wide) in paragraph at lines 945--946
+[]\T1/cmr/m/n/10.95 For ex-am-ple, 1-surfaces are the same as con-tin-u-ously d
+if-fer-en-tiable curves. 
+ []
+
+./analysis.tex:958: Double subscript.
+<argument> \partial (x_i_
+                         1,\ldots ,x_i_k)
+l.958 ...,\ldots,x_i_k)}{\partial(u_1,\ldots,u_k)}
+                                                    \dd{\bm{u}}
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./analysis.tex:958: Double subscript.
+<argument> \partial (x_i_1,\ldots ,x_i_
+                                       k)
+l.958 ...,\ldots,x_i_k)}{\partial(u_1,\ldots,u_k)}
+                                                    \dd{\bm{u}}
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+[18] [19] [20] [21] (./analysis.aux)
+Package rerunfilecheck Info: File `analysis.out' has not changed.
+(rerunfilecheck)             Checksum: 1CCF6988CBE9C623220C187F3C46845A;6662.
+ ) 
+Here is how much of TeX's memory you used:
+ 16341 strings out of 478836
+ 313107 string characters out of 5855606
+ 594935 words of memory out of 5000000
+ 33629 multiletter control sequences out of 15000+600000
+ 424955 words of font info for 90 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 68i,6n,77p,500b,821s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb>
+</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.
+pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.p
+fb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb
+></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
+sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr
+/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><
+/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
+sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/
+local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
+al/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
+l/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/
+texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/te
+xlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texl
+ive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texliv
+e/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/
+2021/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/20
+21/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2021
+/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2021/t
+exmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
+Output written on analysis.pdf (21 pages, 352093 bytes).
+PDF statistics:
+ 443 PDF objects out of 1000 (max. 8388607)
+ 393 compressed objects within 4 object streams
+ 113 named destinations out of 1000 (max. 500000)
+ 361 words of extra memory for PDF output out of 10000 (max. 10000000)
+

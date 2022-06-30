@@ -1,7 +1,7 @@
 #+TITLE: Analysis
 #+HUGO_SECTION: Math
 #+STARTUP: latexpreview
-#+LATEX_HEADER: \input{~/.emacs.d/latexheader.tex}
+#+LATEX_HEADER: \input{../latexheader.tex}
 
 * Real numbers
 
