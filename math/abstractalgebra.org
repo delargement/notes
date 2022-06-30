@@ -2,7 +2,7 @@
 #+STARTUP: latexpreview
 #+HUGO_SECTION: Math
 
-From readings of Aluffi's "Algebra: Chapter 0" and Dummit & Foote.
+Notes from readings of Aluffi's Algebra: Chapter 0.
 
 * Monoids
 
@@ -453,7 +453,6 @@ Let I be a proper ideal of a commutative ring.
 - I is a *prime ideal* if $R/I$ is an integral domain.
 - I is a *maximal ideal* if $R/I$ is a field. (maximal implies prime)
 
-
 Equivalently,
 
 - I is prime iff for all $a,b \in R$
@@ -470,7 +469,14 @@ The equivalence is related to the nature of cancellation on integral domains.
  I \subseteq J \implies (I = J \text{ or } J = R)
 \]
 
+
 This follows from a commutative ring being a field iff its ideals are (0) and (1).
+
+*Properties:*
+
+- By Zorn's lemma (this is not required in Noetherian rings), every nonzero ring has a maximal ideal.
+- A ring with exactly one maximal ideal m is a *local ring* (such as fields). The field A/m is called the *residue field* of A. If A is a ring and there is a proper ideal such that every $x \in A - m$ is a unit in A, then A is a local ring and m its maxmimal ideal. If every element of 1+m  is a unit in A, then A is a local ring.
+- A ring with finitely many maximal ideals is called *semi-local.*
 
 Prime and maximal are equivalent under these cases:
 
@@ -823,4 +829,153 @@ Gaussian integers are an example of Euclidean domains besides the integer ring a
 
 \[
 \mathbb{Z}[i] := \frac{Z[x]}{(x^2 + 1)}
+\]
+
+* Linear algebra
+
+** Bases
+
+*Definition*
+
+An indexed set is a basis if it generates an R-module and is linearly independent
+
+While bases are necessarily maximal linearly independent subsets and minimal generated subsets, modules over a field allow the converse to hold.
+
+In fact, over fields a subset B of a vector space is a basis iff it is a maxmial linearly independent subset iff it is a minimal generating set.
+
+* Fields
+
+
+When studying fields we may focus on field extensions. In fact every field extends Z as Z is initial in Fld.
+
+One invariant of fields is its characteristic.
+
+*Definition*
+
+The *characteristic* of a field k is the nonnegative generator of the kernel (an ideal) of the unique ring homomorphism from Z to k.
+
+
+** Field extensions
+
+*Definition*
+
+A field extension $k \subseteq F$ is finite, of degree n, if F has finite dimension n as a vector space over k. The extension is infinite otherwise. The degree of a finite extension is denoted by [F:k].
+
+
+A particular type of field extensions are simple extensions
+
+*Definition*
+
+Let $k\subseteq F$ is a field extension, and let $\alpha \in F$. The smallest subfield of F containing both $k$ and $\alpha$ is denoted $k(\alpha)$. A field extension is *simple* if there exists an element $\alpha \in F$ such that $F =k(\alpha)$.
+
+
+*Theorem*
+
+Let $k \subseteq k(\alpha)$ be a simple extension. Consider the evaluation map, $\epsilon : k[t] \to k(\alpha)$, defined by $f(t) \mapsto f(\alpha)$.
+
+- $\epsilon$ is injective iff $k \subseteq k(\alpha)$ is an infinite extension. In this case, $k(\alpha)$ is isomorphic to the field of rational functions $k(t)$.
+- $\epsilon$ is not injective iff $k \subseteq k(\alpha)$ is finite. In this case there exists a unique monic irreducible nonconstant polynomial $p(t) \in k[t]$ of degree $n = [k(\alpha) : k]$ such that:
+
+\[
+k(\alpha) \cong \frac{k[t]}{(p(t))}
+\]
+
+Via this isomorphism, $\alpha$ corresponds to the coset of $t$. The polynomial $p(t)$ is the monic polynomial of smallest degree in $k[t]$ such that $p(\alpha) = 0$ in $k(\alpha)$.
+
+
+*Definition*
+
+The group of automorphisms of the extension denoted $Aut_k(F)$ is the group of field automorphisms $j : F \to F$ such that $j|_k = id_k$.
+
+In particular, let $k\subseteq F = k(\alpha)$ be a simple finite extension, and $p(x)$ be the minimal polynomial of $\alpha$ over $k$. Then $|Aut_k(F)|$ equals the number of distinct roots of $p(x)$ in F.
+
+\[
+\vert Aut_k(F) | \leq [F:k]
+\]
+
+with equality iff $p(x)$ factors over $F$ as a product of distinct linear polynomials.
+
+*** Algebraic extensions
+
+*Definition*
+
+Let $k\subseteq F$ be a field extension, and $\alpha \in F$. Then $\alpha$ is *algebraic* over k, of degree n, if $n = [k(\alpha):k]$ is finite; it is transcendental over k otherwise.
+
+An extension is algebraic if ever $\alpha \in F$ over k.
+
+By the earlier characterisation, an element is algebraic iff there exists a nonzero polynomial $f(x) \in k[x]$ such that $f(\alpha)=0$.
+
+
+Finite extensions are necessarily algebraic.
+
+
+*Definition*
+
+A field extension is *finitely generated* if there exist $\alpha_1,\ldots,\alpha_n \in F$ such that,
+
+\[
+F = k(\alpha_1)(\alpha_2)\ldots(\alpha_n)
+\].
+
+*Properties:*
+
+Let $k \subseteq F = k(\alpha_1,\ldots,\alpha_n)$ be a finitely generated field extension. TFAE,
+
+1. $k\subseteq F$ is a finite extension
+2. $k\subseteq F$ is an algebraic extension
+3. Each $\alpha_i$ is algebraic over k.
+
+If the conditions are satisfied, then the degree of the extension is less than or equal to the product of the individual degrees of $\alpha_i$ over k. In fact this shows that addition, products, and quotients of algebraic roots are also algebraic.
+
+The set of algebraic elements of any extension also forms a field. Composition of algebraic extensions are algebraic.
+
+** Algebraic closure
+
+
+Recall a field is algebraically closed if all irreducible polynomials in F[x] have degree 1.
+
+Every field admits an algebraic closure unique up to isomorphism.
+
+
+*Theorem (Nullstellensatz)*
+
+Let $k \subseteq F$ be a field extension, and that F is a finite-type k-algebra. Then $k \subseteq F$ is a finite (thus algebraic) extension.
+
+** Other types of field extensions
+
+*Definition*
+
+Let k be a field, and f(x) in k a polynomial of degree d. The *splitting field* for f(x) over k is an extension F of k such that
+
+\[
+f(x) = c\prod_{i=1}^d (x-\alpha_i)
+\]
+
+splits in $F[x]$, and further $F = k(\alpha_1,\ldots,\alpha_d)$ is generated over k by the roots of f(x) in F.
+
+*Theorem*
+
+The splitting field F for f over k is unique up to isomorphism and $[F:k] \leq (\deg f)!$.
+
+
+*Definition*
+
+A field extension is *normal* if for every irreducible polynomial f(x) over k, f(x) has a root in F iff f(x) as a product of linear factors over F.
+
+*Theorem*
+
+A field extension is finite and normal iff F is the splitting field of some polynomial over k.
+
+
+
+
+
+** (Some) Galois theory
+
+*Definition*
+
+Let $k\subset F$ be a field extension, and $G \subseteq Aut_k(F)$ be a group of automorphisms of the extension. The fixed field is the intermediate field,
+
+\[
+F^G := \{ \alpha \in F | \forall g \in G, g\alpha = \alpha \}
 \]
