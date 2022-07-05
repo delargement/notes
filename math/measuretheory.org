@@ -11,7 +11,7 @@ A family $\mathcal{R}$ of sets is called a ring if $A,B \in \mathcal{R}$ implies
 
 
 \[
-A\cap B \in \mathcal{R}
+A\cup B \in \mathcal{R}
 \],
 
 .
@@ -21,7 +21,7 @@ A-B \in \mathcal{R}
 
 Notice that the conditions imply $A \cap B \in \mathcal{R}$ if its a ring.
 
-A ring is called a $\sigma$-ring if
+A ring is called a $\sigma$ ring if
 
 \[
 \cup_{n=1}^\infty  A_n \in \mathcal{R}
@@ -51,7 +51,6 @@ and it is *countably additive* if $A_i \cap A_j = 0$ ($i \neq j$) implies
 \[
 \phi(\cap^\infty_{n=1}A_n) = \sum^\infty_{n=1}\phi(A_n).
 \]
-
 #+END_defn
 
 
@@ -77,10 +76,7 @@ Then as $n\to \infty$,
 \]
 
 #+END_thrm
-
-A borel set is a set that can be obtained by a countable number of unions,intersectoins or complements starting from open sets. The collection of all Borel sets is a $\sigma$ -ring.
-
-* Lebesgue measure
+** Lebesgue measure
 
 An *elementary set* is a union of a finite element of intervals. The family of all elementary subsets of $\mathbb{R}^p$ is denoted $\mathcal{E}$.
 
@@ -146,9 +142,9 @@ d(A,B) = \mu^*(S(A,B)).
 
 We write $A_n \to A$ if $\lim_{n\to\infty} d(A,A_n) = 0$.
 
-1. If there is a sequence of elementary sets converging to $A$, we say its *finitely $\mu$-measurable*
+1. If there is a sequence of elementary sets converging to $A$, we say its *finitely $\mu$ measurable*
 and write $A \in \mathfrak{M}_F(\mu)$.
-2. If $A$ is the union of a countable collection of finitely $\mu$-measurable sets, then $A$ is $\mu$-measureable and write $A \in \mathfrak{M}(\mu)$.
+2. If $A$ is the union of a countable collection of finitely $\mu$ measurable sets, then $A$ is $\mu$ measureable and write $A \in \mathfrak{M}(\mu)$.
 #+END_defn
 
 
@@ -170,7 +166,7 @@ if at least one of $\mu^*(A),\mu^*(B)$ is finite.
 
 #+END_prop
 
-The distance function is almost a true metric but different sets can have zero distance. Thus we may instead define equivalence in terms of vanishing distance. This equivalence relation makes $\mathfrak{M}_F(\mu)$ to be the closure of $\mathcal{E}$.j
+The distance function is almost a true metric but different sets can have zero distance. Thus we may instead define equivalence in terms of vanishing distance. This equivalence relation makes $\mathfrak{M}_F(\mu)$ be the closure of $\mathcal{E}$.j
 
 
 #+BEGIN_prop
@@ -178,3 +174,158 @@ $\mathfrak{M}(\mu)$ is a $\sigma$-ring and $\mu^*$ is countably additive on $\ma
 #+END_prop
 
 The extended set function is called a measure, and the Lebesgue measure on $\mathbb{R}^p$ is thus the special case $\mu = m$.
+
+** Borel sets
+
+A borel set is a set that can be obtained by a countable number of unions,intersectoins or complements starting from open sets. The collection of all Borel sets is a $\sigma$ -ring, in fact the smallest one which contains all open sets. An element of a borel set is $\mu$ measureable. Every $\mu$ measurable set is the union of a Borel set and a set of measure zero.
+
+* Measure spaces
+
+#+BEGIN_defn
+A set $X$ is a *measure space* if there exists a $\sigma$ ring $\mathfrak{M}$ of subsets of $X$ (the measurable sets) and a non-negative countably additive measure defined on $\mathfrak{M}$. If, in adddition, $X \in \mathfrak{M}$, then $X$ is said to be a *measurable space*.
+#+END_defn
+
+** Measurable functions
+
+
+#+BEGIN_defn
+A function is *measurable* if the set $\{x | f(x) > a\}$ is measurable for every real $a$. Equality can be included.
+#+END_defn
+
+#+BEGIN_prop
+Making more measurable functions.
+1. If $f$ is measurable, then $|f|$ is measurable.
+2. Let $\{f_n\}$ be a sequence of measurable functions. For $x \in X$, put
+
+\[
+g(x) = \sup f_n(x)
+\]
+
+\[
+h(x) = \lim_{n\to\infty}\sup f_n(x)
+\],
+Then $g$ and $h$ are measurable.
+
+This results in the following corollaries,
+1. If $f$ and $g$ are measurable, then $\max(f,g)$ and $\min(f,g)$ are measurable
+2. The limit of a convergent sequence of measurable functions is measurable.
+#+END_prop
+
+Common binary operations are also preserve measurability.
+
+#+BEGIN_thrm
+Let $f$ and $g$ be measurable real-valued functions defiend on $X$, let $F$ be real and continuous on $\mathbb{R}^2$. Then $F(f(x),g(x))$ is measurable.
+#+END_thrm
+
+Thus common operations of analysis can be applied to measurable functions to give measurable functions. An example where measurability doesn't carry over is $h(x) = f(g(x))$, where $f$ is measurable and $g$ is continuous, but $h$ is not necessarily measurable. Interestingly, we were able to define measurable functions without referencing any particular measure. Thus, the class of measurable functions on $X$ depends on the $\sigma$ ring $\mathfrak{M}$.
+
+** Simple functions
+
+#+BEGIN_defn
+Let $s$ be a real-valued function defined on $X$. If the range of $s$ is finite, then $s$ is a *simple function*. Let $E \subseteq X$ and put define $K_E(x) = 1$  when $x\in E$ and zero otherwise as the *characteristic function* of $E$. Denoting $E_i = s^{-1}(\{c_i\})$ where $c_i$ make up the range of $s$, we can decompose any simple function into a linear combinations of characteristic functions,
+\[
+s = \sum_{i=1}^n c_i K_{E_i}.
+\]
+
+$s$ is measurable iff $E_i$ are measurable.
+
+#+END_defn
+
+
+This allows us to approximate every function by simple functions.
+
+#+BEGIN_thrm
+Let $f$ be a real function on $X$. There exists a sequence $\{s_n\}$ of simple funcitons such that $s_n(x) \to f(x)$ as $n \to \infty$, for every $x \in X$. If $f$ is measurable, $\{s_n\}$ may be chosen to be a sequence of measurable functions. If $f\geq 0$, $\{s_n\}$ may be chosen to be a monotonically increasing sequence.
+#+END_thrm
+
+$s_n$ can be constructed as
+
+\[
+s_n = \sum_{i=1}^{n2^n}\frac{i-1}{2^n} K_{E_{ni}} + n K_{F_n}
+\]
+
+for non-negative $f$. For general functions, the function can be split into the difference between its positive and negative components. The sequence converges uniformly to $f$ if $f$ is bounded.
+
+
+* Lebesgue Integration
+
+#+BEGIN_defn
+Suppose $(x \in X, c_i > 0)$
+\[
+s(x) = \sum_{i=1}^n c_i K_{E_i}(x)
+\]
+is measurable and $E \in \mathfrak{M}$. We define
+
+\[
+I_E(s) = \sum_{i=1}^n c_i \mu(E \cap E_i).
+\]
+If $f$ is measurable and non-negative, we define
+
+\[
+\int_E f \dd{\mu} = \sup I_E(s),
+\]
+
+where the sup is taken over all measurable simple functions $s$ such that $0 \leq s \leq f$.
+#+END_defn
+
+The integral may have the value $+ \infty$. If the integral of each of the positive and negative components of a function is finite, then $f$ is said to be *integrable*, or $f \in \mathcal{L}(\mu)$. Integrability carries over to subsets.
+
+#+BEGIN_thrm
+Suppose $f$ is measurable and non-negative on $X$. For $A \in \mathfrak{M}$, define
+
+\[
+\phi(A) = \int_A f\dd{\mu}.
+\]
+
+Then $\phi$ is countably additive on $\mathfrak{M}$. The same conclusion holds for any $f \in \mathcal{L}(\mu)$.
+#+END_thrm
+
+#+LATEX_ATTR: :options [Lebesgue's monotone convergence theorem]
+#+BEGIN_thrm
+Suppose $E\in\mathfrak{M}$. Let $\{f_n\}$ be a sequence of measurable functions such that $0 \leq f_1(x) \leq f_2(x) \leq \ldots$. Let $f$ be defined by $f_n(x) \to f(x)$ as $n\to\infty$. Then
+
+\[
+\int_E f_n \dd{\mu} \to \int_E f\dd{\mu}
+\]
+
+#+END_thrm
+
+A corollary of the result is that the lebesgue integral and summation of a sequence of measurable functions commute.
+
+#+LATEX_ATTR: :options [Fatou's theorem]
+#+BEGIN_thrm
+Suppose $E \in \mathfrak{M}$. If $\{f_n\}$ is a sequence of non-negative measurable functions and
+
+\[
+f(x) = \lim_{n\to\infty}\inf f_n(x),
+\]
+
+then
+
+\[
+\int_E f \dd{\mu} \leq \lim_{n\to\infty} \inf \int_E f_n \dd{\mu}
+\]
+
+#+END_thrm
+
+#+LATEX_ATTR: :options [Lebesgue's domainated convergence theorem]
+#+BEGIN_thrm
+Suppose $E \in \mathfrak{M}$. Let $\{f_n\}$ be a sequence of measurable functions such that
+\[
+f_n(x) \to f(x)
+\]
+as $n\to\infty$. If there exists a function $g \in \mathcal{L}(\mu)$ such that
+
+\[
+\vert f_n(x) | \leq g(x)
+\]
+
+for all $n$, then,
+
+\[
+\lim_{n\to\infty} \int_E f_n \dd{\mu} = \int_E f \dd{\mu}
+\]
+
+#+END_thrm
+
+In summary, the limits of measurable functions are always measurable, whereas the limits of Riemann-integrable functions may fail to be Riemann-integrable.
