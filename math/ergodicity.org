@@ -1,0 +1,60 @@
+#+TITLE: Analysis
+#+HUGO_SECTION: Math
+#+STARTUP: latexpreview
+
+* Measure theory
+
+#+BEGIN_defn
+A *measure-preserving transformation* is a measurable transformation $T$ such that $m_1(T^{-1}(B_2)) = m_2(B_2)$ for all $B_2 \in \mathcal{B}_2$.
+#+END_defn
+
+* Ergodic hypotheses
+
+1. A measure-preserving system $(X,\mathcal{B},m ,T)$ is called *ergodic* if $T^{-1}(B) =B$ implies that $m(B) = 0$ or $m(B) = 1$.
+2. $T$ is an ergodic transformation iff every $T$ invariant function is constant almost everywhere.
+
+
+** Birkhoff equality
+
+#+LATEX_ATTR: :options [Birkhoff]
+#+BEGIN_thrm
+If $T$ is a measure-preserving transformation on a probability space $(X,\mathcal{B},m)$, then for any $f \in L^1(X)$, the time average of $f$ converges almost everywhere to a function $f^* \in L^1$. Furthermore, $f^*$ is $T$ invariant almost everywhere and $\int_X f^* \dd{m} = \int_X f \dd{m}$.
+#+END_thrm
+
+Thus, $T$ is ergodic iff the time average converges to the space average almost everywhere.
+
+
+* Alternate properties
+
+Consider the irrational rotations of a circle, which don't mix up a set but merely translate it. Irrational rotations are ergodic because we can expect that the intersection of $T^{-n}(A)$ and B should overlap with measure $\mu(A)\mu(B)$ for random $n$. But since irrational rotations dense, there will be cases where the sets overlap almost completely or don't intersect at all. How may we characterise transformations which "scatter" a set uniformly?
+
+** Strong-mixing
+
+#+BEGIN_defn
+A measure-preserving system $(X,\mathcal{B}, m , T)$ is *strong-mixing* if for all $A,B \in \mathcal{B}$, we have that
+\[
+\lim_{n\to\infty} m(T^{-n}(A) \cap B) = m(A)m(B)
+\]
+#+END_defn
+
+
+#+BEGIN_defn
+A measure-preserving system $(X,\mathcal{B}, m , T)$ is *weak-mixing* if for all $A,B \in \mathcal{B}$, we have that
+
+\[
+\lim_{n\to\infty}  \frac{1}{n} \sum_{i=0}^{n-1} |
+m(T^{-i}(A) \cap B) - m(A)m(B)| = 0
+\]
+#+END_defn
+
+
+
+For comparison, a transformation is ergodic iff for any $A,B \in \mathcal{B}$, we have that
+
+\[
+\lim_{n\to\infty} \frac{1}{n} \sum_{i=0}^{n-1} m(T^{-i}(A) \cap B) = m(A)m(B).
+\]
+
+
+
+* Major results in Poincare recurrence
