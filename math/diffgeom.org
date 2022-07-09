@@ -1,6 +1,8 @@
-#+TITLE: Differential Geometry
+#+TITLE: Smooth manifolds
 #+STARTUP: latexpreview
 #+HUGO_SECTION: Math
+
+Adapted from Lee's ISM.
 
 * Smooth manifolds
 
@@ -8,6 +10,159 @@ A topological manifold is hausdorff, second-countable and locally euclidean.
 
 * Smooth maps
 
-*Definition*
 
+#+BEGIN_defn
 $f : M\to\mathbb{R}^K$ is a *smooth function* if for every $p \in M$, there exist a smooth chart $(U,\varphi)$ for M whose domain contains p and such that the composite function $f \circ \phi^{-1}$ is smooth on the open subset $\hat{U} = \phi(U) \subseteq \mathbb{R}^n$.
+#+END_defn
+
+* Cotangent bundle
+
+The cotangent bundle is the dual space to the tangent bundle. i.e. the linear functionals which take in tangent vectors.
+
+** Covectors
+
+#+BEGIN_defn
+For a given vector space, a covector is a real-valued linear functional on V. The vector space of covectors on $V$ form its dual space.
+
+The basis of the dual space are the covectors $\epsilon^i(E_j) = \delta^i_j$.
+#+END_defn
+
+While vectors are expanded in terms of their bases like $v^iE_i$, covectors are expanded as $\omega_i\varepsilon^i$
+
+#+BEGIN_defn
+The *dual map* of a linear map $A : V\to W$ is defined by
+
+\[
+(A^*\omega)(v) = \omega(Av)
+\]
+for $\omega \in W^*, v\in V$.
+#+END_defn
+
+It can be shown that '*' operator is a contravariant functor from the category of real vector spaces to itself.
+
+
+*** Second dual space
+
+For each vector space, there is a natural, basis-independent map $\xi: V \to V^{**}$, defined as follows. For each vector $v \in V$, define a linear functional $\xi(v) : V^{ * } \to \mathbb{R}$ by
+
+\[
+\xi(v)(\omega) = \omega(v)
+\] for $\omega \in V^*$
+
+
+Recall the following elementary result on second dual spaces.
+
+#+BEGIN_prop
+For any finite-dimensional vector space V, the map $\xi: V\to V^{**}$ is an isomorphism
+#+END_prop
+
+This proposition allows us to denote the the application of a covector t oa vector by either $\langle \omega, v \rangle$ or $\langle \omega, v \rangle$.
+
+
+** Tangent covectors on manifolds
+
+The *cotangent space at p*, is the dual space to $T_p M$, denoted $T^*_p M$. Given smooth local coordinates $(x^i)$, the coordinate basis $(\partial_i|_p)$ gives rise to a dual basis for $T^*_p M$, which will be denoted as $(dx^i|_p)$. Thus any such covector can be written uniquely as $\omega = \omega_i dx^i|_p$, where $\omega_i = \omega(\partial_i|_p)$.
+
+Recall from the discussion of tangent spaces that two different smooth coordinates transform into one another by the following transformation of their coordinate vector fields,
+
+\[
+\pdv{}{x^i}\bigg\rvert_p = \pdv{\tilde{x}^j}{x^i}(p) \pdv{}{\tilde{x}^j}\bigg\rvert_p.
+\]
+
+The components of a covector thus transform as follows
+
+\[
+\omega_i = \pdv{\tilde{x}^j}{x^i}(p)\tilde{\omega}_j
+\]
+
+Compare this with the transformation law of components tangent vectors,
+
+\[
+\tilde{v}^j = \pdv{\tilde{x}^j}{x^i}(p) v^i
+\]
+
+Thus, tangent covectors are *covariant* vectors because they transform in the same way as the partial derivatives, while tangent vectors are called *contravariant vectors*. This is due to the components of the vectors being the quantities of interest in the past, vectors being treated as n-tuples.
+
+
+
+
+* Tensors
+
+A map $F: V_1 \times \ldots \times V_k \to W$ is multilinear if it is linear as a function of each variable when the others are held fixed. The set of all multilinear maps between a particular domain and codomain is a vector space.
+
+** Tensor product
+
+Let $V$ be a vector space, and $\omega,\eta \in V^*$. Define a function $\omega \otimes \eta : V \times V \to \mathbb{R}$
+
+\[
+\omega \otimes \eta(v_1,v_2) = \omega(v_1)\eta(v_2),
+\]
+
+where the product is regular multiplications of real numbers. Generalising to arbitrary multilinear functionals acting on a product of vector spaces, we get the *tensor product*. Notice its bilinearity and associativity.
+
+#+ATTR_LATEX :options [Basis for multilinear functions]
+#+BEGIN_prop
+Let $V_1,\ldots,V_k$ be real vector spaces of dimensions $n_1,\ldots,n_k$ respectivley. Let $(E^{(j)}_i)$ be a basis for $V_j$ and $(\epsilon^i_{(j)})$ be the corresponding basis for $V^*_j$. Then the set
+
+\[
+\mathcal{B} = \left\{ \epsilon^{i_1}_{(1)}\otimes\ldots\otimes\epsilon^{i_k}_{(k)} : 1\leq i_1 \leq n_1,\ldots,1\leq i_k \leq n_k \right\}
+\]
+
+is a basis for $L(V_1,\ldots,V_k:\mathbb{R})$, which therefore has dimension equal to $n_1\ldots n_k$.
+#+END_prop
+
+
+
+** Abstract tensor products
+
+#+BEGIN_defn
+A *formal linear combination* of elements of a set S is a function $f : S \to \mathbb{R}$ such that $f(s) = 0$ for all but finitely many elements of S. The *free (real) vector space on S*, denoted by $\mathcal{F}(S)$ is the set of all formal linear combinations of elements of S.
+#+END_defn
+
+Each element $f \in \mathcaL{F}(S)$ can be written uniquely in the form $f = \sum^m_{i=1} a_i x_i$, where $x_1,\ldots,x_m$ are the elements of S for which $f(x_i) \neq 0$, and $a_i = f(x_i)$. We identify $x \in S$ with the function $\delta_x \in \mathcal{F}(S)$ that takes the value 1 on $x$ and zero on all other elements of S. Thus $S$ is a basis for the free vector space.
+
+#+ATTR_LATEX :options [Characteristic Property of the Free Vector Space]
+#+BEGIN_prop
+For any set $S$ and any vector space $W$, every map $A: S \rightarrow W$ has a unique extension to a linear map $\bar{A}: \mathcal{F}(S) \rightarrow W$
+#+END_prop
+
+
+Now let $\mathcal{R}$ be the subspace of $\mathcal{F}(V_1\times\ldots\times V_k)$ spanned by all the elements of the forms
+
+\[
+\left(v_{1}, \ldots, a v_{i}, \ldots, v_{k}\right)-a\left(v_{1}, \ldots, v_{i}, \ldots, v_{k}\right)
+\]
+
+\[
+\left(v_{1}, \ldots, v_{i}+v_{i}^{\prime}, \ldots, v_{k}\right)-\left(v_{1}, \ldots, v_{i}, \ldots, v_{k}\right)-\left(v_{1}, \ldots, v_{i}^{\prime}, \ldots, v_{k}\right)
+\]
+
+with $v_{j}, v_{j}^{\prime} \in V_{j}, i \in\{1, \ldots, k\}$, and $a \in \mathbb{R}$.
+
+Define the tensor product of the spaces $V_{1}, \ldots, V_{k}$, denoted by $V_{1} \otimes \cdots \otimes V_{k}$, to be the following quotient vector space:
+
+$$
+V_{1} \otimes \cdots \otimes V_{k}=\mathcal{F}\left(V_{1} \times \cdots \times V_{k}\right) / \mathcal{R},
+$$
+
+and let $\Pi: \mathcal{F}\left(V_{1} \times \cdots \times V_{k}\right) \rightarrow V_{1} \otimes \cdots \otimes V_{k}$ be the natural projection. The equivalence class of an element $\left(v_{1}, \ldots, v_{k}\right)$ in $V_{1} \otimes \cdots \otimes V_{k}$ is denoted by
+
+$$
+v_{1} \otimes \cdots \otimes v_{k}=\Pi\left(v_{1}, \ldots, v_{k}\right),
+$$
+
+and is called the *(abstract) tensor product* of $v_{1}, \ldots, v_{k}$. It follows from the definition that abstract tensor products satisfy
+
+\begin{aligned}
+v_{1} \otimes \cdots \otimes a v_{i} \otimes \cdots \otimes v_{k}= & a\left(v_{1} \otimes \cdots \otimes v_{i} \otimes \cdots \otimes v_{k}\right) \\
+v_{1} \otimes \cdots \otimes\left(v_{i}+v_{i}^{\prime}\right) \otimes \cdots \otimes v_{k}=&\left(v_{1} \otimes \cdots \otimes v_{i} \otimes \cdots \otimes v_{k}\right) \\
+&+\left(v_{1} \otimes \cdots \otimes v_{i}^{\prime} \otimes \cdots \otimes v_{k}\right)
+\end{aligned}
+
+Note not every element of the tensor product space is of the form $v_1 \otimes \ldots \otimes v_k$.
+
+An analogue of the basis proposition for multilinear functions holds for abstract tensor product spaces.
+
+
+
+* Differential forms
