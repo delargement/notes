@@ -2,7 +2,7 @@
 #+STARTUP: latexpreview
 #+HUGO_SECTION: Physics
 
-this is in gaussian units
+this is in gaussian units. Adapted from Shankar and Shroeder.
 
 * Postulates
 1. Associated to any isolated physical system is a hilbert space which is completely described by its state vector.
@@ -551,4 +551,180 @@ Since it commutes with each generator, these operators have simulataneous eigens
 
 \[
 \hat{J}_z\ket{\lambda,m} = m \hbar \ket{\lambda,m}
+\]
+
+* Quantum statistics
+
+** Boltzmann statistics for ideal gases
+
+The partition function of a composite system of $N$ noninteracting indistinguishable gas molecules is of the form,
+
+\[
+Z = \frac{1}{N!}Z_1^N,
+\]
+
+where $Z_1$ is the partition function for a single individual particle, and the factorial prefactor expresses the number of ways of interchanging N particles with each other.
+
+For a single molecule, we may decompose the energy of a molecule in terms of its translational kinetic energy $E_{tr}$, and its internal energy $E_{int}$ (rotational, vibrational etc.) for a particular state. Thus $Z_1 = Z_{tr}Z_{int}$.
+
+*** Particle in a box
+
+In a one dimensional box of length $L$, the standing-wave patterns are limited to wavelengths of $\lambda_n = \frac{2L}{n}$ for positive integer $n$. The corresponding momentum is $p_n =\frac{hn}{2L}$ and the corresponding energy is $E_n = \frac{h^2n^2}{8mL^2}$. Computing the translational partition function
+
+\[
+Z_{1d} = \sum_n e^{-E_n/kT} \approx \sqrt{\frac{2\pi m k T}{h^2}} L \equiv L/l_Q
+\]
+
+where $l_Q$ is the *quantum length*. It is the de Broglie wavelength of a particle of mass m whose kinetic energy is $kT$, aside from the $\pi$.
+
+In three dimensions, we have three times the momentum components so instead $Z_{tr} = V/v_Q$, where $v_Q = l_Q^3$. Thus
+
+\[
+Z = \frac{1}{N!}\left(\frac{VZ_{int}}{v_Q}\right)^N.
+\]
+
+**** Thermal properties
+
+From the helmholtz free energy, we get the thermal properties
+
+\[
+\mu = -kT \ln(\frac{VZ_{int}}{Nv_Q})
+\]
+
+** Gibbs factor
+
+#+BEGIN_defn
+Recall that in Boltzmann statistics, the Boltzmann distribution is given by
+
+\[
+\mathcal{P}(s) = \frac{1}{\mathcal{Z}} e^{-E(s)/kT}
+\]
+
+But when we choose not to neglect the chemical potential, the exponential factor becomes $e^{-[E(s)-\mu N(s)]/kT}$, which we call the *Gibbs factor*. The new partition function is called the *grand partition function* or the *Gibbs sum*
+#+END_defn
+
+
+
+** Bosons and fermions
+
+However, when considering finite quantum states with the issue of particle overlap, then the earlier partition function for composite systems may not apply.
+
+A system of $N$ indistinguishable particles which has no restriction on the number of particles that can occupy a single quantum state is said to obey *Bose-Einstein statistics*. i.e. bosons. If there is a restriction of at most particle occupying a single quantum state, the system is said to obey *Fermi-dirac statistics.* i.e. fermions (Think Pauli exclusion principle).
+
+For reference, Maxwell-Boltzmann statistics concerns distinguishable without restrictions.
+
+However, when the available single-particle states is much greater than the number of particles, i.e. $Z_1 \gg N$, then the chance of two particles occupying the same state is negligible. Thus the regualr partition function applies, i.e $V/N \gg v_Q$. In other words, the distance between particles must be much greater than the de Broglie wavelength. Quantum gases violate this condition. Some examples of systems which also violate the condition include very dense neutron stars, very cold liquid helium or very light particles like electrons in a metal or photons in a hot oven.
+
+** Distribution functions
+
+Consider a single-particle-state (as opposed to a particle itself) system. The probabilty of a state being occupied by $n$ particles is $\mathcal{P}(n) = \frac{1}{\mathcal{Z}}e^{-n(\epsilon-\mu)/kT}$, where $\epsilon$ is the energy of the state when occupied by a single particle.
+
+For fermions, the average number of particles in the state is given by the formula
+
+\[
+\bar{n}_{FD} =\frac{1}{e^{(\epsilon-\mu)/kT}+1}
+\],
+
+which is called the *Fermi-Dirac distribution*.
+
+[[file:./fermidirac.png]]
+
+Similarly for bosons, the *Bose-Einstein distribution* is given by
+
+\[
+\bar{n}_{BE} = \frac{1}{e^{(\epsilon-\mu)/kT}-1}
+\].
+
+For reference, the average occupancy for Boltzmann statistics is given by
+
+\[
+\bar{n}_{Boltzmann} = e^{-(\epsilon-\mu)/kT}
+\]
+
+[[file:./fdbebb.png]]
+
+** Degenerate Fermi gases
+
+Consider a "gas" of fermions at a very low temperature such that the condition for Boltzmann statistics to apply is badly violated. At $T=0$, all single-particle states with energy less than $\mu(T=0)$ are occupied while all other states are unoccupied. We call $\mu(T=0)$ the *Fermi energy*, denoted $\epsilon_F$. The fermi-dirac distribution thus becomes a step function.
+
+When the temperature is low enough that this is almost true, the gas is said to be *degenerate*.
+
+Considering the energy distribution in n-space as a eighth-sphere and the relation $\epsilon_F = \frac{h^2 n^2_{max}}{8mL^2}$ from particle in a box, we get the equation for the Fermi energy as a function of $N$ and $V$.
+
+\[
+\epsilon_F = \frac{h^2}{8m}\left(\frac{3N}{\pi V}\right)^{2/3}
+\].
+
+Thus the total energy integrated over n-space is
+
+\[
+U = 3/5 N\epsilon_{F},
+\]
+
+and we may verify that the Boltzmann condition is equivalent to the condition $kT \gg \epsilon_F$. The required temperature for equality is the Fermi temperature.
+
+The *degeneracy pressure* given by $P = -(\partial U/\partial V)_{S,N}$ is given by
+
+\[
+P =\frac{2}{3}\frac{U}{V}
+\].
+
+
+When a degenerate electron gas is compressed, the wavelength of all the wavefunctions are reduced, and hence the energies of all the wavefunctions increase. This is what keeps matter from collapsing under the huge electrostatic forces that pull electrons and protons together.
+
+** Ultraviolet catastrophe
+
+In classical physics, we may consider EM radiation permeating a box, each standing wave behaving a harmonic oscillator with two degrees of freedom, thus with energy $kT$. Since there are infinitely many such waves, there may seem to be an infinite amount of energy in the box.
+
+However, in QM, a harmonic oscillator may only have energy levels of integer multiples of $hf$ (relative to ground state). This results in the Planck distribution,
+
+\[
+\bar{n}_{Pl} =\frac{1}{e^{hf/kT}-1}
+\]
+
+This freezes out the short-wavelength (high energy) modes, and allows for a finite energy.
+
+
+To find the total energy of all the photons in the box, we may derive Wien's law, by integrating over the Planck distribution with energy and a factor of two for the two independent polarisations of photons.
+
+This is given by,
+
+\[
+\frac{U}{V} = \frac{8\pi(kT)^4}{(hc)^3}\int_0^\infty \frac{x^3}{e^x-1}\dd{x} = \frac{8\pi^5(kT)^4}{15(hc)^3}
+\]
+
+under the change of variable $x=\epsilon/kT$. The spectrum (energy density per unit photon energy) peaks at $x=2.82$.
+
+*** Other thermal properties
+
+The heat capacity is
+
+\[
+C_V = \left(\pdv{U}{T}\right)_V = 4aT^3
+\]
+
+
+The entropy is given by
+
+\[
+S(T) = \frac{32\pi^5}{45}V\left(\frac{kT}{hc}\right)^3 k
+\]
+
+*** Photons escaping through a hole (Radiation)
+
+Volume of some chunk of photons: $R\dd{\theta} \times R\sin\theta\dd{\phi} \times c\dd{t}$.
+Energy in chunk: $U/V c\dd{t} R^2\sin\theta\dd{\theta}\dd{\phi}$
+Probability of escape for photon in chunk: $\frac{A\cos\theta}{4\pi R^2}$
+Total energy: $\frac{A}{4} \frac{U}{V}c\dd{t}$
+
+Thus we get intensity
+
+\[
+I = \frac{c}{4} \frac{U}{V} = \sigma T^4
+\],
+
+where the familiar *Stefan-Boltzmann constant* is given by
+
+\[
+\sigma =\frac{2\pi^5k^4}{15h^3c^2} = 5.67\times 10^{-8} Wm^{-2}K^{-4}
 \]
