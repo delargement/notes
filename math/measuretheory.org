@@ -1,0 +1,180 @@
+#+TITLE: Measure theory
+#+HUGO_SECTION: Math
+#+STARTUP: latexpreview
+
+* Borel algebra
+
+If A and B are any two sets, let $A- B$ be the set of all elements in A that are not in B (This does not imply $B\subset A$).
+
+#+BEGIN_defn
+A family $\mathcal{R}$ of sets is called a ring if $A,B \in \mathcal{R}$ implies
+
+
+\[
+A\cap B \in \mathcal{R}
+\],
+
+.
+\[
+A-B \in \mathcal{R}
+\].
+
+Notice that the conditions imply $A \cap B \in \mathcal{R}$ if its a ring.
+
+A ring is called a $\sigma$-ring if
+
+\[
+\cup_{n=1}^\infty  A_n \in \mathcal{R}
+\],
+
+for any countable sequence of sets $A_n \in \mathcal{R}$.
+
+If this condition is fulfilled, then
+
+\[
+\cap_{n=1}^\infty  A_n \in \mathcal{R}
+\]
+
+also holds.
+
+#+END_defn
+
+#+BEGIN_defn
+A set function $\phi$ defined on $\mathcal{R}$ assigns to every element of a number $\phi(A)$ of the extended number system. $\phi$ is *additive* if $A \cap B = 0$ implies
+
+\[
+\phi(A\cup B) = \phi(A)+ \phi(B)
+\],
+
+and it is *countably additive* if $A_i \cap A_j = 0$ ($i \neq j$) implies
+
+\[
+\phi(\cap^\infty_{n=1}A_n) = \sum^\infty_{n=1}\phi(A_n).
+\]
+
+#+END_defn
+
+
+Notice that nonnegative additive set functions are monotonic by inclusion. In addition, for additive set functions,
+
+\[
+\phi(A-B) = \phi(A) -\phi(B)
+\]
+
+if $B\subseteq A$ and $|\phi B| < +\infty$.
+
+#+BEGIN_thrm
+Suppose $\phi$ is countably additive on a ring $\mathcal{R}$. If $A_n \in \mathcal{R}$ and $A_n\subseteq A_{n+1}$,$A \in \mathcal{R}$ and
+
+\[
+A = \cup_{n=1}^\infty A_n,
+\]
+
+Then as $n\to \infty$,
+
+\[
+\phi(A_n) \to \phi(A)
+\]
+
+#+END_thrm
+
+A borel set is a set that can be obtained by a countable number of unions,intersectoins or complements starting from open sets. The collection of all Borel sets is a $\sigma$ -ring.
+
+* Lebesgue measure
+
+An *elementary set* is a union of a finite element of intervals. The family of all elementary subsets of $\mathbb{R}^p$ is denoted $\mathcal{E}$.
+
+The following properties may be verified,
+
+1. $\mathcal{E}$ is a ring but not a $\sigma$-ring.
+2. $m$ defined by $m([a,b]) = \Pi_{i=1}^p (b_i-a_i)$ is well defined and additive on $\mathcal{E}$.
+
+
+#+BEGIN_defn
+A nonnegative additive set function is *regular* if for every $A \in \mathcal{E}$ and to every $\varepsilon > 0$ there exist sets $F,G \in \mathcal{E}$ such that $F$ is closed, $G$ is open, $F \subset A \subset G$, and
+
+\[
+\phi(G) - \varepsilon \leq \phi(A) \leq \phi(F)+\varepsilon
+\]
+#+END_defn
+
+#+BEGIN_eg
+$m$ is regular, $\mu(a,b) = \alpha(b) - \alpha(a)$ where $\alpha$ is monotonically increasing is regular on the real line.
+#+END_eg
+
+Every regular set function on $\mathcal{E}$ can be extended to a countably additive set function on a $\sigma$ -ring which contains $\mathcal{E}$.
+
+#+BEGIN_defn
+Let $\mu$ be additive, regular, nonnegative and finite on $\mathcal{E}$. Consider countable coverings of any set $E\subseteq \mathbb{R}^p$ by open elementary sets $A_n$:
+
+\[
+E \subseteq \cup_{n=1}^\infty A_n
+\]
+
+Define
+\[
+\mu^*(E) = \inf \sum_{n=1}^\infty \mu(A_n),
+\]
+the inf being taken over all countable coverings of $E$ by open elementary sets. $\mu^*(E)$ is called the *outer measure* of $E$, corresponding to $\mu$.
+#+END_defn
+
+#+BEGIN_prop
+Properties of an outer measure.
+1. The outer measure is nonnegative for all $E$.
+2. It is monotonic by inclusion.
+3. Its restriction to elementary set is equivalent to the original measure.
+4. *Subadditivity*: If $E = \cup_1^\infty E_n$, then
+
+\[
+\mu^*(E) \leq \sum_{n=1}^\infty \mu^*(E_n)
+\]
+
+
+#+END_prop
+
+** Distances between sets
+
+#+BEGIN_defn
+For any $A,B\subseteq\mathbb{R}^p$, we define the symmetric difference and the distance functions
+
+\[
+S(A,B) = (A-B)\cup(B-A)
+\],
+\[
+d(A,B) = \mu^*(S(A,B)).
+\]
+
+We write $A_n \to A$ if $\lim_{n\to\infty} d(A,A_n) = 0$.
+
+1. If there is a sequence of elementary sets converging to $A$, we say its *finitely $\mu$-measurable*
+and write $A \in \mathfrak{M}_F(\mu)$.
+2. If $A$ is the union of a countable collection of finitely $\mu$-measurable sets, then $A$ is $\mu$-measureable and write $A \in \mathfrak{M}(\mu)$.
+#+END_defn
+
+
+#+BEGIN_prop
+Properties of the symmetric difference and the distance function.
+
+1. $S(A,B)\subseteq S(A,C)\cup S(C,B)$.
+2. $S(A_1 \cup A_2,B_1\cup B_2), S(A_1 \cap A_2,B_1\cap B_2), S(A_1 - A_2,B_1- B_2) \subseteq S(A_1,B_1) \cup S(A_2,B_2)$
+
+The distance function follow analagous relations with the relevant set operations becoming the appropriate arithmetic operations.
+
+There is also the property
+
+\[
+ \vert \mu^*(A) - \mu^*(B) | \leq d(A,B)
+\]
+
+if at least one of $\mu^*(A),\mu^*(B)$ is finite.
+
+#+END_prop
+
+The distance function is almost a true metric but different sets can have zero distance. Thus we may instead define equivalence in terms of vanishing distance. This equivalence relation makes $\mathfrak{M}_F(\mu)$ to be the closure of $\mathcal{E}$.j
+
+
+#+BEGIN_prop
+$\mathfrak{M}(\mu)$ is a $\sigma$-ring and $\mu^*$ is countably additive on $\mathfrak{M}(\mu)$.
+#+END_prop
+
+The extended set function is called a measure, and the Lebesgue measure on $\mathbb{R}^p$ is thus the special case $\mu = m$.
